@@ -1,5 +1,0 @@
-# Ignore everything except frontend directory
-*
-!frontend/
-!frontend/**
-!vercel.json
