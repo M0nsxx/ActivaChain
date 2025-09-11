@@ -58,7 +58,7 @@ ActivaChain es la **primera plataforma Web3 integral** que combina:
 - **Certificados NFT Soulbound** que no se pueden transferir
 
 ### 💼 **Marketplace Multi-Token**
-- **42+ servicios activos** en categorías: Desarrollo, Diseño, Marketing, Consultoría
+- **Servicios en desarrollo** - Categorías: Desarrollo, Diseño, Marketing, Consultoría
 - **Pagos con ETH y ARB** - elegí tu token preferido
 - **Sistema de reputación** basado en ZK Proofs
 - **Comisiones de plataforma** del 1% (las más bajas del mercado)
@@ -79,11 +79,11 @@ ActivaChain es la **primera plataforma Web3 integral** que combina:
 - **Transparencia total** en todas las decisiones
 
 ### 👥 **Sistema de Comunidad**
-- **85+ mentores verificados** con ratings reales
-- **156+ workshops** organizados por la comunidad
-- **Sistema de mentoría** 1:1 y grupal
-- **Eventos presenciales y virtuales**
+- **Sistema de mentoría** 1:1 y grupal en desarrollo
+- **Workshops comunitarios** - Próximamente
+- **Eventos presenciales y virtuales** - Planificados
 - **Ratings bidireccionales** para calidad garantizada
+- **Comunidad en crecimiento** - ¡Sé una de las primeras!
 
 ### 🔐 **Reputación Avanzada con ZK Proofs**
 - **Verificación de identidad** sin revelar datos privados
@@ -131,20 +131,141 @@ ActivaChain es la **primera plataforma Web3 integral** que combina:
 
 ---
 
-## 📊 Estadísticas del Proyecto
+## 📊 Estado Actual del Proyecto
 
 <div align="center">
 
 | Métrica | Valor | Descripción |
 |---------|-------|-------------|
-| 👥 **Usuarias Activas** | 2,500+ | Mujeres empoderándose en Web3 |
-| 💼 **Servicios Activos** | 42+ | Marketplace en constante crecimiento |
-| 💰 **Volumen Transaccional** | $125K+ | Dinero real circulando |
-| 🎨 **NFTs Minteados** | 1,200+ | Certificaciones y colecciones |
-| 👩‍🏫 **Mentores Verificados** | 85+ | Expertas dispuestas a ayudar |
-| 🎓 **Workshops Realizados** | 156+ | Educación continua |
+| 🚀 **Estado** | En Desarrollo | Proyecto en fase beta |
+| 🔗 **Redes Soportadas** | 2 | Ethereum Sepolia + Arbitrum Sepolia |
+| 📝 **Contratos Desplegados** | 11+ | Ecosistema completo funcional |
+| 🎯 **Fase** | MVP | Funcionalidades core implementadas |
+| 👥 **Comunidad** | Creciendo | ¡Sé una de las primeras! |
+| 🎓 **Documentación** | 100% | Guías completas disponibles |
 
 </div>
+
+---
+
+## 🎯 Objetivos y Roadmap
+
+### 📅 **Q1 2025 - Lanzamiento Testnet (Enero - Marzo)**
+- ✅ **Enero 2025**: Contratos desplegados en Ethereum Sepolia y Arbitrum Sepolia
+- 🎯 **Febrero 2025**: Marketplace multi-token funcional con ETH y ARB
+- 🎯 **Marzo 2025**: Sistema de reputación y gamificación activo
+- 🎯 **Meta**: 50+ usuarias beta, 10+ servicios activos
+
+### 📅 **Q2 2025 - Expansión Comunitaria (Abril - Junio)**
+- 🎯 **Abril 2025**: Sistema de mentoría y workshops
+- 🎯 **Mayo 2025**: Gobernanza DAO activa
+- 🎯 **Junio 2025**: Integración con APIs externas
+- 🎯 **Meta**: 200+ usuarias, 25+ servicios, 10+ mentores
+
+### 📅 **Q3 2025 - Optimización (Julio - Septiembre)**
+- 🎯 **Julio 2025**: Optimizaciones de gas y UX
+- 🎯 **Agosto 2025**: Sistema de notificaciones push
+- 🎯 **Septiembre 2025**: Preparación para mainnet
+- 🎯 **Meta**: 500+ usuarias, 50+ servicios, 25+ mentores
+
+### 📅 **Q4 2025 - Lanzamiento Mainnet (Octubre - Diciembre)**
+- 🎯 **Octubre 2025**: Deploy en Ethereum Mainnet
+- 🎯 **Noviembre 2025**: Deploy en Arbitrum One
+- 🎯 **Diciembre 2025**: Lanzamiento oficial público
+- 🎯 **Meta**: 1,000+ usuarias, 100+ servicios, 50+ mentores
+
+### 🏆 **Objetivos a Largo Plazo (2026)**
+- 👥 **2,500+ usuarias activas** en Latinoamérica
+- 💼 **100+ servicios activos** en el marketplace
+- 💰 **$125K+ volumen transaccional** mensual
+- 🎨 **1,200+ NFTs minteados** (certificaciones)
+- 👩‍🏫 **85+ mentores verificados** en la comunidad
+- 🎓 **156+ workshops realizados** anualmente
+
+---
+
+## 📍 Contratos Desplegados
+
+### 🌐 **Ethereum Sepolia (Testnet)**
+Red: `11155111` | Explorer: [sepolia.etherscan.io](https://sepolia.etherscan.io)
+
+| Contrato | Dirección | Función |
+|----------|-----------|---------|
+| 🏪 **Marketplace** | [`0xBc6f7ADb6Af52997CC9aF02E1B348083B5eA978F`](https://sepolia.etherscan.io/address/0xBc6f7ADb6Af52997CC9aF02E1B348083B5eA978F) | Marketplace principal multi-token |
+| 🏛️ **Gobernanza** | [`0xf278be79d14CcF53157B045bdbb51D98d58964F9`](https://sepolia.etherscan.io/address/0xf278be79d14CcF53157B045bdbb51D98d58964F9) | Sistema de votación DAO |
+| 🪙 **Token ACTIVA** | [`0x11a16814c7E8079Cc010a1603C15b818c3411FC4`](https://sepolia.etherscan.io/address/0x11a16814c7E8079Cc010a1603C15b818c3411FC4) | Token de gobernanza y staking |
+| 🎨 **NFTs** | [`0x45e5FDDa2B3215423B82b2502B388D5dA8944bA9`](https://sepolia.etherscan.io/address/0x45e5FDDa2B3215423B82b2502B388D5dA8944bA9) | Certificaciones Soulbound |
+| 🏆 **Reputación** | [`0xC68535Ee239f2A46Fdc08c236c86cb6451b6E01D`](https://sepolia.etherscan.io/address/0xC68535Ee239f2A46Fdc08c236c86cb6451b6E01D) | Sistema básico de reputación |
+| 🔐 **Reputación Avanzada** | [`0x9CFb165fd2b22FE011a03C0Afc5aEDD2Ae04f8a3`](https://sepolia.etherscan.io/address/0x9CFb165fd2b22FE011a03C0Afc5aEDD2Ae04f8a3) | ZK Proofs y endorsements |
+| 🎮 **Gamificación** | [`0x75069e3b4e62966325Ac8ef2fEA48e8909225acF`](https://sepolia.etherscan.io/address/0x75069e3b4e62966325Ac8ef2fEA48e8909225acF) | Achievements y badges |
+| 👥 **Comunidad** | [`0x9231c39C19A4A938Da2E3D1D67AbaBDE77388b09`](https://sepolia.etherscan.io/address/0x9231c39C19A4A938Da2E3D1D67AbaBDE77388b09) | Mentores y workshops |
+| 🌐 **IPFS** | [`0x79ede9d4E531ea6b7bF5eF35c4b31ea69210107A`](https://sepolia.etherscan.io/address/0x79ede9d4E531ea6b7bF5eF35c4b31ea69210107A) | Integración con almacenamiento descentralizado |
+| 📱 **Notificaciones** | [`0x1fbD7E942b0e19dB7D74c6DF1CfdE7753A30841d`](https://sepolia.etherscan.io/address/0x1fbD7E942b0e19dB7D74c6DF1CfdE7753A30841d) | Sistema de notificaciones push |
+| 🔌 **API Externa** | [`0xe09D357311eDC869dbba5E043a3915413547F288`](https://sepolia.etherscan.io/address/0xe09D357311eDC869dbba5E043a3915413547F288) | Integración con APIs externas |
+
+### ⚡ **Arbitrum Sepolia (Layer 2)**
+Red: `421614` | Explorer: [sepolia.arbiscan.io](https://sepolia.arbiscan.io)
+
+| Contrato | Dirección | Función |
+|----------|-----------|---------|
+| 🏪 **Marketplace** | [`0x624d15B024a707E5c0295A790763f192289301B2`](https://sepolia.arbiscan.io/address/0x624d15B024a707E5c0295A790763f192289301B2) | Marketplace con soporte ARB |
+| 🏛️ **Gobernanza** | [`0x0E927b4Dc048ff9ba425A4A778CC4342096deF11`](https://sepolia.arbiscan.io/address/0x0E927b4Dc048ff9ba425A4A778CC4342096deF11) | Gobernanza cross-chain |
+| 🪙 **Token ACTIVA** | [`0xE4F74170231156d9937f3baaa672df35571B6A38`](https://sepolia.arbiscan.io/address/0xE4F74170231156d9937f3baaa672df35571B6A38) | Token nativo de Arbitrum |
+| 🎨 **NFTs** | [`0x715231b93296D57D052E1D458Fb32AEc56444765`](https://sepolia.arbiscan.io/address/0x715231b93296D57D052E1D458Fb32AEc56444765) | NFTs con gas optimizado |
+| 🏆 **Reputación** | [`0x98f60Fc67C6eEf622A514b684164bBf31d25Bf52`](https://sepolia.arbiscan.io/address/0x98f60Fc67C6eEf622A514b684164bBf31d25Bf52) | Reputación básica |
+| 🔐 **Reputación Avanzada** | [`0xf973036cFC966a5226625063859A2Eed3109563D`](https://sepolia.arbiscan.io/address/0xf973036cFC966a5226625063859A2Eed3109563D) | ZK Proofs en L2 |
+| 🎮 **Gamificación** | [`0x5Eb409cB1bF3f97e88cE9038a531B59Ad994fC45`](https://sepolia.arbiscan.io/address/0x5Eb409cB1bF3f97e88cE9038a531B59Ad994fC45) | Sistema de logros |
+| 👥 **Comunidad** | [`0xb27AEF60ECAa4f0c9b7040c0C513CECbF2753fFD`](https://sepolia.arbiscan.io/address/0xb27AEF60ECAa4f0c9b7040c0C513CECbF2753fFD) | Mentores y eventos |
+| 🌐 **IPFS** | [`0x4100faaA3f3bB8CD17AF2295Dd5A0724aBCB6927`](https://sepolia.arbiscan.io/address/0x4100faaA3f3bB8CD17AF2295Dd5A0724aBCB6927) | Almacenamiento descentralizado |
+| 📱 **Notificaciones** | [`0x0Be3cC96475c95527D09842a877608316c5B148d`](https://sepolia.arbiscan.io/address/0x0Be3cC96475c95527D09842a877608316c5B148d) | Notificaciones push |
+| 🔌 **API Externa** | [`0x35e3337B817bc14b99c5BdBF466e029000763CCd`](https://sepolia.arbiscan.io/address/0x35e3337B817bc14b99c5BdBF466e029000763CCd) | Integraciones externas |
+| 🟣 **Token ARB** | [`0x912CE59144191C1204E64559FE8253a0e49E6548`](https://sepolia.arbiscan.io/address/0x912CE59144191C1204E64559FE8253a0e49E6548) | Token oficial de Arbitrum |
+
+### 🔧 **Funciones de Cada Contrato**
+
+#### 🏪 **Marketplace Multi-Token**
+- **Crear servicios** con precios en ETH o ARB
+- **Comprar servicios** con diferentes tokens
+- **Sistema de reputación** para filtros de calidad
+- **Comisiones de plataforma** del 1%
+- **Gestión de órdenes** y pagos automáticos
+
+#### 🏛️ **Sistema de Gobernanza**
+- **Crear propuestas** con tokens ACTIVA
+- **Votación transparente** con resultados públicos
+- **3 tipos de propuestas**: Treasury, Protocolo, Comunidad
+- **Período de votación**: 7 días
+- **Ejecución automática** de propuestas aprobadas
+
+#### 🪙 **Token ACTIVA**
+- **Staking** con recompensas del 10% APY
+- **Votación** en propuestas de gobernanza
+- **Quemado** para reducir oferta
+- **Minting** controlado por el owner
+
+#### 🎨 **Sistema de NFTs**
+- **Certificaciones Soulbound** (no transferibles)
+- **Colecciones estacionales** con ERC1155
+- **Metadatos en IPFS** para permanencia
+- **Sistema de whitelist** para accesos exclusivos
+
+#### 🔐 **Reputación Avanzada**
+- **ZK Proofs** para verificación privada
+- **Sistema de endorsements** entre usuarias
+- **Decay temporal** que premia actividad
+- **3 niveles de verificación** con bonificaciones
+
+#### 🎮 **Gamificación**
+- **16 achievements únicos** en 4 categorías
+- **8 badges de raridad** (Común → Legendario)
+- **Sistema de niveles** con puntos de experiencia
+- **Leaderboards** comunitarios
+
+#### 👥 **Sistema de Comunidad**
+- **Registro de mentores** con tarifas por hora
+- **Workshops** y eventos comunitarios
+- **Sistema de ratings** bidireccional
+- **Gestión de participantes** y pagos
 
 ---
 
@@ -284,34 +405,56 @@ git push origin feature/amazing-feature
 
 ---
 
-## 🏆 Historias de Éxito
+## 🎯 Visión de Impacto
 
-### 👩‍💻 **María González - Desarrolladora Web3**
-> *"Empecé sin saber nada de blockchain. Ahora gano $5,000/mes desarrollando contratos inteligentes y vendiendo NFTs. ActivaChain cambió mi vida completamente."*
+### 🌟 **¿Qué Podés Lograr con ActivaChain?**
 
-**Logros:**
-- 💰 $5,000/mes en ingresos
-- 🎓 12 certificaciones NFT completadas
-- 🏆 Badge "Desarrolladora del Año"
-- 👥 25+ mentoreadas ayudadas
+#### 👩‍💻 **Para Desarrolladoras**
+> *"Aprende desde cero y construye tu carrera en Web3. Desde tu primer smart contract hasta tu propio protocolo DeFi."*
 
-### 👩‍🎨 **Ana Rodríguez - Mentora UX**
-> *"ActivaChain me dio las herramientas para crear mi estudio de diseño y ahora soy mentora de 15+ mujeres. La comunidad es increíble."*
+**Oportunidades:**
+- 🎓 Certificaciones NFT verificables
+- 💼 Servicios en el marketplace
+- 🏆 Sistema de reputación profesional
+- 👥 Red de mentores expertas
 
-**Logros:**
-- 💰 $4,200/mes en ingresos
-- 👩‍🏫 15+ mentoreadas activas
-- 🎨 8 colecciones NFT creadas
-- 🏆 Rating 4.9/5 como mentora
+#### 👩‍🎨 **Para Diseñadoras**
+> *"Crea arte digital único, certifica tus logros con NFTs y conecta con clientes que valoran tu trabajo."*
 
-### 👩‍💼 **Carmen Silva - Consultora DeFi**
-> *"De ama de casa a consultora financiera con reputación ZK verificada. Mi familia no puede creer el cambio."*
+**Oportunidades:**
+- 🎨 Colecciones NFT estacionales
+- 💰 Monetiza tu creatividad
+- 🏆 Badges de reconocimiento
+- 🌐 Metadatos permanentes en IPFS
 
-**Logros:**
-- 💰 $6,500/mes en ingresos
-- 🔐 Verificación ZK Premium
-- 🏛️ 3 propuestas de gobernanza aprobadas
-- 🏆 Badge "Innovadora" por sus contribuciones
+#### 👩‍💼 **Para Emprendedoras**
+> *"Construye tu negocio en la nueva economía digital con herramientas descentralizadas y una comunidad que te apoya."*
+
+**Oportunidades:**
+- 🏪 Marketplace para tus servicios
+- 🏛️ Participa en gobernanza
+- 🔐 Reputación verificada con ZK
+- 👥 Acceso a mentores especializados
+
+### 🚀 **Casos de Uso Reales**
+
+#### 📚 **Educación Gamificada**
+- Completa cursos y recibe certificados NFT
+- Desbloquea achievements mientras aprendés
+- Compite en leaderboards comunitarios
+- Mantené streaks de actividad para bonificaciones
+
+#### 💼 **Marketplace de Servicios**
+- Ofrecé tus habilidades y recibí pagos en ETH/ARB
+- Filtra por reputación para encontrar clientes de calidad
+- Sistema de ratings bidireccional para transparencia
+- Comisiones mínimas del 1%
+
+#### 🏛️ **Gobernanza Participativa**
+- Votá en decisiones importantes de la plataforma
+- Creá propuestas para mejorar el ecosistema
+- Participá en la evolución del protocolo
+- Tu voz tiene poder real en las decisiones
 
 ---
 
@@ -342,12 +485,12 @@ git push origin feature/amazing-feature
 - **📧 Email**: hola@activachain.com
 - **📱 Telegram**: [t.me/activachain](https://t.me/activachain)
 
-### 👥 **Comunidad Activa**
-- **2,500+** usuarias en Discord
-- **85+** mentores verificados
-- **156+** workshops realizados
-- **24/7** soporte comunitario
-- **Múltiples idiomas** soportados
+### 👥 **Comunidad en Crecimiento**
+- **Discord** - Únete a la conversación
+- **Mentores** - Expertas dispuestas a ayudar
+- **Workshops** - Educación continua
+- **Soporte** - Comunidad que se ayuda mutuamente
+- **Idiomas** - Español (principal), Inglés
 
 ---
 
@@ -377,7 +520,7 @@ Este proyecto está licenciado bajo la **Licencia MIT** - ver el archivo [LICENS
 
 ### 🌟 **¿Lista para Revolucionar tu Futuro?**
 
-**Unite a más de 2,500 mujeres que ya están construyendo el futuro del trabajo digital**
+**Sé una de las primeras en construir el futuro del trabajo digital con Web3**
 
 [![Comenzar Gratis](https://img.shields.io/badge/Comenzar_Gratis-9333EA?style=for-the-badge&logo=rocket&logoColor=white)](https://activachain.com)
 [![Ver Demo](https://img.shields.io/badge/Ver_Demo-EC4899?style=for-the-badge&logo=play&logoColor=white)](https://demo.activachain.com)
