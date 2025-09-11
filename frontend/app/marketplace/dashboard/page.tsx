@@ -203,7 +203,7 @@ export default function MarketplaceDashboard() {
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
                         <span className="text-white/70">Precio:</span>
-                        <span className="text-white font-bold">$500 USDC</span>
+                        <span className="text-white font-bold">0.5 ETH</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-white/70">Ventas:</span>
@@ -244,7 +244,7 @@ export default function MarketplaceDashboard() {
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
                         <span className="text-white/70">Precio:</span>
-                        <span className="text-white font-bold">$300 USDC</span>
+                        <span className="text-white font-bold">0.3 ETH</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-white/70">Ventas:</span>
@@ -343,15 +343,15 @@ export default function MarketplaceDashboard() {
                   <div className="space-y-4">
                     <div className="flex justify-between">
                       <span className="text-white/70">Ingresos Totales:</span>
-                      <span className="text-white font-bold">$45,230 USDC</span>
+                      <span className="text-white font-bold">45.23 ETH</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-white/70">Comisiones Pagadas:</span>
-                      <span className="text-white font-bold">$1,130 USDC</span>
+                      <span className="text-white font-bold">1.13 ETH</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-white/70">Ganancias Netas:</span>
-                      <span className="text-green-400 font-bold">$44,100 USDC</span>
+                      <span className="text-green-400 font-bold">44.10 ETH</span>
                     </div>
                   </div>
                 </GlassCard>

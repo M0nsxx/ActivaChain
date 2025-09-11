@@ -1123,7 +1123,7 @@ export default function MarketplacePage() {
       <Header />
       
       {/* Hero Section del Marketplace */}
-      <section className="relative pt-32 pb-16 px-4 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Efectos de fondo neurales mejorados */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
@@ -1133,45 +1133,45 @@ export default function MarketplacePage() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 glass-morphism rounded-full mb-8">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-green-400 font-semibold">Marketplace Activo</span>
-              <span className="text-white/60">•</span>
-              <span className="text-white/80">{currentNetwork}</span>
-              <span className="text-white/60">•</span>
-              <span className="text-white/80">{services.length} Servicios Específicos</span>
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 glass-morphism rounded-full mb-6 sm:mb-8">
+              <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-green-400 font-semibold text-sm sm:text-base">Mercado Activo</span>
+              <span className="text-white/60 hidden sm:inline">•</span>
+              <span className="text-white/80 text-xs sm:text-sm">{currentNetwork}</span>
+              <span className="text-white/60 hidden sm:inline">•</span>
+              <span className="text-white/80 text-xs sm:text-sm">{services.length} Servicios</span>
             </div>
             
-            <h1 className="text-7xl font-bold leading-tight mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 sm:mb-8">
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-neural-pulse">
-                Marketplace
+                Mercado
               </span>
               <br />
-              <span className="text-white/95 text-5xl">Descentralizado</span>
+              <span className="text-white/95 text-3xl sm:text-4xl lg:text-5xl">Descentralizado</span>
             </h1>
             
-            <p className="text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12">
               Descubre servicios profesionales, ofrece tus habilidades y construye el futuro del trabajo digital
             </p>
 
             {/* Stats del marketplace */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
-              <GlassCard className="p-6 text-center hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-white mb-2">{services.length}</div>
-                <p className="text-white/70">Servicios Activos</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto mb-8 sm:mb-12">
+              <GlassCard className="p-4 sm:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">{services.length}</div>
+                <p className="text-white/70 text-xs sm:text-sm">Servicios Activos</p>
               </GlassCard>
-              <GlassCard className="p-6 text-center hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-white mb-2">$45K</div>
-                <p className="text-white/70">Volumen Total</p>
+              <GlassCard className="p-4 sm:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">$45K</div>
+                <p className="text-white/70 text-xs sm:text-sm">Volumen Total</p>
               </GlassCard>
-              <GlassCard className="p-6 text-center hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-white mb-2">98%</div>
-                <p className="text-white/70">Satisfacción</p>
+              <GlassCard className="p-4 sm:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">98%</div>
+                <p className="text-white/70 text-xs sm:text-sm">Satisfacción</p>
               </GlassCard>
-              <GlassCard className="p-6 text-center hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-white mb-2">24h</div>
-                <p className="text-white/70">Tiempo Promedio</p>
+              <GlassCard className="p-4 sm:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">24h</div>
+                <p className="text-white/70 text-xs sm:text-sm">Tiempo Promedio</p>
               </GlassCard>
             </div>
           </div>

@@ -87,27 +87,29 @@ export function Header() {
   const navigationItems = [
     { icon: '🏠', label: 'Inicio', action: () => router.push('/') },
     { icon: '🎓', label: 'Aprender', action: navigateToLearn },
-    { icon: '💼', label: 'Marketplace', action: () => router.push('/marketplace') },
+    { icon: '💼', label: 'Mercado', action: () => router.push('/marketplace') },
     { icon: '🎨', label: 'NFTs', action: navigateToNFTs },
     { icon: '⭐', label: 'Reputación', action: navigateToReputacion },
     { icon: '🤝', label: 'Comunidad', action: navigateToComunidad },
     { icon: '👥', label: 'Sobre Nosotros', action: () => router.push('/sobre-nosotros') },
     { icon: '🏛️', label: 'Gobernanza', action: () => scrollToSection('governance'), special: true },
-    { icon: '📊', label: 'Dashboard', action: () => router.push('/dashboard') }
+    { icon: '📊', label: 'Panel de Control', action: () => router.push('/dashboard') }
   ]
 
   return (
     <>
       <HeaderParticles active={governanceClicked} />
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/20 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo y Network Badge */}
-            <div className="flex items-center gap-3">
-              <h1 className="text-xl md:text-2xl font-bold gradient-text">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <h1 className="text-lg sm:text-xl md:text-2xl font-bold gradient-text">
                 ActivaChain
               </h1>
-              <NetworkBadge />
+              <div className="hidden sm:block">
+                <NetworkBadge />
+              </div>
             </div>
             
             {/* Desktop Navigation */}
@@ -164,15 +166,15 @@ export function Header() {
             </button>
             
             {/* Wallet Button */}
-            <div className="ml-4">
+            <div className="ml-2 sm:ml-4">
               <WalletButton />
             </div>
           </div>
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="lg:hidden mt-4 p-4 glass-morphism rounded-xl border border-white/10">
-              <div className="grid grid-cols-2 gap-2">
+            <div className="lg:hidden mt-4 p-3 sm:p-4 glass-morphism rounded-xl border border-white/10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {navigationItems.map((item, index) => (
                   <button 
                     key={index}
@@ -187,9 +189,13 @@ export function Header() {
                     }`}
                   >
                     <span>{item.icon}</span>
-                    <span>{item.label}</span>
+                    <span className="truncate">{item.label}</span>
                   </button>
                 ))}
+              </div>
+              {/* Network Badge en mobile */}
+              <div className="mt-4 pt-4 border-t border-white/10 sm:hidden">
+                <NetworkBadge />
               </div>
             </div>
           )}

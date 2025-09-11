@@ -257,10 +257,10 @@ export function NFTMintingSystem() {
   
   if (!isConnected) {
     return (
-      <GlassCard className="p-8 text-center">
-        <div className="text-6xl mb-4">🔗</div>
-        <h3 className="text-xl font-bold text-white mb-2">Conecta tu Wallet</h3>
-        <p className="text-white/70">Necesitas conectar tu wallet para mintear NFTs</p>
+      <GlassCard className="p-6 sm:p-8 text-center">
+        <div className="text-4xl sm:text-6xl mb-3 sm:mb-4">🔗</div>
+        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Conectá tu Wallet</h3>
+        <p className="text-white/70 text-sm sm:text-base">Necesitás conectar tu wallet para mintear NFTs</p>
       </GlassCard>
     )
   }
@@ -269,63 +269,67 @@ export function NFTMintingSystem() {
     <div className="space-y-8">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-white mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
           Sistema de <span className="gradient-text">NFTs</span>
         </h2>
-        <p className="text-xl text-white/80 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto px-4">
           Crea y mintea NFTs únicos con nuestro sistema ERC1155 y ERC721
         </p>
       </div>
       
       {/* Tabs */}
-      <div className="flex justify-center">
-        <div className="glass-morphism rounded-xl p-1">
-          <button
-            onClick={() => setActiveTab('multi')}
-            className={`px-6 py-3 rounded-lg transition-all duration-300 ${
-              activeTab === 'multi'
-                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-                : 'text-white/70 hover:text-white'
-            }`}
-          >
-            ERC1155 Multi-Token
-          </button>
-          <button
-            onClick={() => setActiveTab('collection')}
-            className={`px-6 py-3 rounded-lg transition-all duration-300 ${
-              activeTab === 'collection'
-                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-                : 'text-white/70 hover:text-white'
-            }`}
-          >
-            ERC721 Colecciones
-          </button>
+      <div className="flex justify-center px-4">
+        <div className="glass-morphism rounded-xl p-1 w-full max-w-md">
+          <div className="flex flex-col sm:flex-row gap-1">
+            <button
+              onClick={() => setActiveTab('multi')}
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-all duration-300 text-sm sm:text-base ${
+                activeTab === 'multi'
+                  ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
+                  : 'text-white/70 hover:text-white'
+              }`}
+            >
+              <span className="hidden sm:inline">ERC1155 Multi-Token</span>
+              <span className="sm:hidden">Multi-Token</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('collection')}
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-all duration-300 text-sm sm:text-base ${
+                activeTab === 'collection'
+                  ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
+                  : 'text-white/70 hover:text-white'
+              }`}
+            >
+              <span className="hidden sm:inline">ERC721 Colecciones</span>
+              <span className="sm:hidden">Colecciones</span>
+            </button>
+          </div>
         </div>
       </div>
       
       {/* Selección de Temporada */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 px-4">
         {seasons.map((season) => (
           <button
             key={season.id}
             onClick={() => setSelectedSeason(season.id)}
-            className={`p-4 rounded-xl transition-all duration-300 ${
+            className={`p-3 sm:p-4 rounded-xl transition-all duration-300 ${
               selectedSeason === season.id
                 ? `bg-gradient-to-r ${season.color} scale-105`
                 : 'glass-morphism hover:scale-102'
             }`}
           >
-            <div className="text-3xl mb-2">{season.icon}</div>
-            <div className="text-white font-semibold text-sm">{season.name}</div>
+            <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">{season.icon}</div>
+            <div className="text-white font-semibold text-xs sm:text-sm">{season.name}</div>
           </button>
         ))}
       </div>
       
       {activeTab === 'multi' ? (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {/* Crear Token */}
-          <GlassCard className="p-6">
-            <h3 className="text-xl font-bold text-white mb-4">Crear Token ERC1155</h3>
+          <GlassCard className="p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Crear Token ERC1155</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-white/70 text-sm mb-2">Nombre del Token</label>
@@ -378,8 +382,8 @@ export function NFTMintingSystem() {
           </GlassCard>
           
           {/* Mintear Token */}
-          <GlassCard className="p-6">
-            <h3 className="text-xl font-bold text-white mb-4">Mintear Token</h3>
+          <GlassCard className="p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Mintear Token</h3>
             {tokenInfo && (
               <div className="space-y-4">
                 <div className="p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
@@ -423,10 +427,10 @@ export function NFTMintingSystem() {
           </GlassCard>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {/* Crear Colección */}
-          <GlassCard className="p-6">
-            <h3 className="text-xl font-bold text-white mb-4">Crear Colección ERC721</h3>
+          <GlassCard className="p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Crear Colección ERC721</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-white/70 text-sm mb-2">Nombre de la Colección</label>
@@ -488,8 +492,8 @@ export function NFTMintingSystem() {
           </GlassCard>
           
           {/* Mintear de Colección */}
-          <GlassCard className="p-6">
-            <h3 className="text-xl font-bold text-white mb-4">Mintear de Colección</h3>
+          <GlassCard className="p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Mintear de Colección</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-white/70 text-sm mb-2">ID de Colección</label>

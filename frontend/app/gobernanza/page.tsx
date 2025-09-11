@@ -13,7 +13,7 @@ export default function GobernanzaPage() {
       <ScrollIndicator />
       
       {/* Sección de Gobernanza */}
-      <section id="governance" className="relative py-20 overflow-hidden">
+      <section id="governance" className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
         <GovernanceNeuralEffects />
         <VotingParticles />
         <NeuralConnections />

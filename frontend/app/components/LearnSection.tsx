@@ -70,7 +70,7 @@ export function LearnSection() {
       icon: '📋',
       color: 'from-blue-500 to-cyan-500',
       price: 'Gratis',
-      features: ['Deploy en testnet', 'Auditoría básica', 'Proyecto final', 'Certificación'],
+      features: ['Despliegue en testnet', 'Auditoría básica', 'Proyecto final', 'Certificación'],
       instructor: {
         name: 'Ana Rodríguez',
         avatar: '👩‍🔬',
@@ -124,7 +124,7 @@ export function LearnSection() {
       icon: '⚡',
       color: 'from-orange-500 to-red-500',
       price: 'Gratis',
-      features: ['DApp completa', 'Deploy en mainnet', 'Tokenomics', 'Job placement'],
+      features: ['DApp completa', 'Despliegue en mainnet', 'Tokenomics', 'Colocación laboral'],
       instructor: {
         name: 'Sofia Chen',
         avatar: '👩‍🚀',
@@ -142,7 +142,7 @@ export function LearnSection() {
       icon: '🏛️',
       color: 'from-indigo-500 to-purple-500',
       price: 'Gratis',
-      features: ['Voting strategies', 'Proposal writing', 'Community building', 'Leadership skills'],
+      features: ['Estrategias de votación', 'Redacción de propuestas', 'Construcción de comunidad', 'Habilidades de liderazgo'],
       instructor: {
         name: 'Elena Vargas',
         avatar: '👩‍⚖️',
@@ -160,7 +160,7 @@ export function LearnSection() {
       duration: '6 meses',
       icon: '🚀',
       gradient: 'from-purple-500 via-pink-500 to-blue-500',
-      benefits: ['Certificación completa', 'Mentoría personalizada', 'Job placement', 'Red profesional']
+      benefits: ['Certificación completa', 'Mentoría personalizada', 'Colocación laboral', 'Red profesional']
     },
     {
       id: 'defi-specialist',
@@ -170,7 +170,7 @@ export function LearnSection() {
       duration: '4 meses',
       icon: '💰',
       gradient: 'from-green-500 via-emerald-500 to-cyan-500',
-      benefits: ['Estrategias avanzadas', 'Portfolio management', 'Risk assessment', 'Certificación premium']
+      benefits: ['Estrategias avanzadas', 'Gestión de portafolio', 'Evaluación de riesgo', 'Certificación premium']
     },
     {
       id: 'nft-entrepreneur',
@@ -180,7 +180,7 @@ export function LearnSection() {
       duration: '3 meses',
       icon: '🎨',
       gradient: 'from-pink-500 via-rose-500 to-purple-500',
-      benefits: ['Colección completa', 'Brand building', 'Marketing strategies', 'Revenue streams']
+      benefits: ['Colección completa', 'Construcción de marca', 'Estrategias de marketing', 'Flujos de ingresos']
     }
   ]
 
@@ -191,20 +191,20 @@ export function LearnSection() {
       description: 'Demuestra tu dominio completo de blockchain y Web3',
       icon: '🏆',
       requirements: ['Completar 5 cursos', 'Proyecto final', 'Examen práctico'],
-      benefits: ['Verificación on-chain', 'NFT único', 'Acceso a red profesional']
+      benefits: ['Verificación en cadena', 'NFT único', 'Acceso a red profesional']
     },
     {
       id: 'defi-specialist',
       title: 'Certificación DeFi Specialist',
       description: 'Especialización en finanzas descentralizadas',
       icon: '💎',
-      requirements: ['Cursos DeFi completos', 'Portfolio demostrable', 'Case study'],
+      requirements: ['Cursos DeFi completos', 'Portafolio demostrable', 'Estudio de caso'],
       benefits: ['Certificación premium', 'Mentoría avanzada', 'Oportunidades laborales']
     }
   ]
 
   return (
-    <section id="learn" className="min-h-screen py-20 px-4 relative overflow-hidden">
+    <section id="learn" className="min-h-screen py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Efectos de fondo neurales */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-glow"></div>
@@ -225,23 +225,23 @@ export function LearnSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="text-6xl">🎓</div>
-            <h2 className="text-6xl font-bold text-white">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div className="text-4xl sm:text-5xl lg:text-6xl">🎓</div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white">
               <span className="gradient-text">Aprende</span> el Futuro
             </h2>
           </div>
-          <p className="text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed px-4">
             Cursos interactivos diseñados específicamente para mujeres. 
             <span className="text-purple-400 font-semibold"> Sin conocimientos previos necesarios.</span>
           </p>
         </div>
 
         {/* Tabs de navegación */}
-        <div className="flex justify-center mb-12">
-          <div className="glass-morphism p-2 rounded-2xl">
-            <div className="flex gap-2">
+        <div className="flex justify-center mb-8 sm:mb-12 px-4">
+          <div className="glass-morphism p-1 sm:p-2 rounded-2xl w-full max-w-2xl">
+            <div className="flex flex-col sm:flex-row gap-1 sm:gap-2">
               {[
                 { id: 'courses', label: 'Cursos', icon: '📚' },
                 { id: 'paths', label: 'Rutas de Aprendizaje', icon: '🛤️' },
@@ -250,14 +250,15 @@ export function LearnSection() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${
+                  className={`px-3 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
                       : 'text-white/70 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   <span>{tab.icon}</span>
-                  {tab.label}
+                  <span className="hidden sm:inline">{tab.label}</span>
+                  <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
                 </button>
               ))}
             </div>
@@ -266,7 +267,7 @@ export function LearnSection() {
 
         {/* Contenido de las tabs */}
         {activeTab === 'courses' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {courses.map((course) => (
               <div
                 key={course.id}
@@ -277,51 +278,51 @@ export function LearnSection() {
                 onMouseLeave={() => setHoveredCard(null)}
                 onClick={() => setSelectedCourse(course)}
               >
-                <GlassCard className="p-6">
-                <div className="space-y-4">
+                <GlassCard className="p-4 sm:p-6">
+                <div className="space-y-3 sm:space-y-4">
                   {/* Header del curso */}
                   <div className="flex items-start justify-between">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${course.color} flex items-center justify-center text-2xl`}>
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-r ${course.color} flex items-center justify-center text-xl sm:text-2xl`}>
                       {course.icon}
                     </div>
                     <div className="text-right">
-                      <div className="text-sm text-white/60">{course.level}</div>
-                      <div className="text-lg font-bold text-white">{course.price}</div>
+                      <div className="text-xs sm:text-sm text-white/60">{course.level}</div>
+                      <div className="text-base sm:text-lg font-bold text-white">{course.price}</div>
                     </div>
                   </div>
 
                   {/* Información del curso */}
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{course.title}</h3>
-                    <p className="text-white/70 text-sm leading-relaxed">{course.description}</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{course.title}</h3>
+                    <p className="text-white/70 text-xs sm:text-sm leading-relaxed">{course.description}</p>
                   </div>
 
                   {/* Stats del curso */}
-                  <div className="grid grid-cols-2 gap-4 py-4 border-t border-white/10">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 py-3 sm:py-4 border-t border-white/10">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{course.lessons}</div>
-                      <div className="text-white/60 text-sm">Lecciones</div>
+                      <div className="text-xl sm:text-2xl font-bold text-white">{course.lessons}</div>
+                      <div className="text-white/60 text-xs sm:text-sm">Lecciones</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{course.duration}</div>
-                      <div className="text-white/60 text-sm">Duración</div>
+                      <div className="text-xl sm:text-2xl font-bold text-white">{course.duration}</div>
+                      <div className="text-white/60 text-xs sm:text-sm">Duración</div>
                     </div>
                   </div>
 
                   {/* Instructor */}
-                  <div className="flex items-center gap-3 p-3 bg-white/5 rounded-xl">
-                    <div className="text-2xl">{course.instructor.avatar}</div>
+                  <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white/5 rounded-xl">
+                    <div className="text-xl sm:text-2xl">{course.instructor.avatar}</div>
                     <div className="flex-1">
-                      <div className="text-white font-semibold text-sm">{course.instructor.name}</div>
+                      <div className="text-white font-semibold text-xs sm:text-sm">{course.instructor.name}</div>
                       <div className="flex items-center gap-1">
                         <span className="text-yellow-400">⭐</span>
-                        <span className="text-white/70 text-sm">{course.instructor.rating}</span>
+                        <span className="text-white/70 text-xs sm:text-sm">{course.instructor.rating}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Botón de acción */}
-                  <button className="w-full neural-button py-3 text-sm">
+                  <button className="w-full neural-button py-2 sm:py-3 text-xs sm:text-sm">
                     Comenzar Curso
                   </button>
                 </div>
@@ -332,46 +333,46 @@ export function LearnSection() {
         )}
 
         {activeTab === 'paths' && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {learningPaths.map((path) => (
               <GlassCard
                 key={path.id}
-                className="p-8 cursor-pointer hover:scale-105 transition-all duration-500"
+                className="p-4 sm:p-6 lg:p-8 cursor-pointer hover:scale-105 transition-all duration-500"
               >
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   {/* Header */}
                   <div className="text-center">
-                    <div className={`w-20 h-20 mx-auto rounded-3xl bg-gradient-to-r ${path.gradient} flex items-center justify-center text-3xl mb-4`}>
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-3xl bg-gradient-to-r ${path.gradient} flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4`}>
                       {path.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{path.title}</h3>
-                    <p className="text-white/70 leading-relaxed">{path.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{path.title}</h3>
+                    <p className="text-white/70 leading-relaxed text-sm sm:text-base">{path.description}</p>
                   </div>
 
                   {/* Stats */}
-                  <div className="grid grid-cols-2 gap-4 py-4 border-t border-white/10">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 py-3 sm:py-4 border-t border-white/10">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-white">{path.courses}</div>
-                      <div className="text-white/60 text-sm">Cursos</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-white">{path.courses}</div>
+                      <div className="text-white/60 text-xs sm:text-sm">Cursos</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-white">{path.duration}</div>
-                      <div className="text-white/60 text-sm">Duración</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-white">{path.duration}</div>
+                      <div className="text-white/60 text-xs sm:text-sm">Duración</div>
                     </div>
                   </div>
 
                   {/* Beneficios */}
-                  <div className="space-y-2">
+                  <div className="space-y-1 sm:space-y-2">
                     {path.benefits.map((benefit, i) => (
                       <div key={i} className="flex items-center gap-2 text-white/70">
                         <span className="text-green-400">✓</span>
-                        <span className="text-sm">{benefit}</span>
+                        <span className="text-xs sm:text-sm">{benefit}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Botón */}
-                  <button className="w-full neural-button py-4">
+                  <button className="w-full neural-button py-3 sm:py-4 text-sm sm:text-base">
                     Iniciar Ruta
                   </button>
                 </div>
@@ -381,30 +382,30 @@ export function LearnSection() {
         )}
 
         {activeTab === 'certificates' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             {certificates.map((cert) => (
               <GlassCard
                 key={cert.id}
-                className="p-8 cursor-pointer hover:scale-105 transition-all duration-500"
+                className="p-4 sm:p-6 lg:p-8 cursor-pointer hover:scale-105 transition-all duration-500"
               >
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   {/* Header */}
-                  <div className="flex items-start gap-4">
-                    <div className="text-5xl">{cert.icon}</div>
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="text-3xl sm:text-4xl lg:text-5xl">{cert.icon}</div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-2">{cert.title}</h3>
-                      <p className="text-white/70">{cert.description}</p>
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2">{cert.title}</h3>
+                      <p className="text-white/70 text-sm sm:text-base">{cert.description}</p>
                     </div>
                   </div>
 
                   {/* Requisitos */}
                   <div>
-                    <h4 className="text-white font-semibold mb-3">Requisitos:</h4>
-                    <div className="space-y-2">
+                    <h4 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Requisitos:</h4>
+                    <div className="space-y-1 sm:space-y-2">
                       {cert.requirements.map((req, i) => (
                         <div key={i} className="flex items-center gap-2 text-white/70">
                           <span className="text-purple-400">•</span>
-                          <span className="text-sm">{req}</span>
+                          <span className="text-xs sm:text-sm">{req}</span>
                         </div>
                       ))}
                     </div>
@@ -412,19 +413,19 @@ export function LearnSection() {
 
                   {/* Beneficios */}
                   <div>
-                    <h4 className="text-white font-semibold mb-3">Beneficios:</h4>
-                    <div className="space-y-2">
+                    <h4 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Beneficios:</h4>
+                    <div className="space-y-1 sm:space-y-2">
                       {cert.benefits.map((benefit, i) => (
                         <div key={i} className="flex items-center gap-2 text-white/70">
                           <span className="text-green-400">✓</span>
-                          <span className="text-sm">{benefit}</span>
+                          <span className="text-xs sm:text-sm">{benefit}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Botón */}
-                  <button className="w-full neural-button py-4">
+                  <button className="w-full neural-button py-3 sm:py-4 text-sm sm:text-base">
                     Ver Detalles
                   </button>
                 </div>
@@ -435,78 +436,79 @@ export function LearnSection() {
 
         {/* Modal de curso seleccionado */}
         {selectedCourse && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-            <GlassCard className="max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8">
-              <div className="space-y-6">
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 z-50">
+            <GlassCard className="max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto p-4 sm:p-6 lg:p-8">
+              <div className="space-y-4 sm:space-y-6">
                 {/* Header del modal */}
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${selectedCourse.color} flex items-center justify-center text-3xl`}>
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r ${selectedCourse.color} flex items-center justify-center text-2xl sm:text-3xl`}>
                       {selectedCourse.icon}
                     </div>
                     <div>
-                      <h2 className="text-3xl font-bold text-white">{selectedCourse.title}</h2>
-                      <p className="text-purple-400 font-semibold">{selectedCourse.level}</p>
+                      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">{selectedCourse.title}</h2>
+                      <p className="text-purple-400 font-semibold text-sm sm:text-base">{selectedCourse.level}</p>
                     </div>
                   </div>
                   <button
                     onClick={() => setSelectedCourse(null)}
-                    className="text-white/60 hover:text-white text-2xl"
+                    className="text-white/60 hover:text-white text-xl sm:text-2xl self-end sm:self-start"
                   >
                     ✕
                   </button>
                 </div>
 
                 {/* Descripción */}
-                <p className="text-white/80 text-lg leading-relaxed">{selectedCourse.description}</p>
+                <p className="text-white/80 text-sm sm:text-base lg:text-lg leading-relaxed">{selectedCourse.description}</p>
 
                 {/* Información del instructor */}
-                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl">
-                  <div className="text-4xl">{selectedCourse.instructor.avatar}</div>
+                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white/5 rounded-xl">
+                  <div className="text-3xl sm:text-4xl">{selectedCourse.instructor.avatar}</div>
                   <div>
-                    <div className="text-white font-semibold text-lg">{selectedCourse.instructor.name}</div>
+                    <div className="text-white font-semibold text-base sm:text-lg">{selectedCourse.instructor.name}</div>
                     <div className="flex items-center gap-2">
                       <span className="text-yellow-400">⭐</span>
-                      <span className="text-white/70">{selectedCourse.instructor.rating} Instructor Rating</span>
+                      <span className="text-white/70 text-sm sm:text-base">{selectedCourse.instructor.rating} Instructor Rating</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Características */}
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-4">¿Qué incluye este curso?</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">¿Qué incluye este curso?</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                     {selectedCourse.features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
+                      <div key={i} className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white/5 rounded-lg">
                         <span className="text-green-400">✓</span>
-                        <span className="text-white/80">{feature}</span>
+                        <span className="text-white/80 text-xs sm:text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-6 py-6 border-t border-white/10">
+                <div className="grid grid-cols-3 gap-3 sm:gap-6 py-4 sm:py-6 border-t border-white/10">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">{selectedCourse.lessons}</div>
-                    <div className="text-white/60">Lecciones</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white">{selectedCourse.lessons}</div>
+                    <div className="text-white/60 text-xs sm:text-sm">Lecciones</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">{selectedCourse.duration}</div>
-                    <div className="text-white/60">Duración</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white">{selectedCourse.duration}</div>
+                    <div className="text-white/60 text-xs sm:text-sm">Duración</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">{selectedCourse.price}</div>
-                    <div className="text-white/60">Precio</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white">{selectedCourse.price}</div>
+                    <div className="text-white/60 text-xs sm:text-sm">Precio</div>
                   </div>
                 </div>
 
                 {/* Botones de acción */}
-                <div className="flex gap-4">
-                  <button className="flex-1 neural-button py-4 text-lg">
-                    Comenzar Curso Ahora
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <button className="flex-1 neural-button py-3 sm:py-4 text-sm sm:text-base lg:text-lg">
+                    <span className="hidden sm:inline">Comenzar Curso Ahora</span>
+                    <span className="sm:hidden">Comenzar Curso</span>
                   </button>
-                  <button className="px-8 py-4 neural-button-secondary">
+                  <button className="px-6 sm:px-8 py-3 sm:py-4 neural-button-secondary text-sm sm:text-base">
                     Ver Preview
                   </button>
                 </div>
@@ -516,20 +518,20 @@ export function LearnSection() {
         )}
 
         {/* CTA Section */}
-        <div className="mt-20">
-          <GlassCard gradient className="p-12 text-center">
-            <div className="space-y-6">
-              <h3 className="text-4xl font-bold text-white">
+        <div className="mt-12 sm:mt-16 lg:mt-20">
+          <GlassCard gradient className="p-6 sm:p-8 lg:p-12 text-center">
+            <div className="space-y-4 sm:space-y-6">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
                 ¿Lista para <span className="gradient-text">Transformar</span> tu Futuro?
               </h3>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto px-4">
                 Únete a miles de mujeres que ya están aprendiendo y ganando en Web3
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="neural-button text-lg px-8 py-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <button className="neural-button text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
                   🚀 Comenzar Gratis
                 </button>
-                <button className="neural-button-secondary text-lg px-8 py-4">
+                <button className="neural-button-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
                   📞 Hablar con Mentor
                 </button>
               </div>

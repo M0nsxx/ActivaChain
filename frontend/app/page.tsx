@@ -42,7 +42,7 @@ export default function HomePage() {
     },
     {
       icon: '💼',
-      title: 'Marketplace Descentralizado',
+      title: 'Mercado Descentralizado',
       subtitle: 'Ganá dinero real',
       description: 'Un mercado digital donde podés vender tus habilidades y recibir pagos seguros. Como MercadoLibre, pero con tecnología blockchain.',
       benefits: ['Pagos instantáneos', 'Sin intermediarios', 'Reputación con ZK proofs', '42+ servicios activos']
@@ -143,7 +143,7 @@ export default function HomePage() {
       <Header />
       
       {/* Hero Section Mejorada */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 pt-32 pb-8 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-8 overflow-hidden">
         {/* Efectos de fondo neurales */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
@@ -151,28 +151,28 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-2xl animate-float"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 mt-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center relative z-10 mt-4">
           {/* Contenido Principal */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-4">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <NetworkBadge />
-              <div className="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-bold animate-pulse">
+              <div className="px-3 sm:px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-xs sm:text-sm font-bold animate-pulse">
                 🚀 Lanzamiento ETH Uruguay 2025
               </div>
             </div>
             
-            <div className="space-y-6">
-              <h1 className="text-7xl font-bold leading-tight">
+            <div className="space-y-4 sm:space-y-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-neural-pulse">
                   ActivaChain
                 </span>
               </h1>
               
-              <div className="space-y-4">
-                <p className="text-3xl text-white/95 font-semibold">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="text-xl sm:text-2xl lg:text-3xl text-white/95 font-semibold">
                   La plataforma Web3 más completa para mujeres
                 </p>
-                <p className="text-xl text-white/80 leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-white/80 leading-relaxed">
                   Aprende, gana, crea NFTs, conecta con mentores y lidera en la nueva economía digital. 
                   <span className="text-purple-400 font-semibold"> Todo en una sola plataforma descentralizada.</span>
                 </p>
@@ -180,58 +180,55 @@ export default function HomePage() {
             </div>
 
             {/* Beneficios clave - ACTUALIZADOS */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-center gap-3 p-4 glass-morphism rounded-xl">
-                <div className="text-2xl">🎓</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              <div className="flex items-center gap-3 p-3 sm:p-4 glass-morphism rounded-xl">
+                <div className="text-xl sm:text-2xl">🎓</div>
                 <div>
-                  <p className="text-white font-semibold">Aprende desde cero</p>
-                  <p className="text-white/70 text-sm">Cursos + Mentores</p>
+                  <p className="text-white font-semibold text-sm sm:text-base">Aprende desde cero</p>
+                  <p className="text-white/70 text-xs sm:text-sm">Cursos + Mentores</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 glass-morphism rounded-xl">
-                <div className="text-2xl">💰</div>
+              <div className="flex items-center gap-3 p-3 sm:p-4 glass-morphism rounded-xl">
+                <div className="text-xl sm:text-2xl">💰</div>
                 <div>
-                  <p className="text-white font-semibold">Ganá dinero real</p>
-                  <p className="text-white/70 text-sm">42+ servicios activos</p>
+                  <p className="text-white font-semibold text-sm sm:text-base">Ganá dinero real</p>
+                  <p className="text-white/70 text-xs sm:text-sm">42+ servicios activos</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 glass-morphism rounded-xl">
-                <div className="text-2xl">🎨</div>
+              <div className="flex items-center gap-3 p-3 sm:p-4 glass-morphism rounded-xl">
+                <div className="text-xl sm:text-2xl">🎨</div>
                 <div>
-                  <p className="text-white font-semibold">Crea NFTs únicos</p>
-                  <p className="text-white/70 text-sm">ERC1155 + ERC721</p>
+                  <p className="text-white font-semibold text-sm sm:text-base">Crea NFTs únicos</p>
+                  <p className="text-white/70 text-xs sm:text-sm">ERC1155 + ERC721</p>
                 </div>
               </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-center gap-3 p-4 glass-morphism rounded-xl">
-                <div className="text-2xl">🏆</div>
+              <div className="flex items-center gap-3 p-3 sm:p-4 glass-morphism rounded-xl">
+                <div className="text-xl sm:text-2xl">🏆</div>
                 <div>
-                  <p className="text-white font-semibold">Sistema de logros</p>
-                  <p className="text-white/70 text-sm">16 achievements</p>
+                  <p className="text-white font-semibold text-sm sm:text-base">Sistema de logros</p>
+                  <p className="text-white/70 text-xs sm:text-sm">16 achievements</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 glass-morphism rounded-xl">
-                <div className="text-2xl">👥</div>
+              <div className="flex items-center gap-3 p-3 sm:p-4 glass-morphism rounded-xl">
+                <div className="text-xl sm:text-2xl">👥</div>
                 <div>
-                  <p className="text-white font-semibold">Comunidad activa</p>
-                  <p className="text-white/70 text-sm">85+ mentores</p>
+                  <p className="text-white font-semibold text-sm sm:text-base">Comunidad activa</p>
+                  <p className="text-white/70 text-xs sm:text-sm">85+ mentores</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 glass-morphism rounded-xl">
-                <div className="text-2xl">🔐</div>
+              <div className="flex items-center gap-3 p-3 sm:p-4 glass-morphism rounded-xl">
+                <div className="text-xl sm:text-2xl">🔐</div>
                 <div>
-                  <p className="text-white font-semibold">Reputación ZK</p>
-                  <p className="text-white/70 text-sm">Verificación privada</p>
+                  <p className="text-white font-semibold text-sm sm:text-base">Reputación ZK</p>
+                  <p className="text-white/70 text-xs sm:text-sm">Verificación privada</p>
                 </div>
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button
                 onClick={() => open?.()}
-                className="neural-button text-lg px-8 py-4 flex items-center justify-center gap-3"
+                className="neural-button text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-center gap-2 sm:gap-3"
               >
                 <span>🚀</span>
                 Comenzar Gratis
@@ -239,15 +236,15 @@ export default function HomePage() {
               
               <a 
                 href="/marketplace"
-                className="neural-button-secondary text-lg px-8 py-4 flex items-center justify-center gap-3 hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300"
+                className="neural-button-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-center gap-2 sm:gap-3 hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300"
               >
                 <span>💎</span>
-                Explorar Marketplace
+                <span className="hidden sm:inline">Explorar </span>Mercado
               </a>
               
               <a 
                 href="/nfts"
-                className="neural-button-secondary text-lg px-8 py-4 flex items-center justify-center gap-3 hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300"
+                className="neural-button-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-center gap-2 sm:gap-3 hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300"
               >
                 <span>🎨</span>
                 Crear NFTs
@@ -255,14 +252,15 @@ export default function HomePage() {
             </div>
 
             {/* Trust indicators - ACTUALIZADOS */}
-            <div className="flex items-center gap-6 text-white/60 text-sm flex-wrap">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-white/60 text-xs sm:text-sm">
               <div className="flex items-center gap-2">
                 <span>✅</span>
                 <span>100% Gratuito</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>✅</span>
-                <span>Sin conocimientos previos</span>
+                <span className="hidden sm:inline">Sin conocimientos previos</span>
+                <span className="sm:hidden">Sin conocimientos</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>✅</span>
@@ -270,7 +268,8 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-2">
                 <span>✅</span>
-                <span>IPFS Descentralizado</span>
+                <span className="hidden sm:inline">IPFS Descentralizado</span>
+                <span className="sm:hidden">IPFS</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>✅</span>
@@ -280,28 +279,28 @@ export default function HomePage() {
           </div>
           
           {/* Dashboard Interactivo */}
-          <div className="relative">
+          <div className="relative mt-8 lg:mt-0">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl"></div>
-            <GlassCard gradient className="p-8 animate-float relative z-10">
-              <div className="space-y-6">
+            <GlassCard gradient className="p-4 sm:p-6 lg:p-8 animate-float relative z-10">
+              <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-white">Mi Progreso</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">Mi Progreso</h3>
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-green-400 text-sm font-semibold">Activa</span>
+                    <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-green-400 text-xs sm:text-sm font-semibold">Activa</span>
                   </div>
                 </div>
                 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {['Blockchain Básico', 'NFTs y Colecciones', 'DeFi para Principiantes', 'ZK Proofs'].map((course, i) => (
                     <div key={i} className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <p className="text-white font-medium">{course}</p>
-                        <span className="text-purple-400 font-bold">{90 - i * 10}%</span>
+                        <p className="text-white font-medium text-sm sm:text-base">{course}</p>
+                        <span className="text-purple-400 font-bold text-sm sm:text-base">{90 - i * 10}%</span>
                       </div>
-                      <div className="w-full bg-white/10 rounded-full h-3">
+                      <div className="w-full bg-white/10 rounded-full h-2 sm:h-3">
                         <div 
-                          className="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all duration-1000"
+                          className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 sm:h-3 rounded-full transition-all duration-1000"
                           style={{ width: `${90 - i * 10}%` }}
                         />
                       </div>
@@ -309,36 +308,36 @@ export default function HomePage() {
                   ))}
                 </div>
                 
-                <div className="pt-6 border-t border-white/20">
-                  <div className="grid grid-cols-2 gap-6">
+                <div className="pt-4 sm:pt-6 border-t border-white/20">
+                  <div className="grid grid-cols-2 gap-4 sm:gap-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-white mb-1">8</div>
-                      <p className="text-white/70 text-sm">NFTs Creados</p>
+                      <div className="text-2xl sm:text-3xl font-bold text-white mb-1">8</div>
+                      <p className="text-white/70 text-xs sm:text-sm">NFTs Creados</p>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-white mb-1">$1,250</div>
-                      <p className="text-white/70 text-sm">Ganado este mes</p>
+                      <div className="text-2xl sm:text-3xl font-bold text-white mb-1">$1,250</div>
+                      <p className="text-white/70 text-xs sm:text-sm">Ganado este mes</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-4">
-                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl">
+                <div className="pt-3 sm:pt-4">
+                  <div className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl">
                     <div>
-                      <p className="text-white font-semibold">Reputación ZK</p>
-                      <p className="text-white/70 text-sm">Nivel: Experta (1,250 pts)</p>
+                      <p className="text-white font-semibold text-sm sm:text-base">Reputación ZK</p>
+                      <p className="text-white/70 text-xs sm:text-sm">Nivel: Experta (1,250 pts)</p>
                     </div>
-                    <div className="text-2xl">🔐</div>
+                    <div className="text-xl sm:text-2xl">🔐</div>
                   </div>
                 </div>
                 
-                <div className="pt-4">
-                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl">
+                <div className="pt-3 sm:pt-4">
+                  <div className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl">
                     <div>
-                      <p className="text-white font-semibold">Achievements</p>
-                      <p className="text-white/70 text-sm">12/16 completados</p>
+                      <p className="text-white font-semibold text-sm sm:text-base">Achievements</p>
+                      <p className="text-white/70 text-xs sm:text-sm">12/16 completados</p>
                     </div>
-                    <div className="text-2xl">🏆</div>
+                    <div className="text-xl sm:text-2xl">🏆</div>
                   </div>
                 </div>
               </div>
@@ -348,25 +347,25 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section Mejorada */}
-      <section className="py-20 px-4 relative">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               Impacto Real en <span className="gradient-text">Números</span>
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto">
               Más de 2,500 mujeres ya están transformando sus vidas con ActivaChain
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {Object.entries(stats).map(([key, value], index) => (
-              <GlassCard key={key} gradient className="p-8 hover:scale-105 transition-transform duration-300">
+              <GlassCard key={key} gradient className="p-4 sm:p-6 lg:p-8 hover:scale-105 transition-transform duration-300">
                 <div className="text-center">
-                  <div className="text-5xl font-bold text-white mb-2">{value}</div>
-                  <p className="text-white/70 capitalize text-lg">{key}</p>
-                  <div className="mt-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">{value}</div>
+                  <p className="text-white/70 capitalize text-sm sm:text-base lg:text-lg">{key}</p>
+                  <div className="mt-3 sm:mt-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
                 </div>
               </GlassCard>
             ))}
@@ -375,37 +374,37 @@ export default function HomePage() {
       </section>
 
       {/* Sección de Características Interactivas */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               ¿Cómo Funciona <span className="gradient-text">ActivaChain</span>?
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto">
               Seis funcionalidades completas para transformar tu futuro digital
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {features.map((feature, index) => (
               <GlassCard 
                 key={index} 
-                className={`p-8 cursor-pointer transition-all duration-500 ${
+                className={`p-4 sm:p-6 lg:p-8 cursor-pointer transition-all duration-500 ${
                   currentFeature === index 
                     ? 'scale-105 bg-gradient-to-br from-purple-500/20 to-pink-500/20' 
                     : 'hover:scale-102'
                 }`}
                 onClick={() => setCurrentFeature(index)}
               >
-                <div className="text-center space-y-6">
-                  <div className="text-6xl mb-4">{feature.icon}</div>
-                  <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
-                  <p className="text-purple-400 font-semibold">{feature.subtitle}</p>
-                  <p className="text-white/80 leading-relaxed">{feature.description}</p>
+                <div className="text-center space-y-4 sm:space-y-6">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4">{feature.icon}</div>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white">{feature.title}</h3>
+                  <p className="text-purple-400 font-semibold text-sm sm:text-base">{feature.subtitle}</p>
+                  <p className="text-white/80 leading-relaxed text-sm sm:text-base">{feature.description}</p>
                   
                   <div className="space-y-2">
                     {feature.benefits.map((benefit, i) => (
-                      <div key={i} className="flex items-center gap-2 text-white/70">
+                      <div key={i} className="flex items-center gap-2 text-white/70 text-xs sm:text-sm">
                         <span className="text-green-400">✓</span>
                         <span>{benefit}</span>
                       </div>
@@ -434,27 +433,27 @@ export default function HomePage() {
       </section>
 
       {/* Sección de Tecnologías Explicadas */}
-      <section className="py-20 px-4 relative">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               Tecnologías del <span className="gradient-text">Futuro</span>
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto">
               Las tecnologías más avanzadas del Web3, explicadas de forma simple
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {technologies.map((tech, index) => (
-              <GlassCard key={index} className="p-6 hover:scale-105 transition-all duration-300">
-                <div className="text-center space-y-4">
-                  <div className="text-4xl mb-4">{tech.icon}</div>
-                  <h3 className="text-xl font-bold text-white">{tech.name}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{tech.description}</p>
-                  <div className="p-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
-                    <p className="text-purple-300 font-semibold text-sm">{tech.benefit}</p>
+              <GlassCard key={index} className="p-4 sm:p-6 hover:scale-105 transition-all duration-300">
+                <div className="text-center space-y-3 sm:space-y-4">
+                  <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{tech.icon}</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">{tech.name}</h3>
+                  <p className="text-white/70 text-xs sm:text-sm leading-relaxed">{tech.description}</p>
+                  <div className="p-2 sm:p-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
+                    <p className="text-purple-300 font-semibold text-xs sm:text-sm">{tech.benefit}</p>
                   </div>
                 </div>
               </GlassCard>
@@ -464,19 +463,19 @@ export default function HomePage() {
       </section>
 
       {/* Sección de Testimonios */}
-      <section className="py-20 px-4 relative">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-purple-500/5"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               Historias de <span className="gradient-text">Éxito</span>
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto">
               Mujeres reales que transformaron sus vidas con ActivaChain y sus nuevas funcionalidades
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 name: "María González",
@@ -503,19 +502,19 @@ export default function HomePage() {
                 avatar: "👩‍💼"
               }
             ].map((testimonial, index) => (
-              <GlassCard key={index} className="p-8 hover:scale-105 transition-all duration-300">
-                <div className="space-y-6">
+              <GlassCard key={index} className="p-4 sm:p-6 lg:p-8 hover:scale-105 transition-all duration-300">
+                <div className="space-y-4 sm:space-y-6">
                   <div className="text-center">
-                    <div className="text-6xl mb-4">{testimonial.avatar}</div>
-                    <h3 className="text-xl font-bold text-white">{testimonial.name}</h3>
-                    <p className="text-purple-400 font-semibold">{testimonial.role}</p>
-                    <p className="text-white/60 text-sm">{testimonial.location}</p>
+                    <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4">{testimonial.avatar}</div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">{testimonial.name}</h3>
+                    <p className="text-purple-400 font-semibold text-sm sm:text-base">{testimonial.role}</p>
+                    <p className="text-white/60 text-xs sm:text-sm">{testimonial.location}</p>
                   </div>
                   
-                  <p className="text-white/80 leading-relaxed italic">"{testimonial.story}"</p>
+                  <p className="text-white/80 leading-relaxed italic text-sm sm:text-base">"{testimonial.story}"</p>
                   
-                  <div className="p-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl">
-                    <p className="text-green-400 font-bold text-lg text-center">{testimonial.earnings}</p>
+                  <div className="p-3 sm:p-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl">
+                    <p className="text-green-400 font-bold text-base sm:text-lg text-center">{testimonial.earnings}</p>
                   </div>
                 </div>
               </GlassCard>
@@ -525,55 +524,57 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section Mejorada */}
-      <section className="py-20 px-4 relative">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10"></div>
         <div className="max-w-6xl mx-auto relative z-10">
-          <GlassCard gradient className="p-16 text-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-6xl font-bold text-white">
+          <GlassCard gradient className="p-6 sm:p-8 lg:p-16 text-center">
+            <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
                   ¿Lista para <span className="gradient-text">Revolucionar</span> tu Futuro?
                 </h2>
-                <p className="text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
                   Unite a más de 2,500 mujeres que ya están construyendo el futuro del trabajo digital con NFTs, ZK proofs y gamificación
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-8 sm:my-12">
                 <div className="space-y-3">
-                  <div className="text-4xl">🚀</div>
-                  <h3 className="text-xl font-bold text-white">Comenzá Gratis</h3>
-                  <p className="text-white/70">Sin costo inicial, sin compromisos</p>
+                  <div className="text-3xl sm:text-4xl">🚀</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">Comenzá Gratis</h3>
+                  <p className="text-white/70 text-sm sm:text-base">Sin costo inicial, sin compromisos</p>
                 </div>
                 <div className="space-y-3">
-                  <div className="text-4xl">🎨</div>
-                  <h3 className="text-xl font-bold text-white">Crea NFTs</h3>
-                  <p className="text-white/70">ERC1155 + ERC721 desde el primer día</p>
+                  <div className="text-3xl sm:text-4xl">🎨</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">Crea NFTs</h3>
+                  <p className="text-white/70 text-sm sm:text-base">ERC1155 + ERC721 desde el primer día</p>
                 </div>
                 <div className="space-y-3">
-                  <div className="text-4xl">👥</div>
-                  <h3 className="text-xl font-bold text-white">85+ Mentores</h3>
-                  <p className="text-white/70">Acceso a workshops y mentoría</p>
+                  <div className="text-3xl sm:text-4xl">👥</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">85+ Mentores</h3>
+                  <p className="text-white/70 text-sm sm:text-base">Acceso a workshops y mentoría</p>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <button
                   onClick={() => open?.()}
-                  className="neural-button text-xl px-12 py-6 flex items-center justify-center gap-4"
+                  className="neural-button text-base sm:text-lg lg:text-xl px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 flex items-center justify-center gap-3 sm:gap-4"
                 >
                   <span>🚀</span>
-                  Comenzar Ahora - Es Gratis
+                  <span className="hidden sm:inline">Comenzar Ahora - Es Gratis</span>
+                  <span className="sm:hidden">Comenzar Gratis</span>
                 </button>
                 
-                <button className="neural-button-secondary text-xl px-12 py-6 flex items-center justify-center gap-4">
+                <button className="neural-button-secondary text-base sm:text-lg lg:text-xl px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 flex items-center justify-center gap-3 sm:gap-4">
                   <span>📹</span>
-                  Ver Demo Completo
+                  <span className="hidden sm:inline">Ver Demo Completo</span>
+                  <span className="sm:hidden">Ver Demo</span>
                 </button>
               </div>
 
-              <div className="pt-8 border-t border-white/20">
-                <p className="text-white/60 text-sm">
+              <div className="pt-6 sm:pt-8 border-t border-white/20">
+                <p className="text-white/60 text-xs sm:text-sm">
                   🔒 100% Seguro • ✅ Sin spam • 🎯 Resultados garantizados • 🔐 ZK Proofs • 🌐 IPFS
                 </p>
               </div>

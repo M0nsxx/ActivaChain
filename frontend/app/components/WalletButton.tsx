@@ -78,12 +78,12 @@ export function WalletButton() {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          className="flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300"
+          className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300"
         >
-          <div className="px-2 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-bold">
+          <div className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-bold">
             Conectado
           </div>
-          <div className="text-white/70 text-xs font-mono hidden md:block">
+          <div className="text-white/70 text-xs font-mono hidden sm:block">
             {address.slice(0, 4)}...{address.slice(-4)}
           </div>
           <div className={`text-xs ${getNetworkColor(chain?.id)} hidden lg:block`}>
@@ -100,28 +100,28 @@ export function WalletButton() {
         </button>
 
         {isDropdownOpen && (
-          <div className="absolute right-0 mt-2 w-64 bg-black/90 backdrop-blur-md border border-white/20 rounded-xl shadow-2xl z-50">
-            <div className="p-4">
-              <div className="mb-4">
+          <div className="absolute right-0 mt-2 w-56 sm:w-64 bg-black/90 backdrop-blur-md border border-white/20 rounded-xl shadow-2xl z-50">
+            <div className="p-3 sm:p-4">
+              <div className="mb-3 sm:mb-4">
                 <div className="text-white/70 text-xs mb-1">Dirección</div>
-                <div className="text-white font-mono text-sm break-all">
+                <div className="text-white font-mono text-xs sm:text-sm break-all">
                   {address}
                 </div>
               </div>
               
-              <div className="mb-4">
+              <div className="mb-3 sm:mb-4">
                 <div className="text-white/70 text-xs mb-2">Red Actual</div>
-                <div className={`text-sm font-medium ${getNetworkColor(chain?.id)}`}>
+                <div className={`text-xs sm:text-sm font-medium ${getNetworkColor(chain?.id)}`}>
                   {getNetworkName(chain?.id)}
                 </div>
               </div>
 
-              <div className="mb-4">
+              <div className="mb-3 sm:mb-4">
                 <div className="text-white/70 text-xs mb-2">Cambiar Red</div>
                 <div className="space-y-2">
                   <button
                     onClick={() => handleSwitchChain(11155111)}
-                    className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
+                    className={`w-full text-left px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg transition-colors ${
                       chain?.id === 11155111 
                         ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' 
                         : 'bg-white/5 text-white/70 hover:bg-white/10'
@@ -129,13 +129,13 @@ export function WalletButton() {
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      <span className="text-sm">Ethereum Sepolia</span>
+                      <span className="text-xs sm:text-sm">Ethereum Sepolia</span>
                     </div>
                   </button>
                   
                   <button
                     onClick={() => handleSwitchChain(421614)}
-                    className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
+                    className={`w-full text-left px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg transition-colors ${
                       chain?.id === 421614 
                         ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' 
                         : 'bg-white/5 text-white/70 hover:bg-white/10'
@@ -143,7 +143,7 @@ export function WalletButton() {
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                      <span className="text-sm">Arbitrum Sepolia</span>
+                      <span className="text-xs sm:text-sm">Arbitrum Sepolia</span>
                     </div>
                   </button>
                 </div>
@@ -152,7 +152,7 @@ export function WalletButton() {
               <div className="border-t border-white/10 pt-3">
                 <button
                   onClick={handleDisconnect}
-                  className="w-full px-3 py-2 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-colors text-sm font-medium"
+                  className="w-full px-2 sm:px-3 py-1.5 sm:py-2 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-colors text-xs sm:text-sm font-medium"
                 >
                   Desconectar Wallet
                 </button>
@@ -167,9 +167,10 @@ export function WalletButton() {
   return (
     <button
       onClick={() => open?.()}
-      className="neural-button"
+      className="neural-button text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
     >
-      Conectar Wallet
+      <span className="hidden sm:inline">Conectar Wallet</span>
+      <span className="sm:hidden">Conectar</span>
     </button>
   )
 }

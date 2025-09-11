@@ -126,7 +126,7 @@ export default function DashboardPage() {
         <GlassCard className="p-8 text-center">
           <div className="text-6xl mb-4">🔐</div>
           <h2 className="text-2xl font-bold text-white mb-4">Acceso Restringido</h2>
-          <p className="text-white/70 mb-6">Necesitás conectar tu wallet para acceder al Dashboard</p>
+          <p className="text-white/70 mb-6">Necesitás conectar tu wallet para acceder al Panel de Control</p>
           <button 
             onClick={() => router.push('/')}
             className="neural-button"
@@ -145,56 +145,56 @@ export default function DashboardPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse-glow delay-1000"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h1 className="text-6xl font-bold text-white mb-6">
-              Mi <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Dashboard</span>
+          <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+              Mi <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Panel de Control</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
               Bienvenida a tu centro de control personal en ActivaChain. Acá podés gestionar tu perfil, 
               ver el progreso de tus cursos y servicios, y acceder a todas tus actividades.
             </p>
           </div>
 
           {/* Profile Overview */}
-          <div className={`mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <GlassCard gradient className="p-8 profile-card animate-dashboard-glow">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="text-8xl animate-dashboard-float">
+          <div className={`mb-8 sm:mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <GlassCard gradient className="p-4 sm:p-6 lg:p-8 profile-card animate-dashboard-glow">
+              <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+                <div className="text-6xl sm:text-7xl lg:text-8xl animate-dashboard-float">
                   {userProfile.avatar}
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <h2 className="text-3xl font-bold text-white mb-2">{userProfile.name}</h2>
-                  <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-4">
-                    <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 rounded-full text-sm font-semibold border border-cyan-500/30 animate-dashboard-pulse">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{userProfile.name}</h2>
+                  <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start mb-4">
+                    <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 rounded-full text-xs sm:text-sm font-semibold border border-cyan-500/30 animate-dashboard-pulse">
                       Nivel {userProfile.level}
                     </span>
-                    <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 rounded-full text-sm font-semibold border border-purple-500/30 animate-dashboard-pulse">
+                    <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 rounded-full text-xs sm:text-sm font-semibold border border-purple-500/30 animate-dashboard-pulse">
                       Reputación: {userProfile.reputation}
                     </span>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                     <div className="text-center dashboard-hover">
-                      <div className="text-2xl font-bold text-white">${userProfile.totalEarnings}</div>
-                      <div className="text-white/70 text-sm">Ganancias</div>
+                      <div className="text-xl sm:text-2xl font-bold text-white">${userProfile.totalEarnings}</div>
+                      <div className="text-white/70 text-xs sm:text-sm">Ganancias</div>
                     </div>
                     <div className="text-center dashboard-hover">
-                      <div className="text-2xl font-bold text-white">{userProfile.servicesCompleted}</div>
-                      <div className="text-white/70 text-sm">Servicios</div>
+                      <div className="text-xl sm:text-2xl font-bold text-white">{userProfile.servicesCompleted}</div>
+                      <div className="text-white/70 text-xs sm:text-sm">Servicios</div>
                     </div>
                     <div className="text-center dashboard-hover">
-                      <div className="text-2xl font-bold text-white">{userProfile.coursesCompleted}</div>
-                      <div className="text-white/70 text-sm">Cursos</div>
+                      <div className="text-xl sm:text-2xl font-bold text-white">{userProfile.coursesCompleted}</div>
+                      <div className="text-white/70 text-xs sm:text-sm">Cursos</div>
                     </div>
                     <div className="text-center dashboard-hover">
-                      <div className="text-2xl font-bold text-white">{userProfile.joinDate}</div>
-                      <div className="text-white/70 text-sm">Miembro desde</div>
+                      <div className="text-xl sm:text-2xl font-bold text-white">{userProfile.joinDate}</div>
+                      <div className="text-white/70 text-xs sm:text-sm">Miembro desde</div>
                     </div>
                   </div>
                 </div>

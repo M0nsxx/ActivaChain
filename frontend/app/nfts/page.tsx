@@ -11,7 +11,7 @@ export default function NFTsPage() {
       <NeuralParticles />
       <Header />
       
-      <main className="relative z-10 pt-32 pb-8 px-4">
+      <main className="relative z-10 pt-24 sm:pt-32 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <NFTMintingSystem />
         </div>

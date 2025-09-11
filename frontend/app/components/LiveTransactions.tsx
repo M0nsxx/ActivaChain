@@ -122,7 +122,7 @@ export function LiveTransactions() {
         <div className="pt-4 border-t border-white/20">
           <div className="flex items-center justify-between text-sm text-white/60">
             <span>Últimas 24 horas</span>
-            <span>Total: $45,230 USDC</span>
+            <span>Total: 45.23 ETH</span>
           </div>
         </div>
       </div>
