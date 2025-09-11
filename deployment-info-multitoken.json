@@ -1,0 +1,17 @@
+{
+  "network": "sepolia",
+  "timestamp": "2025-09-09T22:50:17.691Z",
+  "contracts": {
+    "marketplace": "0xd7458887a104a6F7505b86fAab960eF1834491e4",
+    "arb": "0x5C0F9F645E82cFB26918369Feb1189211511250e"
+  },
+  "deployer": "0xe6bE36A435c3BecAd922ddD9Ede2Fc1DbB632BA1",
+  "services": 15,
+  "reputation": 50,
+  "supportedTokens": [
+    "ETH",
+    "ARB"
+  ],
+  "lastUpdate": "2025-09-11T19:40:27.067Z",
+  "sepoliaServices": 8
+}

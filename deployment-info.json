@@ -1,0 +1,16 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "deployer": "0xe6bE36A435c3BecAd922ddD9Ede2Fc1DbB632BA1",
+  "contracts": {
+    "activaToken": "0xfF50880cB75c87f2b27F57913658c8E6317C8b2a",
+    "reputation": "0x8036b3C8be65D87DbE690f1E6c4f41b02E7D172A",
+    "activaNFT": "0x50d00F9493940e844B61C0Af8B56abbE5FFaF3d0",
+    "marketplace": "0x45745c3A9ae2955a7F877b0D8042e3f6986527c7"
+  },
+  "services": {
+    "total": 5,
+    "created": 5
+  },
+  "timestamp": "2025-09-09T22:19:45.140Z"
+}

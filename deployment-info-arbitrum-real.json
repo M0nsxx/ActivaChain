@@ -1,0 +1,25 @@
+{
+  "network": "arbitrumSepolia",
+  "timestamp": "2025-09-11T22:05:24.453Z",
+  "deployer": "0xe6bE36A435c3BecAd922ddD9Ede2Fc1DbB632BA1",
+  "contracts": {
+    "activaToken": "0xE4F74170231156d9937f3baaa672df35571B6A38",
+    "activaNFT": "0x715231b93296D57D052E1D458Fb32AEc56444765",
+    "reputation": "0x98f60Fc67C6eEf622A514b684164bBf31d25Bf52",
+    "advancedReputation": "0xf973036cFC966a5226625063859A2Eed3109563D",
+    "marketplace": "0x624d15B024a707E5c0295A790763f192289301B2",
+    "gamificationSystem": "0x5Eb409cB1bF3f97e88cE9038a531B59Ad994fC45",
+    "communitySystem": "0xb27AEF60ECAa4f0c9b7040c0C513CECbF2753fFD",
+    "ipfsIntegration": "0x4100faaA3f3bB8CD17AF2295Dd5A0724aBCB6927",
+    "pushNotificationSystem": "0x0Be3cC96475c95527D09842a877608316c5B148d",
+    "externalAPIIntegration": "0x35e3337B817bc14b99c5BdBF466e029000763CCd",
+    "arb": "0x912CE59144191C1204E64559FE8253a0e49E6548",
+    "activaGovernance": "0x0E927b4Dc048ff9ba425A4A778CC4342096deF11"
+  },
+  "services": 5,
+  "reputation": 100,
+  "supportedTokens": [
+    "ETH",
+    "ARB"
+  ]
+}

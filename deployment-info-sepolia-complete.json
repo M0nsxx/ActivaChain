@@ -1,0 +1,23 @@
+{
+  "network": "sepolia",
+  "timestamp": "2025-09-11T22:04:33.721Z",
+  "deployer": "0xe6bE36A435c3BecAd922ddD9Ede2Fc1DbB632BA1",
+  "contracts": {
+    "activaToken": "0x11a16814c7E8079Cc010a1603C15b818c3411FC4",
+    "activaNFT": "0x45e5FDDa2B3215423B82b2502B388D5dA8944bA9",
+    "reputation": "0xC68535Ee239f2A46Fdc08c236c86cb6451b6E01D",
+    "marketplace": "0xBc6f7ADb6Af52997CC9aF02E1B348083B5eA978F",
+    "advancedReputation": "0x9CFb165fd2b22FE011a03C0Afc5aEDD2Ae04f8a3",
+    "gamificationSystem": "0x75069e3b4e62966325Ac8ef2fEA48e8909225acF",
+    "communitySystem": "0x9231c39C19A4A938Da2E3D1D67AbaBDE77388b09",
+    "ipfsIntegration": "0x79ede9d4E531ea6b7bF5eF35c4b31ea69210107A",
+    "pushNotificationSystem": "0x1fbD7E942b0e19dB7D74c6DF1CfdE7753A30841d",
+    "externalAPIIntegration": "0xe09D357311eDC869dbba5E043a3915413547F288",
+    "activaGovernance": "0xf278be79d14CcF53157B045bdbb51D98d58964F9"
+  },
+  "services": 3,
+  "reputation": 100,
+  "supportedTokens": [
+    "ETH"
+  ]
+}

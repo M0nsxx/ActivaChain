@@ -1,0 +1,684 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-[#0F0F23] via-[#1A0B2E] to-[#0F0F23];
+    @apply text-white;
+    @apply min-h-screen;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl;
+  }
+  
+  .glass-morphism-hover {
+    @apply hover:bg-white/15 hover:border-white/30 transition-all duration-300;
+  }
+  
+  .neural-glow {
+    filter: drop-shadow(0 0 40px rgba(147, 51, 234, 0.3));
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+  
+  .gradient-border {
+    background: linear-gradient(#0F0F23, #0F0F23) padding-box,
+                linear-gradient(to right, #9333EA, #EC4899) border-box;
+    border: 2px solid transparent;
+  }
+  
+  .neural-card {
+    @apply glass-morphism glass-morphism-hover neural-glow;
+    @apply p-6 shadow-2xl;
+  }
+  
+  .neural-button {
+    @apply bg-gradient-to-r from-purple-500 to-pink-500;
+    @apply text-white font-bold px-6 py-3 rounded-xl;
+    @apply hover:shadow-2xl hover:shadow-purple-500/25;
+    @apply transition-all transform hover:scale-105;
+    @apply border-0 outline-none;
+  }
+  
+  .neural-button-secondary {
+    @apply border border-white/20 text-white;
+    @apply font-bold px-6 py-3 rounded-xl;
+    @apply hover:bg-white/10 transition-all;
+    @apply backdrop-blur-sm;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes neural-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes neural-glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 20px rgba(147, 51, 234, 0.3));
+  }
+  50% { 
+    filter: drop-shadow(0 0 40px rgba(147, 51, 234, 0.6));
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% { 
+    background-position: -200% 0;
+  }
+  100% { 
+    background-position: 200% 0;
+  }
+}
+
+@keyframes neural-connect {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes glass-shimmer {
+  0% { 
+    background-position: -1000px 0;
+  }
+  100% { 
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes neural-pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3),
+                0 0 40px rgba(236, 72, 153, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.6),
+                0 0 80px rgba(236, 72, 153, 0.4);
+  }
+}
+
+@keyframes neural-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% { 
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% { 
+    transform: translateY(-20px) rotate(-1deg);
+  }
+}
+
+@keyframes marketplace-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3),
+                0 0 40px rgba(236, 72, 153, 0.2),
+                0 0 60px rgba(59, 130, 246, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.6),
+                0 0 80px rgba(236, 72, 153, 0.4),
+                0 0 120px rgba(59, 130, 246, 0.2);
+  }
+}
+
+@keyframes service-card-hover {
+  0% { 
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  100% { 
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(147, 51, 234, 0.3);
+  }
+}
+
+@keyframes transaction-pulse {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes neural-network {
+  0%, 100% { 
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+  50% { 
+    stroke-dashoffset: -20;
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-neural-pulse {
+  animation: neural-pulse 3s ease-in-out infinite;
+}
+
+.animate-neural-glow {
+  animation: neural-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 3s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200% 100%;
+}
+
+.animate-neural-connect {
+  animation: neural-connect 3s ease-in-out infinite;
+}
+
+.animate-glass-shimmer {
+  animation: glass-shimmer 3s linear infinite;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 1000px 100%;
+}
+
+.animate-neural-pulse-glow {
+  animation: neural-pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-neural-float {
+  animation: neural-float 8s ease-in-out infinite;
+}
+
+.animate-marketplace-glow {
+  animation: marketplace-glow 3s ease-in-out infinite;
+}
+
+.animate-service-card-hover {
+  animation: service-card-hover 0.3s ease-out forwards;
+}
+
+.animate-transaction-pulse {
+  animation: transaction-pulse 2s ease-in-out infinite;
+}
+
+.animate-neural-network {
+  animation: neural-network 4s ease-in-out infinite;
+}
+
+.hover-scale-102:hover {
+  transform: scale(1.02);
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+.delay-2000 {
+  animation-delay: 2s;
+}
+
+.delay-3000 {
+  animation-delay: 3s;
+}
+
+/* Efectos especiales para el marketplace */
+.marketplace-card {
+  @apply glass-morphism glass-morphism-hover;
+  @apply transition-all duration-500;
+}
+
+.marketplace-card:hover {
+  animation: marketplace-glow 3s ease-in-out infinite;
+}
+
+.service-card {
+  @apply marketplace-card;
+}
+
+.service-card:hover {
+  animation: service-card-hover 0.3s ease-out forwards;
+}
+
+.transaction-item {
+  @apply transition-all duration-300;
+}
+
+.transaction-item:hover {
+  animation: transaction-pulse 2s ease-in-out infinite;
+}
+
+.neural-connection {
+  animation: neural-network 4s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #9333EA, #EC4899);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7C3AED, #DB2777);
+}
+
+/* Loading animation */
+.loading-dots {
+  display: inline-block;
+}
+
+.loading-dots::after {
+  content: '';
+  animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+/* Efectos específicos para gobernanza */
+@keyframes governance-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3),
+                0 0 40px rgba(236, 72, 153, 0.2),
+                0 0 60px rgba(16, 185, 129, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.6),
+                0 0 80px rgba(236, 72, 153, 0.4),
+                0 0 120px rgba(16, 185, 129, 0.2);
+  }
+}
+
+@keyframes vote-animation {
+  0% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.1) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% { 
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes proposal-glow {
+  0%, 100% { 
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  50% { 
+    border-color: rgba(147, 51, 234, 0.5);
+    background: rgba(147, 51, 234, 0.1);
+  }
+}
+
+@keyframes treasury-flow {
+  0% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+  100% { 
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes democratic-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% { 
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+}
+
+.animate-governance-pulse {
+  animation: governance-pulse 3s ease-in-out infinite;
+}
+
+.animate-vote-animation {
+  animation: vote-animation 2s ease-in-out infinite;
+}
+
+.animate-proposal-glow {
+  animation: proposal-glow 4s ease-in-out infinite;
+}
+
+.animate-treasury-flow {
+  animation: treasury-flow 5s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.animate-democratic-pulse {
+  animation: democratic-pulse 2s ease-in-out infinite;
+}
+
+/* Efectos de glassmorphism mejorados para gobernanza */
+.governance-card {
+  @apply glass-morphism glass-morphism-hover;
+  @apply transition-all duration-500;
+  @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000 before:ease-out;
+}
+
+.governance-card:hover {
+  animation: governance-pulse 3s ease-in-out infinite;
+}
+
+.proposal-card {
+  @apply governance-card;
+}
+
+.proposal-card:hover {
+  animation: proposal-glow 4s ease-in-out infinite;
+}
+
+.voting-button {
+  @apply neural-button;
+  @apply transition-all duration-300;
+}
+
+.voting-button:hover {
+  animation: vote-animation 2s ease-in-out infinite;
+}
+
+.treasury-card {
+  @apply governance-card;
+  @apply bg-gradient-to-br from-green-500/10 to-emerald-500/10;
+  animation: treasury-flow 5s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.democratic-element {
+  animation: democratic-pulse 2s ease-in-out infinite;
+}
+
+/* Efectos de conexión neural para gobernanza */
+.governance-connection {
+  animation: neural-network 4s ease-in-out infinite;
+  stroke-dasharray: 5, 5;
+}
+
+/* Efectos de partículas de votación */
+.voting-particle {
+  @apply absolute w-2 h-2 bg-green-400 rounded-full;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Efectos de progreso de votación */
+.voting-progress {
+  @apply relative overflow-hidden;
+}
+
+.voting-progress::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  transform: translateX(-100%);
+  animation: shimmer 2s linear infinite;
+}
+
+/* Efectos de hover mejorados */
+.governance-hover {
+  @apply transition-all duration-300;
+  @apply hover:scale-105 hover:shadow-2xl;
+  @apply hover:shadow-purple-500/25;
+}
+
+/* Efectos de texto animado */
+.governance-text {
+  @apply bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400;
+  @apply bg-clip-text text-transparent;
+  animation: gradient-shift 3s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+/* Efectos específicos para Dashboard */
+@keyframes dashboard-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3),
+                0 0 40px rgba(147, 51, 234, 0.2),
+                0 0 60px rgba(236, 72, 153, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.6),
+                0 0 80px rgba(147, 51, 234, 0.4),
+                0 0 120px rgba(236, 72, 153, 0.2);
+  }
+}
+
+@keyframes dashboard-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes dashboard-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% { 
+    transform: translateY(-5px) rotate(1deg);
+  }
+  66% { 
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
+@keyframes progress-flow {
+  0% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+  100% { 
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes tab-glow {
+  0%, 100% { 
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+  }
+}
+
+.animate-dashboard-glow {
+  animation: dashboard-glow 3s ease-in-out infinite;
+}
+
+.animate-dashboard-pulse {
+  animation: dashboard-pulse 2s ease-in-out infinite;
+}
+
+.animate-dashboard-float {
+  animation: dashboard-float 6s ease-in-out infinite;
+}
+
+.animate-progress-flow {
+  animation: progress-flow 3s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.animate-tab-glow {
+  animation: tab-glow 2s ease-in-out infinite;
+}
+
+/* Estilos para cards del dashboard */
+.dashboard-card {
+  @apply glass-morphism glass-morphism-hover;
+  @apply transition-all duration-500;
+}
+
+.dashboard-card:hover {
+  animation: dashboard-glow 3s ease-in-out infinite;
+}
+
+.profile-card {
+  @apply dashboard-card;
+  @apply bg-gradient-to-br from-cyan-500/10 to-purple-500/10;
+}
+
+.stats-card {
+  @apply dashboard-card;
+  @apply bg-gradient-to-br from-purple-500/10 to-pink-500/10;
+}
+
+.service-card-dashboard {
+  @apply dashboard-card;
+}
+
+.service-card-dashboard:hover {
+  animation: dashboard-pulse 2s ease-in-out infinite;
+}
+
+.course-card {
+  @apply dashboard-card;
+}
+
+.course-card:hover {
+  animation: dashboard-float 6s ease-in-out infinite;
+}
+
+.activity-card {
+  @apply dashboard-card;
+}
+
+.activity-card:hover {
+  animation: dashboard-pulse 2s ease-in-out infinite;
+}
+
+/* Efectos de progreso */
+.progress-bar {
+  @apply relative overflow-hidden;
+  @apply bg-white/10 rounded-full;
+}
+
+.progress-bar::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  transform: translateX(-100%);
+  animation: shimmer 2s linear infinite;
+}
+
+.progress-fill {
+  @apply h-full rounded-full;
+  @apply bg-gradient-to-r from-cyan-500 to-purple-500;
+  animation: progress-flow 3s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+/* Efectos de tabs */
+.dashboard-tab {
+  @apply transition-all duration-300;
+}
+
+.dashboard-tab:hover {
+  animation: tab-glow 2s ease-in-out infinite;
+}
+
+.dashboard-tab.active {
+  animation: tab-glow 2s ease-in-out infinite;
+}
+
+/* Efectos de hover mejorados para dashboard */
+.dashboard-hover {
+  @apply transition-all duration-300;
+  @apply hover:scale-105 hover:shadow-2xl;
+  @apply hover:shadow-cyan-500/25;
+}
+
+/* Efectos de conexión neural para dashboard */
+.dashboard-connection {
+  animation: neural-network 4s ease-in-out infinite;
+  stroke-dasharray: 3, 3;
+}
+
+/* Efectos de partículas del dashboard */
+.dashboard-particle {
+  @apply absolute w-1 h-1 bg-cyan-400 rounded-full;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Efectos de texto del dashboard */
+.dashboard-text {
+  @apply bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400;
+  @apply bg-clip-text text-transparent;
+  animation: gradient-shift 3s ease-in-out infinite;
+  background-size: 200% 200%;
+}
