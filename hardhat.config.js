@@ -26,8 +26,8 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      sepolia: process.env.ETHERSCAN_API_KEY,
-      arbitrumSepolia: process.env.ARBISCAN_API_KEY
+      sepolia: process.env.ETHERSCAN_API_KEY || "1EI4KGE2DIUPZF2XND8V5AUFVPE1E9X3JK",
+      arbitrumSepolia: process.env.ARBISCAN_API_KEY || "1EI4KGE2DIUPZF2XND8V5AUFVPE1E9X3JK"
     }
   }
 };

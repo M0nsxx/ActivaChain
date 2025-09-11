@@ -3,18 +3,5 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "outputDirectory": ".next",
-  "env": {
-    "NEXT_PUBLIC_REOWN_PROJECT_ID": "@reown_project_id",
-    "NEXT_PUBLIC_SEPOLIA_ACTIVA_NFT": "@sepolia_activa_nft",
-    "NEXT_PUBLIC_SEPOLIA_ACTIVA_TOKEN": "@sepolia_activa_token",
-    "NEXT_PUBLIC_SEPOLIA_MARKETPLACE": "@sepolia_marketplace",
-    "NEXT_PUBLIC_SEPOLIA_USDC": "@sepolia_usdc",
-    "NEXT_PUBLIC_SEPOLIA_REPUTATION": "@sepolia_reputation",
-    "NEXT_PUBLIC_ARBITRUM_ACTIVA_NFT": "@arbitrum_activa_nft",
-    "NEXT_PUBLIC_ARBITRUM_ACTIVA_TOKEN": "@arbitrum_activa_token",
-    "NEXT_PUBLIC_ARBITRUM_MARKETPLACE": "@arbitrum_marketplace",
-    "NEXT_PUBLIC_ARBITRUM_USDC": "@arbitrum_usdc",
-    "NEXT_PUBLIC_ARBITRUM_REPUTATION": "@arbitrum_reputation"
-  }
+  "outputDirectory": ".next"
 }
