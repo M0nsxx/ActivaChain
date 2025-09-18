@@ -46,7 +46,7 @@ export function Footer() {
         <div className="border-t border-white/10 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-white/70">
           <p className="text-sm sm:text-base">&copy; 2025 ActivaChain. Desarrollado con ❤️ para ETH Uruguay 2025.</p>
           <p className="mt-2 text-xs sm:text-sm">
-            Desarrollado por <a href="https://t.me/Vai0sx" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition-colors">Vai0sx</a> • Hecho por el Equipo ActivaChain
+            Desarrollado por <a href="https://t.me/Vaiosx" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition-colors">Vaiosx</a> • Hecho por el Equipo ActivaChain
           </p>
         </div>
       </div>
