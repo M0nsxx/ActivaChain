@@ -169,7 +169,11 @@ export default function NotificationCenter() {
 
   const markAsRead = async (notificationId: number) => {
     if (!isConnected || !contracts.pushNotificationSystem) {
-      addNotification('error', 'Conecta tu wallet primero')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Conecta tu wallet primero'
+      })
       return
     }
 
@@ -178,23 +182,35 @@ export default function NotificationCenter() {
         address: contracts.pushNotificationSystem,
         abi: NOTIFICATION_ABI,
         functionName: 'markAsRead',
-        args: [notificationId]
+        args: [BigInt(notificationId)]
       })
 
       setNotifications(prev => 
         prev.map(n => n.id === notificationId ? { ...n, isRead: true } : n)
       )
       setUnreadCount(prev => prev - 1)
-      addNotification('success', 'Notificación marcada como leída')
+      addNotification({
+        type: 'success',
+        title: 'Éxito',
+        message: 'Notificación marcada como leída'
+      })
     } catch (err) {
       console.error('Error marking notification as read:', err)
-      addNotification('error', 'Error al marcar notificación')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Error al marcar notificación'
+      })
     }
   }
 
   const markAllAsRead = async () => {
     if (!isConnected || !contracts.pushNotificationSystem) {
-      addNotification('error', 'Conecta tu wallet primero')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Conecta tu wallet primero'
+      })
       return
     }
 
@@ -208,16 +224,28 @@ export default function NotificationCenter() {
 
       setNotifications(prev => prev.map(n => ({ ...n, isRead: true })))
       setUnreadCount(0)
-      addNotification('success', 'Todas las notificaciones marcadas como leídas')
+      addNotification({
+        type: 'success',
+        title: 'Éxito',
+        message: 'Todas las notificaciones marcadas como leídas'
+      })
     } catch (err) {
       console.error('Error marking all notifications as read:', err)
-      addNotification('error', 'Error al marcar todas las notificaciones')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Error al marcar todas las notificaciones'
+      })
     }
   }
 
   const updateSettings = async () => {
     if (!isConnected || !contracts.pushNotificationSystem) {
-      addNotification('error', 'Conecta tu wallet primero')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Conecta tu wallet primero'
+      })
       return
     }
 
@@ -233,16 +261,24 @@ export default function NotificationCenter() {
           settings.systemNotifications,
           settings.emailNotifications,
           settings.pushNotifications,
-          settings.quietHoursStart,
-          settings.quietHoursEnd
+          BigInt(settings.quietHoursStart),
+          BigInt(settings.quietHoursEnd)
         ]
       })
 
-      addNotification('success', 'Configuración actualizada')
+      addNotification({
+        type: 'success',
+        title: 'Éxito',
+        message: 'Configuración actualizada'
+      })
       setShowSettings(false)
     } catch (err) {
       console.error('Error updating settings:', err)
-      addNotification('error', 'Error al actualizar configuración')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Error al actualizar configuración'
+      })
     }
   }
 
@@ -279,7 +315,7 @@ export default function NotificationCenter() {
 
   return (
     <div className="space-y-8">
-      <NotificationSystem />
+      <NotificationSystem notifications={[]} onRemove={() => {}} />
       
       {/* Header */}
       <div className="text-center">
