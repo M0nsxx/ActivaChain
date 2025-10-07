@@ -171,7 +171,11 @@ export default function ExternalAPIPanel() {
 
   const makeAPICall = async (service: APIService) => {
     if (!isConnected || !contracts.externalAPIIntegration) {
-      addNotification('error', 'Conecta tu wallet primero')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Conecta tu wallet primero'
+      })
       return
     }
 
@@ -191,11 +195,19 @@ export default function ExternalAPIPanel() {
         value: BigInt('100000000000000') // 0.0001 ETH fee
       })
 
-      addNotification('success', `Llamada a ${service.name} iniciada`)
+      addNotification({
+        type: 'success',
+        title: 'Éxito',
+        message: `Llamada a ${service.name} iniciada`
+      })
       setRequestData('')
     } catch (err) {
       console.error('Error making API call:', err)
-      addNotification('error', 'Error al realizar llamada API')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Error al realizar llamada API'
+      })
     } finally {
       setLoading(false)
     }
@@ -203,7 +215,11 @@ export default function ExternalAPIPanel() {
 
   const transferUSDC = async (to: string, amount: string) => {
     if (!isConnected || !contracts.externalAPIIntegration) {
-      addNotification('error', 'Conecta tu wallet primero')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Conecta tu wallet primero'
+      })
       return
     }
 
@@ -214,14 +230,22 @@ export default function ExternalAPIPanel() {
         address: contracts.externalAPIIntegration,
         abi: EXTERNAL_API_ABI,
         functionName: 'transferUSDCViaCircle',
-        args: [to, BigInt(amount)],
+        args: [to as `0x${string}`, BigInt(amount)],
         value: BigInt('100000000000000') // 0.0001 ETH fee
       })
 
-      addNotification('success', 'Transferencia USDC iniciada')
+      addNotification({
+        type: 'success',
+        title: 'Éxito',
+        message: 'Transferencia USDC iniciada'
+      })
     } catch (err) {
       console.error('Error transferring USDC:', err)
-      addNotification('error', 'Error al transferir USDC')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Error al transferir USDC'
+      })
     } finally {
       setLoading(false)
     }
@@ -229,7 +253,11 @@ export default function ExternalAPIPanel() {
 
   const enrollInShefi = async (cohortId: string, applicationData: string) => {
     if (!isConnected || !contracts.externalAPIIntegration) {
-      addNotification('error', 'Conecta tu wallet primero')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Conecta tu wallet primero'
+      })
       return
     }
 
@@ -244,10 +272,18 @@ export default function ExternalAPIPanel() {
         value: BigInt('100000000000000') // 0.0001 ETH fee
       })
 
-      addNotification('success', 'Inscripción en Shefi iniciada')
+      addNotification({
+        type: 'success',
+        title: 'Éxito',
+        message: 'Inscripción en Shefi iniciada'
+      })
     } catch (err) {
       console.error('Error enrolling in Shefi:', err)
-      addNotification('error', 'Error al inscribirse en Shefi')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Error al inscribirse en Shefi'
+      })
     } finally {
       setLoading(false)
     }
@@ -255,7 +291,11 @@ export default function ExternalAPIPanel() {
 
   const createTalentProfile = async (profileData: string) => {
     if (!isConnected || !contracts.externalAPIIntegration) {
-      addNotification('error', 'Conecta tu wallet primero')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Conecta tu wallet primero'
+      })
       return
     }
 
@@ -270,10 +310,18 @@ export default function ExternalAPIPanel() {
         value: BigInt('100000000000000') // 0.0001 ETH fee
       })
 
-      addNotification('success', 'Perfil de Talent creado')
+      addNotification({
+        type: 'success',
+        title: 'Éxito',
+        message: 'Perfil de Talent creado'
+      })
     } catch (err) {
       console.error('Error creating talent profile:', err)
-      addNotification('error', 'Error al crear perfil de Talent')
+      addNotification({
+        type: 'error',
+        title: 'Error',
+        message: 'Error al crear perfil de Talent'
+      })
     } finally {
       setLoading(false)
     }
@@ -292,7 +340,7 @@ export default function ExternalAPIPanel() {
 
   return (
     <div className="space-y-8">
-      <NotificationSystem />
+      <NotificationSystem notifications={[]} onRemove={() => {}} />
       
       {/* Header */}
       <div className="text-center">
