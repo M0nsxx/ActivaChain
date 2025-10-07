@@ -24,12 +24,12 @@ export default function SobreNosotrosPage() {
       isFounder: true
     },
     {
-      name: "Danpin",
-      role: "Co-Founder & Web3 Developer",
-      description: "Co-fundador y desarrollador Web3 especializado en frontend y contratos inteligentes. Crea experiencias digitales innovadoras y funcionales.",
-      avatar: "👨‍💻",
-      skills: ["Web3 Development", "Smart Contracts", "Frontend", "Blockchain"],
-      gradient: "from-blue-500 to-cyan-500",
+      name: "M0nsxx",
+      role: "Co-Founder & UX/UI Designer",
+      description: "Co-fundadora y diseñadora UX/UI especializada en crear interfaces intuitivas y accesibles. Diseña experiencias que hacen la tecnología blockchain accesible para todos.",
+      avatar: "🎨",
+      skills: ["UX/UI Design", "User Research", "Accessibility", "Design Systems"],
+      gradient: "from-red-500 to-orange-500",
       isFounder: false
     },
     {
@@ -42,16 +42,16 @@ export default function SobreNosotrosPage() {
       isFounder: false
     },
     {
-      name: "M0nsxx",
-      role: "Co-Founder & UX/UI Designer",
-      description: "Co-fundadora y diseñadora UX/UI especializada en crear interfaces intuitivas y accesibles. Diseña experiencias que hacen la tecnología blockchain accesible para todos.",
-      avatar: "🎨",
-      skills: ["UX/UI Design", "User Research", "Accessibility", "Design Systems"],
-      gradient: "from-red-500 to-orange-500",
+      name: "Noemi",
+      role: "Co-Founder & Community Manager",
+      description: "Co-fundadora y gestora de comunidad especializada en construir conexiones auténticas. Fomenta un ecosistema inclusivo donde cada miembro se siente valorado y empoderado.",
+      avatar: "🤝",
+      skills: ["Community Management", "Social Media", "Event Planning", "Networking"],
+      gradient: "from-pink-500 to-rose-500",
       isFounder: false
     },
     {
-      name: "Vai0sx",
+      name: "Vaiosx",
       role: "Co-Founder & Blockchain Developer",
       description: "Co-fundador y desarrollador blockchain especializado en arquitectura descentralizada. Construye la infraestructura técnica que hace posible el ecosistema ActivaChain.",
       avatar: "⚡",
