@@ -123,6 +123,23 @@ export function AdvancedReputationSystem() {
   const reputation = reputationData as ReputationData | undefined
   const detailed = detailedReputation as DetailedReputationData | undefined
   
+  // Datos de fallback para evitar NaN
+  const safeReputation = reputation ? {
+    score: reputation.score || BigInt(0),
+    endorsementCount: reputation.endorsementCount || BigInt(0),
+    isVerified: reputation.isVerified || false,
+    verificationLevel: reputation.verificationLevel || BigInt(0),
+    activityStreak: reputation.activityStreak || BigInt(0),
+    timeSinceLastActivity: reputation.timeSinceLastActivity || BigInt(0)
+  } : {
+    score: BigInt(0),
+    endorsementCount: BigInt(0),
+    isVerified: false,
+    verificationLevel: BigInt(0),
+    activityStreak: BigInt(0),
+    timeSinceLastActivity: BigInt(0)
+  }
+  
   const getVerificationLevelText = (level: bigint) => {
     switch (Number(level)) {
       case 0: return 'No verificado'
@@ -245,7 +262,7 @@ export function AdvancedReputationSystem() {
     )
   }
   
-  const reputationLevel = reputation ? getReputationLevel(reputation.score) : null
+  const reputationLevel = getReputationLevel(safeReputation.score)
   
   return (
     <div className="space-y-8">
@@ -300,100 +317,96 @@ export function AdvancedReputationSystem() {
           {/* Reputación Principal */}
           <GlassCard className="p-6">
             <h3 className="text-xl font-bold text-white mb-4">Tu Reputación</h3>
-            {reputation && (
-              <div className="space-y-6">
-                <div className="text-center">
-                  <div className="text-6xl mb-2">{reputationLevel?.icon}</div>
-                  <h4 className={`text-2xl font-bold ${reputationLevel?.color}`}>
-                    {reputationLevel?.level}
-                  </h4>
-                  <p className="text-3xl font-bold text-white mt-2">
-                    {Number(reputation.score).toLocaleString()} pts
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 bg-white/10 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-white">
-                      {Number(reputation.endorsementCount)}
-                    </div>
-                    <div className="text-white/70 text-sm">Endorsements</div>
-                  </div>
-                  <div className="p-4 bg-white/10 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-white">
-                      {Number(reputation.activityStreak)}
-                    </div>
-                    <div className="text-white/70 text-sm">Días Activo</div>
-                  </div>
-                </div>
-                
-                <div className="p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/70">Verificación:</span>
-                    <span className={`font-semibold ${getVerificationLevelColor(reputation.verificationLevel)}`}>
-                      {getVerificationLevelText(reputation.verificationLevel)}
-                    </span>
-                  </div>
-                </div>
-                
-                <button
-                  onClick={handleRecordActivity}
-                  className="w-full neural-button py-3"
-                >
-                  Registrar Actividad Diaria
-                </button>
+            <div className="space-y-6">
+              <div className="text-center">
+                <div className="text-6xl mb-2">{reputationLevel?.icon}</div>
+                <h4 className={`text-2xl font-bold ${reputationLevel?.color}`}>
+                  {reputationLevel?.level}
+                </h4>
+                <p className="text-3xl font-bold text-white mt-2">
+                  {Number(safeReputation.score).toLocaleString()} pts
+                </p>
               </div>
-            )}
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 bg-white/10 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-white">
+                    {Number(safeReputation.endorsementCount)}
+                  </div>
+                  <div className="text-white/70 text-sm">Endorsements</div>
+                </div>
+                <div className="p-4 bg-white/10 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-white">
+                    {Number(safeReputation.activityStreak)}
+                  </div>
+                  <div className="text-white/70 text-sm">Días Activo</div>
+                </div>
+              </div>
+              
+              <div className="p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
+                <div className="flex items-center justify-between">
+                  <span className="text-white/70">Verificación:</span>
+                  <span className={`font-semibold ${getVerificationLevelColor(safeReputation.verificationLevel)}`}>
+                    {getVerificationLevelText(safeReputation.verificationLevel)}
+                  </span>
+                </div>
+              </div>
+                
+              <button
+                onClick={handleRecordActivity}
+                className="w-full neural-button py-3"
+              >
+                Registrar Actividad Diaria
+              </button>
+            </div>
           </GlassCard>
           
           {/* Reputación Detallada */}
           <GlassCard className="p-6">
             <h3 className="text-xl font-bold text-white mb-4">Desglose Detallado</h3>
-            {detailed && (
-              <div className="space-y-4">
-                <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
-                  <span className="text-white/70">Puntuación Base:</span>
-                  <span className="text-white font-semibold">
-                    {Number(detailed.baseScore).toLocaleString()}
+            <div className="space-y-4">
+              <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
+                <span className="text-white/70">Puntuación Base:</span>
+                <span className="text-white font-semibold">
+                  {detailed ? Number(detailed.baseScore).toLocaleString() : '0'}
+                </span>
+              </div>
+              
+              <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
+                <span className="text-white/70">Decay Temporal:</span>
+                <span className="text-red-400 font-semibold">
+                  -{detailed ? Number(detailed.timeDecay).toLocaleString() : '0'}
+                </span>
+              </div>
+              
+              <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
+                <span className="text-white/70">Bonus Endorsements:</span>
+                <span className="text-green-400 font-semibold">
+                  +{detailed ? Number(detailed.endorsementBonus).toLocaleString() : '0'}
+                </span>
+              </div>
+              
+              <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
+                <span className="text-white/70">Puntuación Actividad:</span>
+                <span className="text-blue-400 font-semibold">
+                  +{detailed ? Number(detailed.activityScore).toLocaleString() : '0'}
+                </span>
+              </div>
+              
+              <div className="border-t border-white/20 pt-4">
+                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
+                  <span className="text-white font-semibold">Total:</span>
+                  <span className="text-white font-bold text-xl">
+                    {detailed ? Number(detailed.totalScore).toLocaleString() : '0'}
                   </span>
-                </div>
-                
-                <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
-                  <span className="text-white/70">Decay Temporal:</span>
-                  <span className="text-red-400 font-semibold">
-                    -{Number(detailed.timeDecay).toLocaleString()}
-                  </span>
-                </div>
-                
-                <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
-                  <span className="text-white/70">Bonus Endorsements:</span>
-                  <span className="text-green-400 font-semibold">
-                    +{Number(detailed.endorsementBonus).toLocaleString()}
-                  </span>
-                </div>
-                
-                <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
-                  <span className="text-white/70">Puntuación Actividad:</span>
-                  <span className="text-blue-400 font-semibold">
-                    +{Number(detailed.activityScore).toLocaleString()}
-                  </span>
-                </div>
-                
-                <div className="border-t border-white/20 pt-4">
-                  <div className="flex justify-between items-center p-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
-                    <span className="text-white font-semibold">Total:</span>
-                    <span className="text-white font-bold text-xl">
-                      {Number(detailed.totalScore).toLocaleString()}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="text-xs text-white/50 space-y-1">
-                  <p>Última actualización: {new Date(Number(detailed.lastUpdate) * 1000).toLocaleDateString()}</p>
-                  <p>Última actividad: {new Date(Number(detailed.lastActivity) * 1000).toLocaleDateString()}</p>
                 </div>
               </div>
-            )}
+              
+              <div className="text-xs text-white/50 space-y-1">
+                <p>Última actualización: {detailed ? new Date(Number(detailed.lastUpdate) * 1000).toLocaleDateString() : 'Nunca'}</p>
+                <p>Última actividad: {detailed ? new Date(Number(detailed.lastActivity) * 1000).toLocaleDateString() : 'Nunca'}</p>
+              </div>
+            </div>
           </GlassCard>
         </div>
       )}

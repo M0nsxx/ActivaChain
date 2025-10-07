@@ -91,6 +91,9 @@ export function Header() {
     { icon: '🎨', label: 'NFTs', action: navigateToNFTs },
     { icon: '⭐', label: 'Reputación', action: navigateToReputacion },
     { icon: '🤝', label: 'Comunidad', action: navigateToComunidad },
+    { icon: '🌐', label: 'IPFS', action: () => router.push('/ipfs') },
+    { icon: '🔔', label: 'Notificaciones', action: () => router.push('/notificaciones') },
+    { icon: '🔗', label: 'APIs', action: () => router.push('/apis') },
     { icon: '👥', label: 'Sobre Nosotros', action: () => router.push('/sobre-nosotros') },
     { icon: '🏛️', label: 'Gobernanza', action: () => scrollToSection('governance'), special: true },
     { icon: '📊', label: 'Panel de Control', action: () => router.push('/dashboard') }

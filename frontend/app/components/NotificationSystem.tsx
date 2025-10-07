@@ -28,10 +28,13 @@ const getExplorerUrl = (hash: string, network?: string) => {
 }
 
 export function NotificationSystem({ notifications, onRemove, currentNetwork }: NotificationSystemProps) {
+  // Asegurar que notifications siempre sea un array
+  const safeNotifications = notifications || []
+  
   useEffect(() => {
     const timers: NodeJS.Timeout[] = []
     
-    notifications.forEach(notification => {
+    safeNotifications.forEach(notification => {
       if (notification.autoClose !== false && notification.type !== 'loading') {
         const duration = notification.duration || (notification.type === 'error' ? 8000 : 5000)
         const timer = setTimeout(() => {
@@ -46,7 +49,7 @@ export function NotificationSystem({ notifications, onRemove, currentNetwork }: 
     return () => {
       timers.forEach(timer => clearTimeout(timer))
     }
-  }, [notifications, onRemove])
+  }, [safeNotifications, onRemove])
 
   const getIcon = (type: Notification['type']) => {
     switch (type) {
@@ -76,7 +79,7 @@ export function NotificationSystem({ notifications, onRemove, currentNetwork }: 
   return (
     <div className="fixed top-4 right-4 z-[9999] flex flex-col gap-3 max-w-sm w-full">
       <AnimatePresence mode="popLayout">
-        {notifications.map((notification) => (
+        {safeNotifications.map((notification) => (
           <motion.div
             key={notification.id}
             initial={{ opacity: 0, x: 300, scale: 0.8 }}
