@@ -154,8 +154,8 @@ export function CommunitySystem() {
   const { addNotification } = useNotifications()
   
   const [activeTab, setActiveTab] = useState<'mentors' | 'workshops' | 'events' | 'create'>('workshops')
-  const [selectedWorkshop, setSelectedWorkshop] = useState<number>(0)
-  const [selectedEvent, setSelectedEvent] = useState<number>(0)
+  const [selectedWorkshop, setSelectedWorkshop] = useState<number>(1)
+  const [selectedEvent, setSelectedEvent] = useState<number>(1)
   
   // Estados para formularios
   const [mentorForm, setMentorForm] = useState({
@@ -829,6 +829,8 @@ export function CommunitySystem() {
               </div>
             ) : selectedWorkshop > 0 && exampleWorkshops.find(w => w.id === selectedWorkshop) ? (
               (() => {
+                console.log('Selected workshop:', selectedWorkshop)
+                console.log('Available workshops:', exampleWorkshops.map(w => w.id))
                 const workshop = exampleWorkshops.find(w => w.id === selectedWorkshop)!
                 return (
                   <div className="space-y-4">
@@ -987,6 +989,8 @@ export function CommunitySystem() {
               </div>
             ) : selectedEvent > 0 && exampleEvents.find(e => e.id === selectedEvent) ? (
               (() => {
+                console.log('Selected event:', selectedEvent)
+                console.log('Available events:', exampleEvents.map(e => e.id))
                 const event = exampleEvents.find(e => e.id === selectedEvent)!
                 return (
                   <div className="space-y-4">
