@@ -733,7 +733,7 @@ export function CommunitySystem() {
           <GlassCard className="p-6">
             <h3 className="text-xl font-bold text-white mb-4">Workshops Disponibles</h3>
             <div className="space-y-4">
-              {false && activeWorkshops && activeWorkshops.length > 0 ? (
+              {false && activeWorkshops && activeWorkshops?.length > 0 ? (
                 activeWorkshops?.map((workshopId) => (
                   <button
                     key={Number(workshopId)}
@@ -896,7 +896,7 @@ export function CommunitySystem() {
           <GlassCard className="p-6">
             <h3 className="text-xl font-bold text-white mb-4">Eventos Disponibles</h3>
             <div className="space-y-4">
-              {false && activeEvents && activeEvents.length > 0 ? (
+              {false && activeEvents && activeEvents?.length > 0 ? (
                 activeEvents?.map((eventId) => (
                   <button
                     key={Number(eventId)}
