@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useAccount, useReadContract, useWriteContract } from 'wagmi'
+import { useSearchParams } from 'next/navigation'
 import { useContracts } from '../lib/useContracts'
 import GlassCard from './GlassCard'
 import { NotificationSystem, useNotifications } from './NotificationSystem'
@@ -152,10 +153,19 @@ export function CommunitySystem() {
   const { address, isConnected } = useAccount()
   const contracts = useContracts()
   const { addNotification } = useNotifications()
+  const searchParams = useSearchParams()
   
   const [activeTab, setActiveTab] = useState<'mentors' | 'workshops' | 'events' | 'create'>('workshops')
   const [selectedWorkshop, setSelectedWorkshop] = useState<number>(1)
   const [selectedEvent, setSelectedEvent] = useState<number>(1)
+
+  // Detectar parámetro de URL para establecer tab activo
+  useEffect(() => {
+    const tab = searchParams.get('tab')
+    if (tab && ['mentors', 'workshops', 'events', 'create'].includes(tab)) {
+      setActiveTab(tab as 'mentors' | 'workshops' | 'events' | 'create')
+    }
+  }, [searchParams])
   
   // Estados para formularios
   const [mentorForm, setMentorForm] = useState({
@@ -212,7 +222,7 @@ export function CommunitySystem() {
     abi: COMMUNITY_ABI,
     functionName: 'getWorkshopInfo',
     args: [BigInt(selectedWorkshop)],
-    query: { enabled: !!contracts.community && selectedWorkshop >= 0 }
+    query: { enabled: !!contracts.community && selectedWorkshop > 0 }
   })
   
   // Leer información de evento seleccionado
@@ -221,7 +231,7 @@ export function CommunitySystem() {
     abi: COMMUNITY_ABI,
     functionName: 'getEventInfo',
     args: [BigInt(selectedEvent)],
-    query: { enabled: !!contracts.community && selectedEvent >= 0 }
+    query: { enabled: !!contracts.community && selectedEvent > 0 }
   })
   
   const { writeContract } = useWriteContract()
@@ -733,7 +743,13 @@ export function CommunitySystem() {
           <GlassCard className="p-6">
             <h3 className="text-xl font-bold text-white mb-4">Workshops Disponibles</h3>
             <div className="space-y-4">
-              {false && activeWorkshops && activeWorkshops?.length > 0 ? (
+              {(() => {
+                console.log('activeWorkshops:', activeWorkshops);
+                console.log('activeWorkshops type:', typeof activeWorkshops);
+                console.log('activeWorkshops isArray:', Array.isArray(activeWorkshops));
+                console.log('activeWorkshops length:', activeWorkshops?.length);
+                return activeWorkshops && Array.isArray(activeWorkshops) && activeWorkshops!.length > 0;
+              })() ? (
                 activeWorkshops?.map((workshopId) => (
                   <button
                     key={Number(workshopId)}
@@ -896,7 +912,13 @@ export function CommunitySystem() {
           <GlassCard className="p-6">
             <h3 className="text-xl font-bold text-white mb-4">Eventos Disponibles</h3>
             <div className="space-y-4">
-              {false && activeEvents && activeEvents?.length > 0 ? (
+              {(() => {
+                console.log('activeEvents:', activeEvents);
+                console.log('activeEvents type:', typeof activeEvents);
+                console.log('activeEvents isArray:', Array.isArray(activeEvents));
+                console.log('activeEvents length:', activeEvents?.length);
+                return activeEvents && Array.isArray(activeEvents) && activeEvents!.length > 0;
+              })() ? (
                 activeEvents?.map((eventId) => (
                   <button
                     key={Number(eventId)}
@@ -1218,6 +1240,7 @@ export function CommunitySystem() {
           </GlassCard>
         </div>
       )}
+
     </div>
   )
 }

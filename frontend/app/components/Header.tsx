@@ -56,6 +56,10 @@ export function Header() {
     router.push('/comunidad')
   }
 
+  const navigateToPrecios = () => {
+    router.push('/precios')
+  }
+
   // Detectar sección activa basada en scroll
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -111,11 +115,12 @@ export function Header() {
     { icon: '💼', label: 'MERCADO', action: () => router.push('/marketplace') },
     { icon: '🎨', label: 'NFTS', action: navigateToNFTs },
     { icon: '⭐', label: 'REPUTACIÓN', action: navigateToReputacion },
-    { icon: '🤝', label: 'COMUNIDAD', action: navigateToComunidad },
+    { icon: '💰', label: 'PRECIOS', action: navigateToPrecios },
     { icon: '🏛️', label: 'GOBERNANZA', action: () => scrollToSection('governance'), special: true }
   ]
 
   const helpSubmenuItems = [
+    { icon: '🤝', label: 'COMUNIDAD', action: navigateToComunidad },
     { icon: '👥', label: 'SOBRE NOSOTROS', action: () => router.push('/sobre-nosotros') },
     { icon: '🔔', label: 'NOTIFICACIONES', action: () => router.push('/notificaciones') },
     { icon: '🔗', label: 'APIS', action: () => router.push('/apis') },
