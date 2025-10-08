@@ -153,7 +153,7 @@ export function CommunitySystem() {
   const contracts = useContracts()
   const { addNotification } = useNotifications()
   
-  const [activeTab, setActiveTab] = useState<'mentors' | 'workshops' | 'events' | 'create'>('mentors')
+  const [activeTab, setActiveTab] = useState<'mentors' | 'workshops' | 'events' | 'create'>('workshops')
   const [selectedWorkshop, setSelectedWorkshop] = useState<number>(0)
   const [selectedEvent, setSelectedEvent] = useState<number>(0)
   
@@ -225,6 +225,110 @@ export function CommunitySystem() {
   })
   
   const { writeContract } = useWriteContract()
+  
+  // Workshops de ejemplo para mostrar cuando no hay workshops del contrato
+  const exampleWorkshops = [
+    {
+      id: 1,
+      title: "Introducción a Smart Contracts",
+      description: "Aprende los fundamentos de los contratos inteligentes, desde conceptos básicos hasta implementación práctica con Solidity.",
+      startTime: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 días desde ahora
+      endTime: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000 + 2 * 60 * 60 * 1000), // +2 horas
+      maxParticipants: 25,
+      currentParticipants: 12,
+      price: 0.05,
+      isActive: true,
+      organizer: "0x1234...5678"
+    },
+    {
+      id: 2,
+      title: "DeFi para Principiantes",
+      description: "Explora el mundo de las finanzas descentralizadas: yield farming, liquidity pools, y protocolos DeFi más populares.",
+      startTime: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000), // 14 días desde ahora
+      endTime: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000 + 3 * 60 * 60 * 1000), // +3 horas
+      maxParticipants: 30,
+      currentParticipants: 8,
+      price: 0.08,
+      isActive: true,
+      organizer: "0x9876...5432"
+    },
+    {
+      id: 3,
+      title: "NFTs y Mercados Digitales",
+      description: "Crea, mintea y comercializa NFTs. Aprende sobre estándares ERC721/ERC1155 y plataformas de mercado.",
+      startTime: new Date(Date.now() + 21 * 24 * 60 * 60 * 1000), // 21 días desde ahora
+      endTime: new Date(Date.now() + 21 * 24 * 60 * 60 * 1000 + 2.5 * 60 * 60 * 1000), // +2.5 horas
+      maxParticipants: 20,
+      currentParticipants: 15,
+      price: 0.06,
+      isActive: true,
+      organizer: "0x4567...8901"
+    },
+    {
+      id: 4,
+      title: "Seguridad en Web3",
+      description: "Mejores prácticas de seguridad, auditorías de contratos, y protección de activos digitales.",
+      startTime: new Date(Date.now() + 28 * 24 * 60 * 60 * 1000), // 28 días desde ahora
+      endTime: new Date(Date.now() + 28 * 24 * 60 * 60 * 1000 + 4 * 60 * 60 * 1000), // +4 horas
+      maxParticipants: 15,
+      currentParticipants: 3,
+      price: 0.1,
+      isActive: true,
+      organizer: "0x2468...1357"
+    }
+  ]
+  
+  // Eventos de ejemplo para mostrar cuando no hay eventos del contrato
+  const exampleEvents = [
+    {
+      id: 1,
+      title: "Meetup Web3 Uruguay",
+      description: "Encuentro presencial para la comunidad Web3 de Uruguay. Networking, charlas técnicas y oportunidades de colaboración.",
+      startTime: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000), // 10 días desde ahora
+      endTime: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000 + 4 * 60 * 60 * 1000), // +4 horas
+      location: "Montevideo, Uruguay",
+      maxParticipants: 50,
+      currentParticipants: 23,
+      isActive: true,
+      organizer: "0x1111...2222"
+    },
+    {
+      id: 2,
+      title: "Hackathon Blockchain 2025",
+      description: "Competencia de desarrollo blockchain de 48 horas. Premios en ETH y oportunidades de trabajo en Web3.",
+      startTime: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000), // 20 días desde ahora
+      endTime: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000 + 48 * 60 * 60 * 1000), // +48 horas
+      location: "Online",
+      maxParticipants: 100,
+      currentParticipants: 67,
+      isActive: true,
+      organizer: "0x3333...4444"
+    },
+    {
+      id: 3,
+      title: "Workshop de Seguridad en DeFi",
+      description: "Sesión práctica sobre auditoría de contratos inteligentes y mejores prácticas de seguridad en protocolos DeFi.",
+      startTime: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), // 15 días desde ahora
+      endTime: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000 + 3 * 60 * 60 * 1000), // +3 horas
+      location: "Buenos Aires, Argentina",
+      maxParticipants: 30,
+      currentParticipants: 18,
+      isActive: true,
+      organizer: "0x5555...6666"
+    },
+    {
+      id: 4,
+      title: "Conferencia NFT Art & Culture",
+      description: "Explorando el arte digital, colecciones NFT y el futuro de la creatividad en Web3. Incluye exposición de arte digital.",
+      startTime: new Date(Date.now() + 25 * 24 * 60 * 60 * 1000), // 25 días desde ahora
+      endTime: new Date(Date.now() + 25 * 24 * 60 * 60 * 1000 + 6 * 60 * 60 * 1000), // +6 horas
+      location: "Santiago, Chile",
+      maxParticipants: 75,
+      currentParticipants: 42,
+      isActive: true,
+      organizer: "0x7777...8888"
+    }
+  ]
   
   const handleRegisterMentor = async () => {
     if (!address) return
@@ -647,7 +751,30 @@ export function CommunitySystem() {
                   </button>
                 ))
               ) : (
-                <p className="text-white/70 text-center py-8">No hay workshops disponibles</p>
+                exampleWorkshops.map((workshop) => (
+                  <button
+                    key={workshop.id}
+                    onClick={() => setSelectedWorkshop(workshop.id)}
+                    className={`w-full p-4 rounded-lg transition-all duration-300 ${
+                      selectedWorkshop === workshop.id
+                        ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30'
+                        : 'bg-white/10 hover:bg-white/20'
+                    }`}
+                  >
+                    <div className="text-left">
+                      <h4 className="text-white font-semibold">{workshop.title}</h4>
+                      <p className="text-white/70 text-sm">{workshop.description.substring(0, 80)}...</p>
+                      <div className="flex justify-between items-center mt-2">
+                        <span className="text-purple-400 text-xs">
+                          {workshop.currentParticipants}/{workshop.maxParticipants} participantes
+                        </span>
+                        <span className="text-green-400 text-xs font-semibold">
+                          {workshop.price} ETH
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+                ))
               )}
             </div>
           </GlassCard>
@@ -700,6 +827,60 @@ export function CommunitySystem() {
                   Unirse al Workshop
                 </button>
               </div>
+            ) : selectedWorkshop > 0 && exampleWorkshops.find(w => w.id === selectedWorkshop) ? (
+              (() => {
+                const workshop = exampleWorkshops.find(w => w.id === selectedWorkshop)!
+                return (
+                  <div className="space-y-4">
+                    <div className="p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
+                      <h4 className="text-white font-semibold text-lg">{workshop.title}</h4>
+                      <p className="text-white/70 mt-2">{workshop.description}</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="p-3 bg-white/10 rounded-lg">
+                        <p className="text-white/70 text-sm">Inicio:</p>
+                        <p className="text-white font-semibold">
+                          {workshop.startTime.toLocaleDateString()}
+                        </p>
+                      </div>
+                      <div className="p-3 bg-white/10 rounded-lg">
+                        <p className="text-white/70 text-sm">Fin:</p>
+                        <p className="text-white font-semibold">
+                          {workshop.endTime.toLocaleDateString()}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="p-3 bg-white/10 rounded-lg">
+                        <p className="text-white/70 text-sm">Participantes:</p>
+                        <p className="text-white font-semibold">
+                          {workshop.currentParticipants} / {workshop.maxParticipants}
+                        </p>
+                      </div>
+                      <div className="p-3 bg-white/10 rounded-lg">
+                        <p className="text-white/70 text-sm">Precio:</p>
+                        <p className="text-white font-semibold">
+                          {workshop.price} ETH
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="p-3 bg-white/10 rounded-lg">
+                      <p className="text-white/70 text-sm">Organizador:</p>
+                      <p className="text-white font-semibold">{workshop.organizer}</p>
+                    </div>
+                    
+                    <button
+                      className="w-full neural-button py-3"
+                      disabled={workshop.currentParticipants >= workshop.maxParticipants}
+                    >
+                      {workshop.currentParticipants >= workshop.maxParticipants ? 'Workshop Lleno' : 'Unirse al Workshop'}
+                    </button>
+                  </div>
+                )
+              })()
             ) : (
               <p className="text-white/70 text-center py-8">Selecciona un workshop para ver detalles</p>
             )}
@@ -731,7 +912,30 @@ export function CommunitySystem() {
                   </button>
                 ))
               ) : (
-                <p className="text-white/70 text-center py-8">No hay eventos disponibles</p>
+                exampleEvents.map((event) => (
+                  <button
+                    key={event.id}
+                    onClick={() => setSelectedEvent(event.id)}
+                    className={`w-full p-4 rounded-lg transition-all duration-300 ${
+                      selectedEvent === event.id
+                        ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30'
+                        : 'bg-white/10 hover:bg-white/20'
+                    }`}
+                  >
+                    <div className="text-left">
+                      <h4 className="text-white font-semibold">{event.title}</h4>
+                      <p className="text-white/70 text-sm">{event.description.substring(0, 80)}...</p>
+                      <div className="flex justify-between items-center mt-2">
+                        <span className="text-purple-400 text-xs">
+                          {event.currentParticipants}/{event.maxParticipants} participantes
+                        </span>
+                        <span className="text-blue-400 text-xs font-semibold">
+                          {event.location}
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+                ))
               )}
             </div>
           </GlassCard>
@@ -781,6 +985,57 @@ export function CommunitySystem() {
                   Unirse al Evento
                 </button>
               </div>
+            ) : selectedEvent > 0 && exampleEvents.find(e => e.id === selectedEvent) ? (
+              (() => {
+                const event = exampleEvents.find(e => e.id === selectedEvent)!
+                return (
+                  <div className="space-y-4">
+                    <div className="p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
+                      <h4 className="text-white font-semibold text-lg">{event.title}</h4>
+                      <p className="text-white/70 mt-2">{event.description}</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="p-3 bg-white/10 rounded-lg">
+                        <p className="text-white/70 text-sm">Inicio:</p>
+                        <p className="text-white font-semibold">
+                          {event.startTime.toLocaleDateString()}
+                        </p>
+                      </div>
+                      <div className="p-3 bg-white/10 rounded-lg">
+                        <p className="text-white/70 text-sm">Fin:</p>
+                        <p className="text-white font-semibold">
+                          {event.endTime.toLocaleDateString()}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="p-3 bg-white/10 rounded-lg">
+                      <p className="text-white/70 text-sm">Ubicación:</p>
+                      <p className="text-white font-semibold">{event.location}</p>
+                    </div>
+                    
+                    <div className="p-3 bg-white/10 rounded-lg">
+                      <p className="text-white/70 text-sm">Participantes:</p>
+                      <p className="text-white font-semibold">
+                        {event.currentParticipants} / {event.maxParticipants}
+                      </p>
+                    </div>
+                    
+                    <div className="p-3 bg-white/10 rounded-lg">
+                      <p className="text-white/70 text-sm">Organizador:</p>
+                      <p className="text-white font-semibold">{event.organizer}</p>
+                    </div>
+                    
+                    <button
+                      className="w-full neural-button py-3"
+                      disabled={event.currentParticipants >= event.maxParticipants}
+                    >
+                      {event.currentParticipants >= event.maxParticipants ? 'Evento Lleno' : 'Unirse al Evento'}
+                    </button>
+                  </div>
+                )
+              })()
             ) : (
               <p className="text-white/70 text-center py-8">Selecciona un evento para ver detalles</p>
             )}

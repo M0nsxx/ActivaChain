@@ -40,7 +40,7 @@ export function useNetworkStatus() {
         }
       case 421614:
         return {
-          name: 'Arbitrum Sepolia',
+          name: 'Red Arbitrum',
           color: 'from-purple-500 to-pink-500',
           icon: '🔶'
         }

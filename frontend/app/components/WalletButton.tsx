@@ -3,6 +3,7 @@
 import { useAppKit } from '@reown/appkit/react'
 import { useAccount, useDisconnect, useSwitchChain } from 'wagmi'
 import { useState, useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import { sepolia, arbitrumSepolia } from '@reown/appkit/networks'
 
 export function WalletButton() {
@@ -19,6 +20,7 @@ export function WalletButton() {
   const { switchChain } = useSwitchChain()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
 
   // Cerrar dropdown al hacer clic fuera
   useEffect(() => {
@@ -56,7 +58,7 @@ export function WalletButton() {
       case 11155111:
         return 'Ethereum Sepolia'
       case 421614:
-        return 'Arbitrum Sepolia'
+        return 'Red Arbitrum'
       default:
         return 'Red Desconocida'
     }
@@ -117,6 +119,19 @@ export function WalletButton() {
               </div>
 
               <div className="mb-3 sm:mb-4">
+                <button
+                  onClick={() => {
+                    router.push('/dashboard')
+                    setIsDropdownOpen(false)
+                  }}
+                  className="w-full px-2 sm:px-3 py-1.5 sm:py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 rounded-lg hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300 text-xs sm:text-sm font-medium flex items-center gap-2"
+                >
+                  <span>📊</span>
+                  <span>Panel de Control</span>
+                </button>
+              </div>
+
+              <div className="mb-3 sm:mb-4">
                 <div className="text-white/70 text-xs mb-2">Cambiar Red</div>
                 <div className="space-y-2">
                   <button
@@ -143,7 +158,7 @@ export function WalletButton() {
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                      <span className="text-xs sm:text-sm">Arbitrum Sepolia</span>
+                      <span className="text-xs sm:text-sm">Red Arbitrum</span>
                     </div>
                   </button>
                 </div>

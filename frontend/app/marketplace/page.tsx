@@ -143,7 +143,7 @@ export default function MarketplacePage() {
   
   // Determinar la red actual
   const currentNetwork = chainId === 11155111 ? 'Ethereum Sepolia' : 
-                        chainId === 421614 ? 'Arbitrum Sepolia' : 'Ethereum Sepolia'
+                        chainId === 421614 ? 'Red Arbitrum' : 'Ethereum Sepolia'
   
   // Función para determinar si un servicio debe mostrarse en la red actual
   const shouldShowService = useMemo(() => (serviceId: number) => {

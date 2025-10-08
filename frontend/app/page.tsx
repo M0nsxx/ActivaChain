@@ -156,8 +156,8 @@ export default function HomePage() {
           <div className="space-y-6 sm:space-y-8">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <NetworkBadge />
-              <div className="px-3 sm:px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-xs sm:text-sm font-bold animate-pulse">
-                🚀 Lanzamiento ETH Uruguay 2025
+              <div className="px-3 sm:px-4 py-2 bg-yellow-500/20 text-yellow-400 rounded-full text-xs sm:text-sm font-bold animate-pulse">
+                🏆 Ganadores ETH Uruguay 2025 - 1er Lugar
               </div>
             </div>
             
@@ -343,6 +343,51 @@ export default function HomePage() {
               </div>
             </GlassCard>
           </div>
+        </div>
+      </section>
+
+      {/* Sección de Premio - Ganadores ETH Uruguay 2025 */}
+      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10"></div>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <GlassCard gradient className="p-6 sm:p-8 lg:p-12 text-center">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex justify-center">
+                <div className="text-6xl sm:text-7xl lg:text-8xl animate-bounce">🏆</div>
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                  ¡Ganadores del 1er Lugar!
+                </span>
+              </h2>
+              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-semibold">
+                ETH Uruguay 2025 - Hackathon
+              </p>
+              <p className="text-base sm:text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
+                ActivaChain fue reconocida como la mejor plataforma Web3 para mujeres, 
+                destacando por su innovación en gamificación, NFTs, ZK proofs y su impacto 
+                real en la comunidad femenina de Uruguay y Latinoamérica.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/70 text-sm sm:text-base">
+                <div className="flex items-center gap-2">
+                  <span>✅</span>
+                  <span>Innovación en Web3</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span>✅</span>
+                  <span>Impacto Social</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span>✅</span>
+                  <span>Implementación Completa</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span>✅</span>
+                  <span>Comunidad Activa</span>
+                </div>
+              </div>
+            </div>
+          </GlassCard>
         </div>
       </section>
 

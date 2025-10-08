@@ -15,10 +15,10 @@ export function Footer() {
           <div className="space-y-3 sm:space-y-4">
             <h4 className="font-bold text-white text-sm sm:text-base">Plataforma</h4>
             <ul className="space-y-2 text-white/70 text-sm sm:text-base">
-              <li><a href="#learn" className="hover:text-white transition-colors">Aprender</a></li>
-              <li><a href="#marketplace" className="hover:text-white transition-colors">Mercado</a></li>
-              <li><a href="#governance" className="hover:text-white transition-colors">Gobernanza</a></li>
-              <li><a href="#reputation" className="hover:text-white transition-colors">Reputación</a></li>
+              <li><a href="/aprender" className="hover:text-white transition-colors">Aprender</a></li>
+              <li><a href="/marketplace" className="hover:text-white transition-colors">Mercado</a></li>
+              <li><a href="/gobernanza" className="hover:text-white transition-colors">Gobernanza</a></li>
+              <li><a href="/reputacion" className="hover:text-white transition-colors">Reputación</a></li>
             </ul>
           </div>
           
@@ -26,8 +26,7 @@ export function Footer() {
             <h4 className="font-bold text-white text-sm sm:text-base">Comunidad</h4>
             <ul className="space-y-2 text-white/70 text-sm sm:text-base">
               <li><a href="#" className="hover:text-white transition-colors">Discord</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Twitter</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="https://x.com/activachain" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">X</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
             </ul>
           </div>
@@ -35,10 +34,10 @@ export function Footer() {
           <div className="space-y-3 sm:space-y-4">
             <h4 className="font-bold text-white text-sm sm:text-base">Legal</h4>
             <ul className="space-y-2 text-white/70 text-sm sm:text-base">
-              <li><a href="#" className="hover:text-white transition-colors">Términos</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacidad</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Cookies</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contacto</a></li>
+              <li><a href="/terminos" className="hover:text-white transition-colors">Términos</a></li>
+              <li><a href="/privacidad" className="hover:text-white transition-colors">Privacidad</a></li>
+              <li><a href="/cookies" className="hover:text-white transition-colors">Cookies</a></li>
+              <li><a href="/contacto" className="hover:text-white transition-colors">Contacto</a></li>
             </ul>
           </div>
         </div>

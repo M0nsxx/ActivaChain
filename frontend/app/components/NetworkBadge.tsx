@@ -15,7 +15,7 @@ export function NetworkBadge() {
         }
       case 421614:
         return {
-          name: 'Arbitrum Sepolia',
+          name: 'Red Arbitrum',
           color: 'bg-blue-500/20 text-blue-400'
         }
       default:
@@ -39,7 +39,6 @@ export function NetworkBadge() {
   return (
     <div className={`px-3 py-1 rounded-full text-xs font-bold ${networkInfo.color}`}>
       {networkInfo.name}
-      {chainId === 421614 && ' (Maldo Bounty)'}
     </div>
   )
 }

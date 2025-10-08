@@ -104,7 +104,7 @@ export function TokenBalance() {
                 rel="noopener noreferrer"
                 className="text-purple-400 hover:text-purple-300 text-xs block transition-colors"
               >
-                → Arbitrum Sepolia Faucet
+                → Red Arbitrum Faucet
               </a>
               <a 
                 href="https://bridge.arbitrum.io/" 

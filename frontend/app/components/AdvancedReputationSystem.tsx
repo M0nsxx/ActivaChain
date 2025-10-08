@@ -368,28 +368,28 @@ export function AdvancedReputationSystem() {
               <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
                 <span className="text-white/70">Puntuación Base:</span>
                 <span className="text-white font-semibold">
-                  {detailed ? Number(detailed.baseScore).toLocaleString() : '0'}
+                  {detailed && detailed.baseScore ? Number(detailed.baseScore).toLocaleString() : '0'}
                 </span>
               </div>
               
               <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
                 <span className="text-white/70">Decay Temporal:</span>
                 <span className="text-red-400 font-semibold">
-                  -{detailed ? Number(detailed.timeDecay).toLocaleString() : '0'}
+                  -{detailed && detailed.timeDecay ? Number(detailed.timeDecay).toLocaleString() : '0'}
                 </span>
               </div>
               
               <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
                 <span className="text-white/70">Bonus Endorsements:</span>
                 <span className="text-green-400 font-semibold">
-                  +{detailed ? Number(detailed.endorsementBonus).toLocaleString() : '0'}
+                  +{detailed && detailed.endorsementBonus ? Number(detailed.endorsementBonus).toLocaleString() : '0'}
                 </span>
               </div>
               
               <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
                 <span className="text-white/70">Puntuación Actividad:</span>
                 <span className="text-blue-400 font-semibold">
-                  +{detailed ? Number(detailed.activityScore).toLocaleString() : '0'}
+                  +{detailed && detailed.activityScore ? Number(detailed.activityScore).toLocaleString() : '0'}
                 </span>
               </div>
               
@@ -397,14 +397,14 @@ export function AdvancedReputationSystem() {
                 <div className="flex justify-between items-center p-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
                   <span className="text-white font-semibold">Total:</span>
                   <span className="text-white font-bold text-xl">
-                    {detailed ? Number(detailed.totalScore).toLocaleString() : '0'}
+                    {detailed && detailed.totalScore ? Number(detailed.totalScore).toLocaleString() : '0'}
                   </span>
                 </div>
               </div>
               
               <div className="text-xs text-white/50 space-y-1">
-                <p>Última actualización: {detailed ? new Date(Number(detailed.lastUpdate) * 1000).toLocaleDateString() : 'Nunca'}</p>
-                <p>Última actividad: {detailed ? new Date(Number(detailed.lastActivity) * 1000).toLocaleDateString() : 'Nunca'}</p>
+                <p>Última actualización: {detailed && detailed.lastUpdate ? new Date(Number(detailed.lastUpdate) * 1000).toLocaleDateString() : 'Nunca'}</p>
+                <p>Última actividad: {detailed && detailed.lastActivity ? new Date(Number(detailed.lastActivity) * 1000).toLocaleDateString() : 'Nunca'}</p>
               </div>
             </div>
           </GlassCard>
