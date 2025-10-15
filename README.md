@@ -212,16 +212,16 @@ Red: `421614` | Explorer: [sepolia.arbiscan.io](https://sepolia.arbiscan.io)
 
 | Contrato | Dirección | Estado | Función |
 |----------|-----------|--------|---------|
-| 🏆 **UnifiedReputationSystem** | [`0x539Baccf23AC6288aEC9a8ef194624c3F687AAeE`](https://sepolia.arbiscan.io/address/0x539Baccf23AC6288aEC9a8ef194624c3F687AAeE) | ✅ **DESPLEGADO** | Sistema unificado de reputación con decay |
-| 💰 **ActivaToken** | [`0xa7218aBd05Aba7683e8f1545F71dC7E923328D54`](https://sepolia.arbiscan.io/address/0xa7218aBd05Aba7683e8f1545F71dC7E923328D54) | ✅ **DESPLEGADO** | Token principal con staking 10% APY |
-| 🎨 **ActivaNFT** | [`0xa31cC5889bddaFBD2C7740a9997CB90aC1d22b60`](https://sepolia.arbiscan.io/address/0xa31cC5889bddaFBD2C7740a9997CB90aC1d22b60) | ✅ **DESPLEGADO** | Certificaciones Soulbound |
-| 🛒 **ActivaMarketplaceMultiToken** | [`0x1f873dA3E4B2Cf2C85FbB205dB94Ae384491d149`](https://sepolia.arbiscan.io/address/0x1f873dA3E4B2Cf2C85FbB205dB94Ae384491d149) | ✅ **DESPLEGADO** | Marketplace multi-token |
-| 🏛️ **ActivaGovernance** | [`0x6E9a5e4cc6A86C449b0972A0EBfc63456BF9dD5c`](https://sepolia.arbiscan.io/address/0x6E9a5e4cc6A86C449b0972A0EBfc63456BF9dD5c) | ✅ **DESPLEGADO** | Sistema de gobernanza DAO |
-| 🎮 **GamificationSystem** | [`0xD8C0527636936f320d6Ce37A0d01B899CE4ff6e3`](https://sepolia.arbiscan.io/address/0xD8C0527636936f320d6Ce37A0d01B899CE4ff6e3) | ✅ **DESPLEGADO** | Sistema de logros y badges |
-| 👥 **CommunitySystem** | [`0xbc135184E879AaD3C0974E4F554c658F4d35fBCb`](https://sepolia.arbiscan.io/address/0xbc135184E879AaD3C0974E4F554c658F4d35fBCb) | ✅ **DESPLEGADO** | Sistema de comunidad y mentores |
-| 📁 **IPFSIntegration** | [`0x840c198dF7Ada931AC47DB716Cbb25e77BeE2B62`](https://sepolia.arbiscan.io/address/0x840c198dF7Ada931AC47DB716Cbb25e77BeE2B62) | ✅ **DESPLEGADO** | Almacenamiento descentralizado |
-| 🔔 **PushNotificationSystem** | [`0xD7298486554822fc2d666F35B833fd9296eb96C6`](https://sepolia.arbiscan.io/address/0xD7298486554822fc2d666F35B833fd9296eb96C6) | ✅ **DESPLEGADO** | Sistema de notificaciones push |
-| 🔗 **ExternalAPIIntegration** | [`0x574037D27d74F27502de001bdcD06000e4Ca6962`](https://sepolia.arbiscan.io/address/0x574037D27d74F27502de001bdcD06000e4Ca6962) | ✅ **DESPLEGADO** | Integración con APIs externas |
+| 🏆 **UnifiedReputationSystem** | [`0x74d7e25B0A42e76a2a9e106e3F45D12752836c8a`](https://sepolia.arbiscan.io/address/0x74d7e25B0A42e76a2a9e106e3F45D12752836c8a) | ✅ **DESPLEGADO** | Sistema unificado de reputación con decay |
+| 💰 **ActivaToken** | [`0x0E660759b190fd22DA58c9b36E98934bA847bA0c`](https://sepolia.arbiscan.io/address/0x0E660759b190fd22DA58c9b36E98934bA847bA0c) | ✅ **DESPLEGADO** | Token principal con staking 10% APY |
+| 🎨 **ActivaNFT** | [`0x07B3CE7A9355B2dbb7f5C00c8aFE243438a6c828`](https://sepolia.arbiscan.io/address/0x07B3CE7A9355B2dbb7f5C00c8aFE243438a6c828) | ✅ **DESPLEGADO** | Certificaciones Soulbound |
+| 🛒 **ActivaMarketplaceMultiToken** | [`0x8083dc18681D0f2148268Bd37EB37B59d651C413`](https://sepolia.arbiscan.io/address/0x8083dc18681D0f2148268Bd37EB37B59d651C413) | ✅ **DESPLEGADO** | Marketplace multi-token |
+| 🏛️ **ActivaGovernance** | [`0x8C2010aE5e64c2a0884F00978e69cf11Ca1FC3c9`](https://sepolia.arbiscan.io/address/0x8C2010aE5e64c2a0884F00978e69cf11Ca1FC3c9) | ✅ **DESPLEGADO** | Sistema de gobernanza DAO |
+| 🎮 **GamificationSystem** | [`0x97816BdD1E663Ee1E24F597Fed82E5019c297CCf`](https://sepolia.arbiscan.io/address/0x97816BdD1E663Ee1E24F597Fed82E5019c297CCf) | ✅ **DESPLEGADO** | Sistema de logros y badges |
+| 👥 **CommunitySystem** | [`0xF42aE39CE7c762cddE752D869de8e21C9Cd3ea5A`](https://sepolia.arbiscan.io/address/0xF42aE39CE7c762cddE752D869de8e21C9Cd3ea5A) | ✅ **DESPLEGADO** | Sistema de comunidad y mentores |
+| 📁 **IPFSIntegration** | [`0xa8F5E0156Fa15b86f50719eCD1466d308947c7c6`](https://sepolia.arbiscan.io/address/0xa8F5E0156Fa15b86f50719eCD1466d308947c7c6) | ✅ **DESPLEGADO** | Almacenamiento descentralizado |
+| 🔔 **PushNotificationSystem** | [`0xB9742668B5f231EfA594A6055CD2e778E1bf6E61`](https://sepolia.arbiscan.io/address/0xB9742668B5f231EfA594A6055CD2e778E1bf6E61) | ✅ **DESPLEGADO** | Sistema de notificaciones push |
+| 🔗 **ExternalAPIIntegration** | [`0x3C4060F9aBa183dc3eadf8e6Cc1681352b6f8162`](https://sepolia.arbiscan.io/address/0x3C4060F9aBa183dc3eadf8e6Cc1681352b6f8162) | ✅ **DESPLEGADO** | Integración con APIs externas |
 
 ### 🔧 **Funciones de Cada Contrato**
 
@@ -431,9 +431,9 @@ Todos los contratos están **listos para integración** con Maldo.uy:
 - **ActivaMarketplaceMultiToken:** `0x9b5dEfCe5f8eC4762Dd63077063677F3C624d807`
 
 **Arbitrum Sepolia (Recomendado para producción):**
-- **UnifiedReputationSystem:** `0x539Baccf23AC6288aEC9a8ef194624c3F687AAeE`
-- **ActivaToken:** `0xa7218aBd05Aba7683e8f1545F71dC7E923328D54`
-- **ActivaMarketplaceMultiToken:** `0x1f873dA3E4B2Cf2C85FbB205dB94Ae384491d149`
+- **UnifiedReputationSystem:** `0x74d7e25B0A42e76a2a9e106e3F45D12752836c8a`
+- **ActivaToken:** `0x0E660759b190fd22DA58c9b36E98934bA847bA0c`
+- **ActivaMarketplaceMultiToken:** `0x8083dc18681D0f2148268Bd37EB37B59d651C413`
 
 #### **📋 Recursos de Integración:**
 - **ABIs disponibles** para integración directa

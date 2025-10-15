@@ -16,12 +16,12 @@ module.exports = {
     sepolia: {
       url: "https://eth-sepolia.g.alchemy.com/v2/9_JhUBBHvDHoh6YqQ8Ow7",
       chainId: 11155111,
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
+      accounts: ["cdf3a5b835fbba21d85927c43246285f2cefdcf4d665c3cdc7335f1da05d2450"]
     },
     arbitrumSepolia: {
       url: "https://sepolia-rollup.arbitrum.io/rpc",
       chainId: 421614,
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
+      accounts: ["cdf3a5b835fbba21d85927c43246285f2cefdcf4d665c3cdc7335f1da05d2450"]
     }
   },
   etherscan: {
