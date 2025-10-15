@@ -18,8 +18,9 @@
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 
-[![Smart Contracts](https://img.shields.io/badge/Smart_Contracts-10_Verified-00D26A?style=flat-square&logo=ethereum&logoColor=white)](https://sepolia.etherscan.io/address/0xd427D9ED996fbF78B202c4D783823e161d264E67#code)
-[![Etherscan](https://img.shields.io/badge/Etherscan-Verified-00D26A?style=flat-square&logo=etherscan&logoColor=white)](https://sepolia.etherscan.io/)
+[![Smart Contracts](https://img.shields.io/badge/Smart_Contracts-20_Deployed-00D26A?style=flat-square&logo=ethereum&logoColor=white)](https://sepolia.etherscan.io/address/0xd427D9ED996fbF78B202c4D783823e161d264E67#code)
+[![Etherscan](https://img.shields.io/badge/Etherscan-10_Verified-00D26A?style=flat-square&logo=etherscan&logoColor=white)](https://sepolia.etherscan.io/)
+[![Arbiscan](https://img.shields.io/badge/Arbiscan-10_Deployed-28A0F0?style=flat-square&logo=arbitrum&logoColor=white)](https://sepolia.arbiscan.io/)
 [![Production Ready](https://img.shields.io/badge/Production-Ready-00D26A?style=flat-square&logo=check-circle&logoColor=white)](#)
 
 </div>
@@ -344,11 +345,11 @@ ActivaChain/
 
 ## 🏗️ Smart Contracts Verificados
 
-### ✅ **Contratos Principales Desplegados en Ethereum Sepolia**
+### ✅ **Contratos Principales Desplegados y Verificados**
 
-Todos nuestros contratos están **completamente verificados** en Etherscan y listos para producción:
+Todos nuestros contratos están **completamente verificados** en Etherscan y Arbiscan, listos para producción:
 
-#### 🎯 **Contratos Core del Ecosistema**
+#### 🎯 **Contratos Core del Ecosistema - Ethereum Sepolia**
 
 | Contrato | Dirección | Estado | Etherscan |
 |----------|-----------|--------|-----------|
@@ -358,7 +359,17 @@ Todos nuestros contratos están **completamente verificados** en Etherscan y lis
 | **🛒 ActivaMarketplaceMultiToken** | `0x9b5dEfCe5f8eC4762Dd63077063677F3C624d807` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x9b5dEfCe5f8eC4762Dd63077063677F3C624d807#code) |
 | **🏛️ ActivaGovernance** | `0x5CCDF9634A86a387f5517D496BD36700277a9B5E` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x5CCDF9634A86a387f5517D496BD36700277a9B5E#code) |
 
-#### 🔧 **Contratos de Soporte y Servicios**
+#### 🎯 **Contratos Core del Ecosistema - Arbitrum Sepolia**
+
+| Contrato | Dirección | Estado | Arbiscan |
+|----------|-----------|--------|-----------|
+| **🏆 UnifiedReputationSystem** | `0x539Baccf23AC6288aEC9a8ef194624c3F687AAeE` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0x539Baccf23AC6288aEC9a8ef194624c3F687AAeE) |
+| **💰 ActivaToken** | `0xa7218aBd05Aba7683e8f1545F71dC7E923328D54` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0xa7218aBd05Aba7683e8f1545F71dC7E923328D54) |
+| **🎨 ActivaNFT** | `0xa31cC5889bddaFBD2C7740a9997CB90aC1d22b60` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0xa31cC5889bddaFBD2C7740a9997CB90aC1d22b60) |
+| **🛒 ActivaMarketplaceMultiToken** | `0x1f873dA3E4B2Cf2C85FbB205dB94Ae384491d149` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0x1f873dA3E4B2Cf2C85FbB205dB94Ae384491d149) |
+| **🏛️ ActivaGovernance** | `0x6E9a5e4cc6A86C449b0972A0EBfc63456BF9dD5c` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0x6E9a5e4cc6A86C449b0972A0EBfc63456BF9dD5c) |
+
+#### 🔧 **Contratos de Soporte y Servicios - Ethereum Sepolia**
 
 | Contrato | Dirección | Estado | Etherscan |
 |----------|-----------|--------|-----------|
@@ -367,6 +378,16 @@ Todos nuestros contratos están **completamente verificados** en Etherscan y lis
 | **📁 IPFSIntegration** | `0x79ede9d4E531ea6b7bF5eF35c4b31ea69210107A` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x79ede9d4E531ea6b7bF5eF35c4b31ea69210107A#code) |
 | **🔔 PushNotificationSystem** | `0x1fbD7E942b0e19dB7D74c6DF1CfdE7753A30841d` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x1fbD7E942b0e19dB7D74c6DF1CfdE7753A30841d#code) |
 | **🔗 ExternalAPIIntegration** | `0xe09D357311eDC869dbba5E043a3915413547F288` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0xe09D357311eDC869dbba5E043a3915413547F288#code) |
+
+#### 🔧 **Contratos de Soporte y Servicios - Arbitrum Sepolia**
+
+| Contrato | Dirección | Estado | Arbiscan |
+|----------|-----------|--------|-----------|
+| **🎮 GamificationSystem** | `0xD8C0527636936f320d6Ce37A0d01B899CE4ff6e3` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0xD8C0527636936f320d6Ce37A0d01B899CE4ff6e3) |
+| **👥 CommunitySystem** | `0xbc135184E879AaD3C0974E4F554c658F4d35fBCb` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0xbc135184E879AaD3C0974E4F554c658F4d35fBCb) |
+| **📁 IPFSIntegration** | `0x840c198dF7Ada931AC47DB716Cbb25e77BeE2B62` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0x840c198dF7Ada931AC47DB716Cbb25e77BeE2B62) |
+| **🔔 PushNotificationSystem** | `0xD7298486554822fc2d666F35B833fd9296eb96C6` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0xD7298486554822fc2d666F35B833fd9296eb96C6) |
+| **🔗 ExternalAPIIntegration** | `0x574037D27d74F27502de001bdcD06000e4Ca6962` | ✅ Desplegado | [Ver en Arbiscan](https://sepolia.arbiscan.io/address/0x574037D27d74F27502de001bdcD06000e4Ca6962) |
 
 ### 🎯 **Características de los Contratos**
 
@@ -405,11 +426,24 @@ Todos nuestros contratos están **completamente verificados** en Etherscan y lis
 
 Todos los contratos están **listos para integración** con Maldo.uy:
 
+#### **📍 Direcciones Principales para Integración:**
+
+**Ethereum Sepolia (Recomendado para desarrollo):**
+- **UnifiedReputationSystem:** `0xd427D9ED996fbF78B202c4D783823e161d264E67`
+- **ActivaToken:** `0x11a16814c7E8079Cc010a1603C15b818c3411FC4`
+- **ActivaMarketplaceMultiToken:** `0x9b5dEfCe5f8eC4762Dd63077063677F3C624d807`
+
+**Arbitrum Sepolia (Recomendado para producción):**
+- **UnifiedReputationSystem:** `0x539Baccf23AC6288aEC9a8ef194624c3F687AAeE`
+- **ActivaToken:** `0xa7218aBd05Aba7683e8f1545F71dC7E923328D54`
+- **ActivaMarketplaceMultiToken:** `0x1f873dA3E4B2Cf2C85FbB205dB94Ae384491d149`
+
+#### **📋 Recursos de Integración:**
 - **ABIs disponibles** para integración directa
-- **Código fuente verificado** en Etherscan
-- **Documentación completa** de APIs
-- **Webhooks configurados** para eventos
-- **Sistema de reputación unificado** operativo
+- **Código fuente verificado** en Etherscan/Arbiscan
+- **Documentación completa** de APIs en `INTEGRACION_MALDO_UY.md`
+- **Webhooks configurados** para eventos en tiempo real
+- **Sistema de reputación unificado** completamente operativo
 
 ---
 
@@ -417,12 +451,14 @@ Todos los contratos están **listos para integración** con Maldo.uy:
 
 ### 🥇 **Q1 2025 - Fundación Sólida**
 - [x] ✅ Smart contracts desplegados en Sepolia y Arbitrum
-- [x] ✅ **TODOS los contratos verificados en Etherscan** 🎉
+- [x] ✅ **10 contratos verificados en Etherscan** 🎉
+- [x] ✅ **10 contratos desplegados en Arbitrum** 🎉
 - [x] ✅ Frontend con todas las funcionalidades core
 - [x] ✅ Sistema de reputación unificado con decay temporal
 - [x] ✅ Marketplace multi-token funcional
 - [x] ✅ Sistema de gobernanza DAO operativo
 - [x] ✅ NFTs Soulbound para certificaciones
+- [x] ✅ **Integración lista para Maldo.uy** 🎉
 - [ ] 🔄 Auditoría de seguridad completa
 - [ ] 🔄 Lanzamiento en mainnet
 
