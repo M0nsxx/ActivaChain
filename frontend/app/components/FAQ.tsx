@@ -6,27 +6,43 @@ import GlassCard from './GlassCard'
 const faqs = [
   {
     question: "¿Qué es ActivaChain?",
-    answer: "ActivaChain es una plataforma educativa que enseña blockchain y Web3 a mujeres, sin necesidad de conocimientos previos. Te ayudamos a aprender, certificar tus habilidades y ganar dinero real."
+    answer: "ActivaChain es una plataforma híbrida innovadora que combina educación blockchain con gestión de eventos Web3. Ofrecemos cursos, workshops, eventos comunitarios y un marketplace de NFTs, todo integrado con tecnología blockchain para crear oportunidades económicas reales."
   },
   {
     question: "¿Necesito saber de tecnología?",
-    answer: "¡Para nada! Nuestros cursos están diseñados para principiantes. Te enseñamos desde cero, como si nunca hubieras usado una computadora."
+    answer: "¡Para nada! Nuestros cursos están diseñados para principiantes. Te enseñamos desde cero, como si nunca hubieras usado una computadora. Tenemos contenido básico gratuito y cursos premium para todos los niveles."
   },
   {
     question: "¿Cómo puedo ganar dinero?",
-    answer: "Una vez que aprendas, podés ofrecer servicios como desarrollo de contratos inteligentes, diseño UX, marketing digital, o consultoría. Nuestro marketplace conecta clientes con profesionales verificadas."
+    answer: "Ofrecemos múltiples formas de ganar: servicios como desarrollo de contratos inteligentes, diseño UX, marketing digital, consultoría, creación de NFTs, participación en workshops premium, y nuestro marketplace conecta clientes con profesionales verificadas. También puedes ganar tokens $ACTIVA por participación activa."
   },
   {
     question: "¿Qué son los NFTs?",
-    answer: "Los NFTs son certificados digitales únicos que no se pueden copiar. Cuando completás un curso, recibís un NFT que prueba tus habilidades. Es como un diploma, pero imposible de falsificar."
+    answer: "Los NFTs son certificados digitales únicos que no se pueden copiar. Cuando completás un curso, recibís un NFT que prueba tus habilidades. También puedes crear, mintear y comercializar NFTs en nuestro marketplace con comisiones competitivas del 3%."
   },
   {
     question: "¿Es seguro?",
-    answer: "Sí, usamos tecnología blockchain que es súper segura. Tus datos están protegidos y todas las transacciones son transparentes y verificables."
+    answer: "Sí, usamos tecnología blockchain que es súper segura. Tus datos están protegidos, todas las transacciones son transparentes y verificables, y implementamos las mejores prácticas de seguridad Web3."
   },
   {
     question: "¿Cuánto cuesta?",
-    answer: "¡Es completamente gratis! No hay costos ocultos. Solo necesitás tiempo y ganas de aprender."
+    answer: "Ofrecemos un modelo flexible: Plan Gratuito con cursos básicos y 2 eventos por mes, Plan Pro ($29.99/mes) con contenido premium ilimitado, y Plan Enterprise ($99.99/mes) para organizaciones. También workshops premium ($25-150) y certificaciones ($75-200)."
+  },
+  {
+    question: "¿Qué es el token $ACTIVA?",
+    answer: "$ACTIVA es nuestro token nativo que permite staking para descuentos, governance para decisiones de la plataforma, y recompensas por participación activa. Es parte de nuestro ecosistema tokenómico único que incentiva el aprendizaje y la participación."
+  },
+  {
+    question: "¿Qué incluye el Plan Pro?",
+    answer: "El Plan Pro ($29.99/mes) incluye: todo lo del plan gratuito, cursos premium ilimitados, workshops premium, certificaciones incluidas, marketplace NFTs con descuentos, y acceso a eventos exclusivos. Es perfecto para profesionales Web3."
+  },
+  {
+    question: "¿Puedo organizar eventos?",
+    answer: "¡Sí! Puedes crear workshops y eventos tanto gratuitos como premium. Los eventos privados tienen tarifas de $5-15 por participante. También ofrecemos eventos corporativos privados para organizaciones con análisis avanzados y soporte prioritario."
+  },
+  {
+    question: "¿Cómo funciona el marketplace?",
+    answer: "Nuestro marketplace permite crear, mintear y vender NFTs con una comisión del 3% por venta. Los usuarios Pro obtienen descuentos especiales. Es una plataforma completa para monetizar tu creatividad digital."
   }
 ]
 

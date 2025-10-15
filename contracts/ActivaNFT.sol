@@ -3,6 +3,7 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "./UnifiedReputationSystem.sol";
 
 contract ActivaNFT is ERC721URIStorage, Ownable {
     uint256 private _tokenIds;
@@ -17,12 +18,16 @@ contract ActivaNFT is ERC721URIStorage, Ownable {
     
     mapping(uint256 => Certification) public certifications;
     mapping(address => uint256[]) public userCertifications;
-    mapping(address => uint256) public reputationScore;
+    
+    // Referencia al sistema de reputación unificado
+    UnifiedReputationSystem public reputationSystem;
     
     event CertificationMinted(address indexed user, uint256 tokenId, string courseName);
     event ReputationUpdated(address indexed user, uint256 newScore);
     
-    constructor() ERC721("ActivaChain Certification", "ACTIVA-NFT") Ownable(msg.sender) {}
+    constructor(address _reputationSystem) ERC721("ActivaChain Certification", "ACTIVA-NFT") Ownable(msg.sender) {
+        reputationSystem = UnifiedReputationSystem(_reputationSystem);
+    }
     
     function mintCertification(
         address learner,
@@ -46,10 +51,13 @@ contract ActivaNFT is ERC721URIStorage, Ownable {
         });
         
         userCertifications[learner].push(newTokenId);
-        reputationScore[learner] += score * level;
+        
+        // Actualizar reputación usando sistema unificado
+        uint256 reputationBonus = score * level;
+        reputationSystem.updateReputation(learner, reputationBonus, true);
         
         emit CertificationMinted(learner, newTokenId, courseName);
-        emit ReputationUpdated(learner, reputationScore[learner]);
+        emit ReputationUpdated(learner, reputationBonus);
         
         return newTokenId;
     }

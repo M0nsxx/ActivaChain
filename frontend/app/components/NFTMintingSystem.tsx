@@ -5,92 +5,12 @@ import { useAccount, useReadContract, useWriteContract, useWaitForTransactionRec
 import { useContracts } from '../lib/useContracts'
 import GlassCard from './GlassCard'
 import { NotificationSystem, useNotifications } from './NotificationSystem'
+import { NFTTemplateSelector } from './NFTTemplateSelector'
+import { NFTTemplate, NFT_CATEGORIES, NFT_LEVELS } from '../lib/templates'
+import { ACTIVA_NFT_ABI } from '../lib/contracts'
 
-// ABI para ActivaMultiToken (ERC1155)
-const MULTI_TOKEN_ABI = [
-  {
-    "inputs": [
-      {"internalType": "string", "name": "name", "type": "string"},
-      {"internalType": "string", "name": "symbol", "type": "string"},
-      {"internalType": "uint256", "name": "maxSupply", "type": "uint256"},
-      {"internalType": "uint256", "name": "price", "type": "uint256"},
-      {"internalType": "uint256", "name": "season", "type": "uint256"},
-      {"internalType": "string", "name": "uri", "type": "string"}
-    ],
-    "name": "createToken",
-    "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {"internalType": "uint256", "name": "tokenId", "type": "uint256"},
-      {"internalType": "uint256", "name": "amount", "type": "uint256"}
-    ],
-    "name": "mintToken",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [{"internalType": "uint256", "name": "tokenId", "type": "uint256"}],
-    "name": "getTokenInfo",
-    "outputs": [
-      {
-        "components": [
-          {"internalType": "string", "name": "name", "type": "string"},
-          {"internalType": "string", "name": "symbol", "type": "string"},
-          {"internalType": "uint256", "name": "maxSupply", "type": "uint256"},
-          {"internalType": "uint256", "name": "currentSupply", "type": "uint256"},
-          {"internalType": "bool", "name": "isActive", "type": "bool"},
-          {"internalType": "uint256", "name": "price", "type": "uint256"},
-          {"internalType": "address", "name": "creator", "type": "address"},
-          {"internalType": "uint256", "name": "season", "type": "uint256"}
-        ],
-        "internalType": "struct ActivaMultiToken.TokenInfo",
-        "name": "",
-        "type": "tuple"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [{"internalType": "uint256", "name": "season", "type": "uint256"}],
-    "name": "getSeasonalTokens",
-    "outputs": [{"internalType": "uint256[]", "name": "", "type": "uint256[]"}],
-    "stateMutability": "view",
-    "type": "function"
-  }
-] as const
-
-// ABI para ActivaCollection (ERC721)
-const COLLECTION_ABI = [
-  {
-    "inputs": [
-      {"internalType": "string", "name": "name", "type": "string"},
-      {"internalType": "string", "name": "description", "type": "string"},
-      {"internalType": "uint256", "name": "maxSupply", "type": "uint256"},
-      {"internalType": "uint256", "name": "price", "type": "uint256"},
-      {"internalType": "uint256", "name": "season", "type": "uint256"},
-      {"internalType": "string", "name": "baseURI", "type": "string"}
-    ],
-    "name": "createCollection",
-    "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {"internalType": "uint256", "name": "collectionId", "type": "uint256"},
-      {"internalType": "string", "name": "tokenURI", "type": "string"}
-    ],
-    "name": "mintFromCollection",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  }
-] as const
+// ABI para ActivaNFT (ERC721) - Usando el ABI real del contrato
+const MULTI_TOKEN_ABI = ACTIVA_NFT_ABI
 
 interface TokenInfo {
   name: string
@@ -125,29 +45,36 @@ export function NFTMintingSystem() {
   const [selectedToken, setSelectedToken] = useState<number>(0)
   const [selectedCollection, setSelectedCollection] = useState<number>(0)
   
+  // Estados para plantillas
+  const [showTemplateSelector, setShowTemplateSelector] = useState(false)
+  const [selectedTemplate, setSelectedTemplate] = useState<NFTTemplate | null>(null)
+  
   // Estados para crear tokens/colecciones
   const [createForm, setCreateForm] = useState({
     name: '',
     description: '',
     maxSupply: '',
     price: '',
-    uri: ''
+    uri: '',
+    category: '',
+    level: 1,
+    score: 0
   })
   
-  // Leer tokens estacionales
-  const { data: seasonalTokens } = useReadContract({
+  // Leer certificaciones del usuario
+  const { data: userCertifications } = useReadContract({
     address: contracts.activaNFT,
     abi: MULTI_TOKEN_ABI,
-    functionName: 'getSeasonalTokens',
-    args: [BigInt(selectedSeason)],
-    query: { enabled: !!contracts.activaNFT }
+    functionName: 'getUserCertifications',
+    args: [address || '0x0000000000000000000000000000000000000000'],
+    query: { enabled: !!contracts.activaNFT && !!address }
   })
   
-  // Leer información de token seleccionado
-  const { data: tokenInfo } = useReadContract({
+  // Leer detalles de certificación seleccionada
+  const { data: certificationDetails } = useReadContract({
     address: contracts.activaNFT,
     abi: MULTI_TOKEN_ABI,
-    functionName: 'getTokenInfo',
+    functionName: 'getCertificationDetails',
     args: [BigInt(selectedToken)],
     query: { enabled: !!contracts.activaNFT && selectedToken >= 0 }
   })
@@ -164,55 +91,142 @@ export function NFTMintingSystem() {
   ]
   
   const handleCreateToken = async () => {
-    if (!address) return
+    if (!address) {
+      addNotification({
+        type: 'warning',
+        title: 'Wallet no conectado',
+        message: 'Por favor conecta tu wallet para crear tokens'
+      })
+      return
+    }
+
+    if (!createForm.name || !createForm.maxSupply || !createForm.price) {
+      addNotification({
+        type: 'warning',
+        title: 'Campos incompletos',
+        message: 'Por favor completa todos los campos obligatorios'
+      })
+      return
+    }
     
     try {
+      // Mostrar notificación de inicio
+      const loadingNotificationId = addNotification({
+        type: 'loading',
+        title: 'Creando token...',
+        message: `"${createForm.name}"`,
+        autoClose: false
+      })
+
+      // Configuración de gas optimizada
+      const gasConfig = {
+        gas: BigInt(500000),
+        maxFeePerGas: BigInt(50000000000), // 50 Gwei
+        maxPriorityFeePerGas: BigInt(2000000000), // 2 Gwei
+      }
+
       const hash = await writeMultiToken({
         address: contracts.activaNFT,
         abi: MULTI_TOKEN_ABI,
-        functionName: 'createToken',
+        functionName: 'mintCertification',
         args: [
-          createForm.name,
-          createForm.name.substring(0, 3).toUpperCase(),
-          BigInt(createForm.maxSupply),
-          BigInt(createForm.price),
-          BigInt(selectedSeason),
-          createForm.uri
+          address, // learner
+          createForm.name, // courseName
+          createForm.level, // level
+          BigInt(createForm.score), // score
+          createForm.uri // tokenURI
+        ],
+        ...gasConfig
+      }) as `0x${string}` | undefined
+
+      if (hash) {
+        addNotification({
+          type: 'success',
+          title: 'Transacción enviada',
+          message: 'Esperando confirmación de la red...',
+          hash
+        })
+      }
+
+      // Limpiar formulario después de éxito
+      setCreateForm({
+        name: '',
+        description: '',
+        maxSupply: '',
+        price: '',
+        uri: '',
+        category: '',
+        level: 1,
+        score: 0
+      })
+      setSelectedTemplate(null)
+
+      // Notificación de éxito final
+      addNotification({
+        type: 'success',
+        title: '¡Token Creado! 🎉',
+        message: `"${createForm.name}" creado exitosamente`,
+        hash: hash || undefined,
+        duration: 8000
+      })
+      
+    } catch (error: any) {
+      console.error('Error creating token:', error)
+      
+      // Errores más específicos
+      if (error.message?.includes('insufficient funds')) {
+        addNotification({
+          type: 'error',
+          title: 'Fondos insuficientes',
+          message: 'No tienes suficiente ETH para pagar el gas'
+        })
+      } else if (error.message?.includes('rejected') || error.message?.includes('denied')) {
+        addNotification({
+          type: 'warning',
+          title: 'Transacción cancelada',
+          message: 'Cancelaste la creación del token'
+        })
+      } else if (error.message?.includes('gas')) {
+        addNotification({
+          type: 'error',
+          title: 'Error de gas',
+          message: 'Problema con la configuración de gas'
+        })
+      } else {
+        addNotification({
+          type: 'error',
+          title: 'Error de creación',
+          message: error.message || 'Error desconocido al crear el token'
+        })
+      }
+    }
+  }
+  
+  const handleMintToken = async () => {
+    if (!address) return
+    
+    try {
+      // Precio fijo por ahora - se puede ajustar según la lógica del negocio
+      const pricePerToken = BigInt("10000000000000000") // 0.01 ETH
+      const totalPrice = pricePerToken * BigInt(mintingAmount)
+      
+      const hash = await writeMultiToken({
+        address: contracts.activaNFT,
+        abi: MULTI_TOKEN_ABI,
+        functionName: 'mintCertification',
+        args: [
+          address, // learner
+          `Certificación ${selectedToken}`, // courseName
+          1, // level (básico)
+          BigInt(100), // score
+          `https://ipfs.io/ipfs/QmExample${selectedToken}` // tokenURI
         ]
       })
       
       addNotification({
         type: 'success',
-        title: 'Token Creado',
-        message: 'Tu token ha sido creado exitosamente'
-      })
-    } catch (error) {
-      addNotification({
-        type: 'error',
-        title: 'Error',
-        message: 'Error al crear el token'
-      })
-    }
-  }
-  
-  const handleMintToken = async () => {
-    if (!address || !tokenInfo) return
-    
-    try {
-      const totalPrice = tokenInfo.price * BigInt(mintingAmount)
-      
-      const hash = await writeMultiToken({
-        address: contracts.activaNFT,
-        abi: MULTI_TOKEN_ABI,
-        functionName: 'mintToken',
-        args: [BigInt(selectedToken), BigInt(mintingAmount)],
-        value: totalPrice
-      })
-      
-      addNotification({
-        type: 'success',
         title: 'NFT Minteado',
-        message: `Has minteado ${mintingAmount} ${tokenInfo.name}`
+        message: `Has minteado ${mintingAmount} certificaciones`
       })
     } catch (error) {
       addNotification({
@@ -229,15 +243,14 @@ export function NFTMintingSystem() {
     try {
       const hash = await writeCollection({
         address: contracts.activaNFT,
-        abi: COLLECTION_ABI,
-        functionName: 'createCollection',
+        abi: MULTI_TOKEN_ABI,
+        functionName: 'mintCertification',
         args: [
-          createForm.name,
-          createForm.description,
-          BigInt(createForm.maxSupply),
-          BigInt(createForm.price),
-          BigInt(selectedSeason),
-          createForm.uri
+          address, // learner
+          createForm.name, // courseName
+          createForm.level, // level
+          BigInt(createForm.score), // score
+          createForm.uri // tokenURI
         ]
       })
       
@@ -253,6 +266,57 @@ export function NFTMintingSystem() {
         message: 'Error al crear la colección'
       })
     }
+  }
+
+  // Funciones para manejar plantillas
+  const handleTemplateSelect = (template: NFTTemplate) => {
+    setSelectedTemplate(template)
+    setCreateForm({
+      name: template.name,
+      description: template.description,
+      maxSupply: '1000', // Valor por defecto
+      price: '0.01', // Valor por defecto en ETH
+      uri: template.metadata.image,
+      category: template.category,
+      level: template.level,
+      score: template.score
+    })
+    setShowTemplateSelector(false)
+    
+    addNotification({
+      type: 'success',
+      title: 'Plantilla Seleccionada',
+      message: `"${template.name}" cargada exitosamente`
+    })
+  }
+
+  const handleCreateFromTemplate = () => {
+    if (!selectedTemplate) return
+    
+    setCreateForm({
+      name: selectedTemplate.name,
+      description: selectedTemplate.description,
+      maxSupply: '1000',
+      price: '0.01',
+      uri: selectedTemplate.metadata.image,
+      category: selectedTemplate.category,
+      level: selectedTemplate.level,
+      score: selectedTemplate.score
+    })
+  }
+
+  const handleCreateFromScratch = () => {
+    setSelectedTemplate(null)
+    setCreateForm({
+      name: '',
+      description: '',
+      maxSupply: '',
+      price: '',
+      uri: '',
+      category: '',
+      level: 1,
+      score: 0
+    })
   }
   
   if (!isConnected) {
@@ -329,7 +393,48 @@ export function NFTMintingSystem() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {/* Crear Token */}
           <GlassCard className="p-4 sm:p-6">
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Crear Token ERC1155</h3>
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-white">Crear Token ERC1155</h3>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setShowTemplateSelector(true)}
+                  className="px-3 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-sm font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
+                >
+                  🎨 Plantillas
+                </button>
+                <button
+                  onClick={handleCreateFromScratch}
+                  className="px-3 py-2 bg-white/10 text-white rounded-lg text-sm font-semibold hover:bg-white/20 transition-all duration-300"
+                >
+                  ✨ Desde Cero
+                </button>
+              </div>
+            </div>
+            
+            {/* Plantilla seleccionada */}
+            {selectedTemplate && (
+              <div className="mb-4 p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="text-2xl">{selectedTemplate.icon}</div>
+                  <div>
+                    <h4 className="text-white font-semibold">{selectedTemplate.name}</h4>
+                    <p className="text-white/70 text-sm">{selectedTemplate.description}</p>
+                    <div className="flex gap-2 mt-2">
+                      <span className="px-2 py-1 bg-white/10 text-white/80 rounded-full text-xs">
+                        {selectedTemplate.category}
+                      </span>
+                      <span className="px-2 py-1 bg-white/10 text-white/80 rounded-full text-xs">
+                        Nivel {selectedTemplate.level}
+                      </span>
+                      <span className="px-2 py-1 bg-white/10 text-white/80 rounded-full text-xs">
+                        {selectedTemplate.score} pts
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            
             <div className="space-y-4">
               <div>
                 <label className="block text-white/70 text-sm mb-2">Nombre del Token</label>
@@ -372,6 +477,52 @@ export function NFTMintingSystem() {
                   placeholder="ipfs://..."
                 />
               </div>
+              
+              {/* Campos adicionales para plantillas */}
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-white/70 text-sm mb-2">Categoría</label>
+                  <select
+                    value={createForm.category}
+                    onChange={(e) => setCreateForm({...createForm, category: e.target.value})}
+                    className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white"
+                  >
+                    <option value="">Seleccionar...</option>
+                    {Object.entries(NFT_CATEGORIES).map(([key, category]) => (
+                      <option key={key} value={key}>
+                        {category.icon} {key}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-white/70 text-sm mb-2">Nivel</label>
+                  <select
+                    value={createForm.level}
+                    onChange={(e) => setCreateForm({...createForm, level: Number(e.target.value)})}
+                    className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white"
+                  >
+                    {Object.entries(NFT_LEVELS).map(([level, info]) => (
+                      <option key={level} value={level}>
+                        Nivel {level} - {info.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-white/70 text-sm mb-2">Puntuación</label>
+                  <input
+                    type="number"
+                    value={createForm.score}
+                    onChange={(e) => setCreateForm({...createForm, score: Number(e.target.value)})}
+                    className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50"
+                    placeholder="0"
+                    min="0"
+                    max="100"
+                  />
+                </div>
+              </div>
+              
               <button
                 onClick={handleCreateToken}
                 className="w-full neural-button py-3"
@@ -384,46 +535,44 @@ export function NFTMintingSystem() {
           {/* Mintear Token */}
           <GlassCard className="p-4 sm:p-6">
             <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Mintear Token</h3>
-            {tokenInfo && (
-              <div className="space-y-4">
-                <div className="p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
-                  <h4 className="text-white font-semibold">{tokenInfo.name}</h4>
-                  <p className="text-white/70 text-sm">
-                    Suministro: {tokenInfo.currentSupply.toString()} / {tokenInfo.maxSupply.toString()}
-                  </p>
-                  <p className="text-white/70 text-sm">
-                    Precio: {Number(tokenInfo.price) / 1e18} ETH
-                  </p>
-                </div>
-                
-                <div>
-                  <label className="block text-white/70 text-sm mb-2">Cantidad</label>
-                  <input
-                    type="number"
-                    min="1"
-                    max={Number(tokenInfo.maxSupply - tokenInfo.currentSupply)}
-                    value={mintingAmount}
-                    onChange={(e) => setMintingAmount(Number(e.target.value))}
-                    className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50"
-                  />
-                </div>
-                
-                <div className="p-3 bg-white/10 rounded-lg">
-                  <p className="text-white/70 text-sm">Total a pagar:</p>
-                  <p className="text-white font-semibold">
-                    {(Number(tokenInfo.price) * mintingAmount) / 1e18} ETH
-                  </p>
-                </div>
-                
-                <button
-                  onClick={handleMintToken}
-                  className="w-full neural-button py-3"
-                  disabled={!tokenInfo.isActive || tokenInfo.currentSupply >= tokenInfo.maxSupply}
-                >
-                  Mintear NFT
-                </button>
+            <div className="space-y-4">
+              <div className="p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg">
+                <h4 className="text-white font-semibold">Certificación ActivaChain</h4>
+                <p className="text-white/70 text-sm">
+                  Certificación NFT de completación de curso
+                </p>
+                <p className="text-white/70 text-sm">
+                  Precio: 0.01 ETH por certificación
+                </p>
               </div>
-            )}
+              
+              <div>
+                <label className="block text-white/70 text-sm mb-2">Cantidad</label>
+                <input
+                  type="number"
+                  min="1"
+                  max="10"
+                  value={mintingAmount}
+                  onChange={(e) => setMintingAmount(Number(e.target.value))}
+                  className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50"
+                />
+              </div>
+              
+              <div className="p-3 bg-white/10 rounded-lg">
+                <p className="text-white/70 text-sm">Total a pagar:</p>
+                <p className="text-white font-semibold">
+                  {(0.01 * mintingAmount).toFixed(2)} ETH
+                </p>
+              </div>
+              
+              <button
+                onClick={handleMintToken}
+                className="w-full neural-button py-3"
+                disabled={!isConnected}
+              >
+                Mintear Certificación
+              </button>
+            </div>
           </GlassCard>
         </div>
       ) : (
@@ -522,6 +671,14 @@ export function NFTMintingSystem() {
             </div>
           </GlassCard>
         </div>
+      )}
+      
+      {/* Selector de Plantillas */}
+      {showTemplateSelector && (
+        <NFTTemplateSelector
+          onSelect={handleTemplateSelect}
+          onClose={() => setShowTemplateSelector(false)}
+        />
       )}
     </div>
   )

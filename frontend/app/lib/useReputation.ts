@@ -1,7 +1,7 @@
 import { useAccount, useReadContract, useWriteContract } from 'wagmi'
 import { useContracts } from './useContracts'
 import { useCallback, useEffect, useState } from 'react'
-import { ADVANCED_REPUTATION_ABI, GAMIFICATION_ABI } from './contracts'
+import { UNIFIED_REPUTATION_ABI, GAMIFICATION_ABI } from './contracts'
 
 interface ReputationData {
   score: number
@@ -47,23 +47,23 @@ export function useReputation() {
 
   // Leer reputación básica
   const { data: basicReputation, refetch: refetchBasic } = useReadContract({
-    address: contracts.advancedReputation,
-    abi: ADVANCED_REPUTATION_ABI,
+    address: contracts.unifiedReputation,
+    abi: UNIFIED_REPUTATION_ABI,
     functionName: 'getReputation',
     args: address ? [address] : undefined,
     query: {
-      enabled: !!address && !!contracts.advancedReputation
+      enabled: !!address && !!contracts.unifiedReputation
     }
   })
 
   // Leer reputación detallada
   const { data: detailedReputation, refetch: refetchDetailed } = useReadContract({
-    address: contracts.advancedReputation,
-    abi: ADVANCED_REPUTATION_ABI,
+    address: contracts.unifiedReputation,
+    abi: UNIFIED_REPUTATION_ABI,
     functionName: 'getDetailedReputation',
     args: address ? [address] : undefined,
     query: {
-      enabled: !!address && !!contracts.advancedReputation
+      enabled: !!address && !!contracts.unifiedReputation
     }
   })
 
@@ -104,14 +104,14 @@ export function useReputation() {
 
   // Función para endorsar a un usuario
   const endorseUser = useCallback(async (userAddress: string) => {
-    if (!contracts.advancedReputation) {
+    if (!contracts.unifiedReputation) {
       throw new Error('Contrato de reputación no disponible')
     }
 
     try {
       await writeContract({
-        address: contracts.advancedReputation,
-        abi: ADVANCED_REPUTATION_ABI,
+        address: contracts.unifiedReputation,
+        abi: UNIFIED_REPUTATION_ABI,
         functionName: 'endorseUser',
         args: [userAddress as `0x${string}`]
       })
@@ -125,20 +125,20 @@ export function useReputation() {
       console.error('Error endorsing user:', error)
       throw error
     }
-  }, [contracts.advancedReputation, writeContract, refetchBasic, refetchDetailed])
+  }, [contracts.unifiedReputation, writeContract, refetchBasic, refetchDetailed])
 
   // Función para verificar identidad con ZK
   const verifyIdentity = useCallback(async (proofHash: string, proof: string, verificationLevel: number) => {
-    if (!contracts.advancedReputation) {
+    if (!contracts.unifiedReputation) {
       throw new Error('Contrato de reputación no disponible')
     }
 
     try {
       await writeContract({
-        address: contracts.advancedReputation,
-        abi: ADVANCED_REPUTATION_ABI,
+        address: contracts.unifiedReputation,
+        abi: UNIFIED_REPUTATION_ABI,
         functionName: 'verifyIdentityWithZK',
-        args: [proofHash as `0x${string}`, proof as `0x${string}`, BigInt(verificationLevel)]
+        args: [proofHash as `0x${string}`, proof as `0x${string}`, verificationLevel]
       })
       
       // Refrescar datos después de la transacción
@@ -150,7 +150,7 @@ export function useReputation() {
       console.error('Error verifying identity:', error)
       throw error
     }
-  }, [contracts.advancedReputation, writeContract, refetchBasic, refetchDetailed])
+  }, [contracts.unifiedReputation, writeContract, refetchBasic, refetchDetailed])
 
   // Función para obtener información de un achievement
   const getAchievementInfo = useCallback(async (achievementId: number) => {
@@ -203,8 +203,8 @@ export function useReputation() {
   // Actualizar datos de reputación cuando cambien los datos del contrato
   useEffect(() => {
     if (basicReputation && detailedReputation && gamificationProfile) {
-      const [score, endorsementCount, isVerified, verificationLevel, activityStreak] = basicReputation
-      const [baseScore, timeDecay, endorsementBonus, activityScore, totalScore] = detailedReputation
+      const [score, endorsementCount, isVerified, verificationLevel, activityStreak, timeSinceLastActivity] = basicReputation
+      const [baseScore, timeDecay, totalScore, lastUpdate, lastActivity] = detailedReputation
       const [totalPoints, level, experience, achievements, badges, streak] = gamificationProfile
 
       // Calcular nivel basado en puntos

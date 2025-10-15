@@ -1,0 +1,100 @@
+{
+  "timestamp": "2025-10-15T20:43:30.225Z",
+  "apiVersion": "V2",
+  "results": {
+    "sepolia": {
+      "UnifiedReputationSystem": {
+        "success": false,
+        "error": "Command failed: npx hardhat verify --network sepolia 0x24FF472f7fc79672A4C1032dF37B74B2981389bf \nhardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nInvalid API Key (#err2)|SEPOLIA-\n\n\n",
+        "stdout": "[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:\n\nsourcify: {\n  enabled: true\n}\n\nOr set 'enabled' to false to hide this message.\n\nFor more information, visit https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify\n",
+        "stderr": "hardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nInvalid API Key (#err2)|SEPOLIA-\n\n\n"
+      },
+      "ActivaToken": {
+        "success": false,
+        "error": "Command failed: npx hardhat verify --network sepolia 0x11a16814c7E8079Cc010a1603C15b818c3411FC4 ActivaChain Token ACTIVA 1000000000000000000000000\nhardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe constructor for contracts/ActivaToken.sol:ActivaToken has 3 parameters\nbut 4 arguments were provided instead.\n\n\n",
+        "stdout": "[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:\n\nsourcify: {\n  enabled: true\n}\n\nOr set 'enabled' to false to hide this message.\n\nFor more information, visit https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify\n",
+        "stderr": "hardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe constructor for contracts/ActivaToken.sol:ActivaToken has 3 parameters\nbut 4 arguments were provided instead.\n\n\n"
+      },
+      "ActivaNFT": {
+        "success": false,
+        "error": "Command failed: npx hardhat verify --network sepolia 0x45e5FDDa2B3215423B82b2502B388D5dA8944bA9 0xC68535Ee239f2A46Fdc08c236c86cb6451b6E01D\nhardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe address provided as argument contains a contract, but its bytecode doesn't match any of your local contracts.\n\nPossible causes are:\n  - The artifact for that contract is outdated or missing. You can try compiling the project again with the --force flag before re-running the verification.\n  - The contract's code changed after the deployment was executed. Sometimes this happens by changes in seemingly unrelated contracts.\n  - The solidity compiler settings were modified after the deployment was executed (like the optimizer, target EVM, etc.)\n  - The given address is wrong.\n  - The selected network (sepolia) is wrong.\n\n\n",
+        "stdout": "[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:\n\nsourcify: {\n  enabled: true\n}\n\nOr set 'enabled' to false to hide this message.\n\nFor more information, visit https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify\n",
+        "stderr": "hardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe address provided as argument contains a contract, but its bytecode doesn't match any of your local contracts.\n\nPossible causes are:\n  - The artifact for that contract is outdated or missing. You can try compiling the project again with the --force flag before re-running the verification.\n  - The contract's code changed after the deployment was executed. Sometimes this happens by changes in seemingly unrelated contracts.\n  - The solidity compiler settings were modified after the deployment was executed (like the optimizer, target EVM, etc.)\n  - The given address is wrong.\n  - The selected network (sepolia) is wrong.\n\n\n"
+      },
+      "ActivaMarketplaceMultiToken": {
+        "success": false,
+        "error": "Command failed: npx hardhat verify --network sepolia 0xBc6f7ADb6Af52997CC9aF02E1B348083B5eA978F 0x0eBdB4cf4b72E806A0c55059B301797aE6629f6D 0x24FF472f7fc79672A4C1032dF37B74B2981389bf\nhardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe address provided as argument contains a contract, but its bytecode doesn't match any of your local contracts.\n\nPossible causes are:\n  - The artifact for that contract is outdated or missing. You can try compiling the project again with the --force flag before re-running the verification.\n  - The contract's code changed after the deployment was executed. Sometimes this happens by changes in seemingly unrelated contracts.\n  - The solidity compiler settings were modified after the deployment was executed (like the optimizer, target EVM, etc.)\n  - The given address is wrong.\n  - The selected network (sepolia) is wrong.\n\n\n",
+        "stdout": "[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:\n\nsourcify: {\n  enabled: true\n}\n\nOr set 'enabled' to false to hide this message.\n\nFor more information, visit https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify\n",
+        "stderr": "hardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe address provided as argument contains a contract, but its bytecode doesn't match any of your local contracts.\n\nPossible causes are:\n  - The artifact for that contract is outdated or missing. You can try compiling the project again with the --force flag before re-running the verification.\n  - The contract's code changed after the deployment was executed. Sometimes this happens by changes in seemingly unrelated contracts.\n  - The solidity compiler settings were modified after the deployment was executed (like the optimizer, target EVM, etc.)\n  - The given address is wrong.\n  - The selected network (sepolia) is wrong.\n\n\n"
+      },
+      "ActivaGovernance": {
+        "success": false,
+        "error": "Command failed: npx hardhat verify --network sepolia 0xf278be79d14CcF53157B045bdbb51D98d58964F9 0x11a16814c7E8079Cc010a1603C15b818c3411FC4\nhardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe address 0xf278be79d14CcF53157B045bdbb51D98d58964F9 has no bytecode. Is the contract deployed to this network?\nThe selected network is sepolia.\n\n\n",
+        "stdout": "[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:\n\nsourcify: {\n  enabled: true\n}\n\nOr set 'enabled' to false to hide this message.\n\nFor more information, visit https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify\n",
+        "stderr": "hardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe address 0xf278be79d14CcF53157B045bdbb51D98d58964F9 has no bytecode. Is the contract deployed to this network?\nThe selected network is sepolia.\n\n\n"
+      }
+    },
+    "arbitrumSepolia": {
+      "UnifiedReputationSystem": {
+        "success": false,
+        "error": "Command failed: npx hardhat verify --network arbitrumSepolia 0x52C342E5484185612A7B4030164737B8E183c318 \nhardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nInvalid API Key (#err2)|ARBTESTNET\n\n\n",
+        "stdout": "[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:\n\nsourcify: {\n  enabled: true\n}\n\nOr set 'enabled' to false to hide this message.\n\nFor more information, visit https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify\n",
+        "stderr": "hardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nInvalid API Key (#err2)|ARBTESTNET\n\n\n"
+      },
+      "ActivaMarketplaceMultiToken": {
+        "success": false,
+        "error": "Command failed: npx hardhat verify --network arbitrumSepolia 0x91f2522Fba8AD5520556D94fca100520D7d2e48c 0x0eBdB4cf4b72E806A0c55059B301797aE6629f6D 0x52C342E5484185612A7B4030164737B8E183c318\nhardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe address provided as argument contains a contract, but its bytecode doesn't match any of your local contracts.\n\nPossible causes are:\n  - The artifact for that contract is outdated or missing. You can try compiling the project again with the --force flag before re-running the verification.\n  - The contract's code changed after the deployment was executed. Sometimes this happens by changes in seemingly unrelated contracts.\n  - The solidity compiler settings were modified after the deployment was executed (like the optimizer, target EVM, etc.)\n  - The given address is wrong.\n  - The selected network (arbitrumSepolia) is wrong.\n\n\n",
+        "stdout": "[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:\n\nsourcify: {\n  enabled: true\n}\n\nOr set 'enabled' to false to hide this message.\n\nFor more information, visit https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify\n",
+        "stderr": "hardhat-verify found one or more errors during the verification process:\n\nEtherscan:\nThe address provided as argument contains a contract, but its bytecode doesn't match any of your local contracts.\n\nPossible causes are:\n  - The artifact for that contract is outdated or missing. You can try compiling the project again with the --force flag before re-running the verification.\n  - The contract's code changed after the deployment was executed. Sometimes this happens by changes in seemingly unrelated contracts.\n  - The solidity compiler settings were modified after the deployment was executed (like the optimizer, target EVM, etc.)\n  - The given address is wrong.\n  - The selected network (arbitrumSepolia) is wrong.\n\n\n"
+      }
+    }
+  },
+  "contracts": {
+    "sepolia": {
+      "UnifiedReputationSystem": {
+        "address": "0x24FF472f7fc79672A4C1032dF37B74B2981389bf",
+        "constructorArgs": []
+      },
+      "ActivaToken": {
+        "address": "0x11a16814c7E8079Cc010a1603C15b818c3411FC4",
+        "constructorArgs": [
+          "ActivaChain Token",
+          "ACTIVA",
+          "1000000000000000000000000"
+        ]
+      },
+      "ActivaNFT": {
+        "address": "0x45e5FDDa2B3215423B82b2502B388D5dA8944bA9",
+        "constructorArgs": [
+          "0xC68535Ee239f2A46Fdc08c236c86cb6451b6E01D"
+        ]
+      },
+      "ActivaMarketplaceMultiToken": {
+        "address": "0xBc6f7ADb6Af52997CC9aF02E1B348083B5eA978F",
+        "constructorArgs": [
+          "0x0eBdB4cf4b72E806A0c55059B301797aE6629f6D",
+          "0x24FF472f7fc79672A4C1032dF37B74B2981389bf"
+        ]
+      },
+      "ActivaGovernance": {
+        "address": "0xf278be79d14CcF53157B045bdbb51D98d58964F9",
+        "constructorArgs": [
+          "0x11a16814c7E8079Cc010a1603C15b818c3411FC4"
+        ]
+      }
+    },
+    "arbitrumSepolia": {
+      "UnifiedReputationSystem": {
+        "address": "0x52C342E5484185612A7B4030164737B8E183c318",
+        "constructorArgs": []
+      },
+      "ActivaMarketplaceMultiToken": {
+        "address": "0x91f2522Fba8AD5520556D94fca100520D7d2e48c",
+        "constructorArgs": [
+          "0x0eBdB4cf4b72E806A0c55059B301797aE6629f6D",
+          "0x52C342E5484185612A7B4030164737B8E183c318"
+        ]
+      }
+    }
+  }
+}

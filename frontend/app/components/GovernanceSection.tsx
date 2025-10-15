@@ -89,54 +89,10 @@ export default function GovernanceSection() {
     return () => observer.disconnect()
   }, [])
 
-  // Mock data para demostración
+  // Cargar propuestas reales del contrato de gobernanza
   useEffect(() => {
-    const mockProposals: Proposal[] = [
-      {
-        id: 1,
-        title: "Aumentar comisión de plataforma al 3%",
-        description: "Propuesta para incrementar la comisión de la plataforma del 2.5% al 3% para mejorar la sostenibilidad del protocolo y financiar nuevas funcionalidades.",
-        proposer: "0x1234...5678",
-        startTime: Date.now() - 86400000, // 1 día atrás
-        endTime: Date.now() + 518400000, // 6 días restantes
-        forVotes: "15000000000000000000000", // 15,000 ACTIVA
-        againstVotes: "8000000000000000000000", // 8,000 ACTIVA
-        abstainVotes: "2000000000000000000000", // 2,000 ACTIVA
-        proposalType: 2,
-        executed: false,
-        cancelled: false
-      },
-      {
-        id: 2,
-        title: "Fondo de desarrollo comunitario - $50,000",
-        description: "Crear un fondo de 50,000 ARB para financiar proyectos de desarrollo comunitario y hackathons dirigidos a mujeres en Web3.",
-        proposer: "0x9876...5432",
-        startTime: Date.now() - 172800000, // 2 días atrás
-        endTime: Date.now() + 432000000, // 5 días restantes
-        forVotes: "25000000000000000000000", // 25,000 ACTIVA
-        againstVotes: "5000000000000000000000", // 5,000 ACTIVA
-        abstainVotes: "1000000000000000000000", // 1,000 ACTIVA
-        proposalType: 1,
-        executed: false,
-        cancelled: false
-      },
-      {
-        id: 3,
-        title: "Nuevo curso: DeFi Avanzado para Mujeres",
-        description: "Aprobar la creación de un nuevo curso especializado en DeFi avanzado, incluyendo yield farming, liquidity mining y protocolos de lending.",
-        proposer: "0x4567...8901",
-        startTime: Date.now() - 259200000, // 3 días atrás
-        endTime: Date.now() + 345600000, // 4 días restantes
-        forVotes: "30000000000000000000000", // 30,000 ACTIVA
-        againstVotes: "3000000000000000000000", // 3,000 ACTIVA
-        abstainVotes: "2000000000000000000000", // 2,000 ACTIVA
-        proposalType: 3,
-        executed: false,
-        cancelled: false
-      }
-    ]
-
-    setProposals(mockProposals)
+    // TODO: Implementar carga de propuestas reales desde el contrato
+    setProposals([])
     setStats({
       totalProposals: 12,
       activeProposals: 3,

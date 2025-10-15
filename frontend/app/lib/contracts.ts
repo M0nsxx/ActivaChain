@@ -409,3 +409,127 @@ export const COMMUNITY_ABI = [
     "type": "function"
   }
 ] as const
+
+// ABI para UnifiedReputationSystem
+export const UNIFIED_REPUTATION_ABI = [
+  {
+    "inputs": [{"internalType": "address", "name": "user", "type": "address"}],
+    "name": "getReputation",
+    "outputs": [
+      {"internalType": "uint256", "name": "score", "type": "uint256"},
+      {"internalType": "uint256", "name": "endorsementCount", "type": "uint256"},
+      {"internalType": "bool", "name": "isVerified", "type": "bool"},
+      {"internalType": "uint8", "name": "verificationLevel", "type": "uint8"},
+      {"internalType": "uint256", "name": "userActivityStreak", "type": "uint256"},
+      {"internalType": "uint256", "name": "timeSinceLastActivity", "type": "uint256"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "address", "name": "user", "type": "address"}],
+    "name": "getDetailedReputation",
+    "outputs": [
+      {"internalType": "uint256", "name": "baseScore", "type": "uint256"},
+      {"internalType": "uint256", "name": "timeDecay", "type": "uint256"},
+      {"internalType": "uint256", "name": "totalScore", "type": "uint256"},
+      {"internalType": "uint256", "name": "lastUpdate", "type": "uint256"},
+      {"internalType": "uint256", "name": "lastActivity", "type": "uint256"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "bytes32", "name": "proofHash", "type": "bytes32"},
+      {"internalType": "bytes", "name": "proof", "type": "bytes"},
+      {"internalType": "uint8", "name": "verificationLevel", "type": "uint8"}
+    ],
+    "name": "verifyIdentityWithZK",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "address", "name": "user", "type": "address"}],
+    "name": "endorseUser",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "address", "name": "user", "type": "address"}],
+    "name": "recordActivity",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "address", "name": "user", "type": "address"},
+      {"internalType": "uint256", "name": "points", "type": "uint256"},
+      {"internalType": "bool", "name": "isPositive", "type": "bool"}
+    ],
+    "name": "updateReputation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+] as const
+
+// ABI para ActivaNFT (ERC721)
+export const ACTIVA_NFT_ABI = [
+  {
+    "inputs": [
+      {"internalType": "address", "name": "learner", "type": "address"},
+      {"internalType": "string", "name": "courseName", "type": "string"},
+      {"internalType": "uint8", "name": "level", "type": "uint8"},
+      {"internalType": "uint256", "name": "score", "type": "uint256"},
+      {"internalType": "string", "name": "tokenURI", "type": "string"}
+    ],
+    "name": "mintCertification",
+    "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "address", "name": "user", "type": "address"}],
+    "name": "getUserCertifications",
+    "outputs": [{"internalType": "uint256[]", "name": "", "type": "uint256[]"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "tokenId", "type": "uint256"}],
+    "name": "getCertificationDetails",
+    "outputs": [
+      {
+        "components": [
+          {"internalType": "string", "name": "courseName", "type": "string"},
+          {"internalType": "uint256", "name": "completionDate", "type": "uint256"},
+          {"internalType": "uint8", "name": "level", "type": "uint8"},
+          {"internalType": "uint256", "name": "score", "type": "uint256"},
+          {"internalType": "bool", "name": "isSoulbound", "type": "bool"}
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "tokenId", "type": "uint256"}],
+    "name": "ownerOf",
+    "outputs": [{"internalType": "address", "name": "", "type": "address"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "tokenId", "type": "uint256"}],
+    "name": "tokenURI",
+    "outputs": [{"internalType": "string", "name": "", "type": "string"}],
+    "stateMutability": "view",
+    "type": "function"
+  }
+] as const

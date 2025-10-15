@@ -9,6 +9,7 @@ import { Footer } from '@/app/components/Footer'
 import { NeuralParticles } from '@/app/components/NeuralParticles'
 import { DashboardNeuralEffects } from '@/app/components/DashboardNeuralEffects'
 import { DashboardStats } from '@/app/components/DashboardStats'
+import NotificationSummary from '@/app/components/NotificationSummary'
 
 export default function DashboardPage() {
   const { address, isConnected } = useAccount()
@@ -205,6 +206,11 @@ export default function DashboardPage() {
           {/* Dashboard Stats */}
           <div className={`mb-12 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <DashboardStats />
+          </div>
+
+          {/* Notification Summary */}
+          <div className={`mb-12 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <NotificationSummary />
           </div>
 
           {/* Navigation Tabs */}

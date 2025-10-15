@@ -111,6 +111,21 @@ export default function NotificationCenter() {
   })
   const [showSettings, setShowSettings] = useState(false)
 
+  // Si no hay wallet conectada, mostrar mensaje de conexión
+  if (!isConnected) {
+    return (
+      <GlassCard className="p-8 text-center">
+        <div className="text-6xl mb-4">🔗</div>
+        <h3 className="text-xl font-bold text-white mb-2">Conecta tu Wallet</h3>
+        <p className="text-white/70 mb-6">Necesitas conectar tu wallet para ver tus notificaciones personalizadas</p>
+        <div className="bg-white/5 rounded-lg p-4 text-white/60 text-sm">
+          <p>Las notificaciones están personalizadas para cada wallet conectada</p>
+          <p>Conecta tu wallet para acceder a tu centro de notificaciones</p>
+        </div>
+      </GlassCard>
+    )
+  }
+
   // Cargar notificaciones del usuario
   useEffect(() => {
     if (address && contracts.pushNotificationSystem) {
@@ -119,47 +134,84 @@ export default function NotificationCenter() {
   }, [address, contracts.pushNotificationSystem])
 
   const loadNotifications = async () => {
-    // Simular carga de notificaciones
+    if (!address) return
+    
+    // Generar notificaciones personalizadas basadas en la wallet conectada
+    const walletShort = `${address.substring(0, 6)}...${address.substring(address.length - 4)}`
     const mockNotifications: Notification[] = [
       {
         id: 1,
-        recipient: address || '',
+        recipient: address,
         title: '🎉 ¡Nuevo Achievement Desbloqueado!',
-        message: 'Has completado tu primer curso de blockchain',
+        message: `¡Felicitaciones ${walletShort}! Has completado tu primer curso de blockchain y desbloqueado el achievement "Blockchain Explorer"`,
         notificationType: 2,
         timestamp: Date.now() - 3600000,
         isRead: false,
-        metadata: '{"achievementId": 1}'
+        metadata: JSON.stringify({ 
+          achievementId: 1, 
+          wallet: address,
+          achievementName: 'Blockchain Explorer',
+          points: 100
+        })
       },
       {
         id: 2,
-        recipient: address || '',
+        recipient: address,
         title: '💰 Transacción Completada',
-        message: 'Tu servicio "Desarrollo Smart Contract" ha sido completado',
+        message: `Tu servicio "Desarrollo Smart Contract" ha sido completado exitosamente. Pago recibido: 0.5 ETH`,
         notificationType: 1,
         timestamp: Date.now() - 7200000,
         isRead: true,
-        metadata: '{"txHash": "0x123..."}'
+        metadata: JSON.stringify({ 
+          txHash: '0x123...', 
+          wallet: address,
+          amount: '0.5 ETH',
+          serviceId: 1
+        })
       },
       {
         id: 3,
-        recipient: address || '',
+        recipient: address,
         title: '👥 Nuevo Evento Comunitario',
-        message: 'Workshop "DeFi para Principiantes" - Mañana 3PM',
+        message: `Workshop "DeFi para Principiantes" - Mañana 3PM. Te esperamos ${walletShort}!`,
         notificationType: 3,
         timestamp: Date.now() - 10800000,
         isRead: false,
-        metadata: '{"eventId": 5}'
+        metadata: JSON.stringify({ 
+          eventId: 5, 
+          wallet: address,
+          eventName: 'DeFi para Principiantes',
+          date: 'Mañana 3PM'
+        })
       },
       {
         id: 4,
-        recipient: address || '',
+        recipient: address,
         title: '🔔 Actualización del Sistema',
-        message: 'Nuevas funcionalidades disponibles en ActivaChains',
+        message: `Nuevas funcionalidades disponibles en ActivaChains. Tu wallet ${walletShort} ahora tiene acceso a funciones premium`,
         notificationType: 4,
         timestamp: Date.now() - 14400000,
         isRead: true,
-        metadata: '{}'
+        metadata: JSON.stringify({ 
+          wallet: address,
+          newFeatures: ['Premium Access', 'Advanced Analytics'],
+          version: '2.1.0'
+        })
+      },
+      {
+        id: 5,
+        recipient: address,
+        title: '⭐ Reputación Actualizada',
+        message: `Tu reputación ha aumentado a 850 puntos. ¡Excelente trabajo ${walletShort}!`,
+        notificationType: 2,
+        timestamp: Date.now() - 18000000,
+        isRead: false,
+        metadata: JSON.stringify({ 
+          wallet: address,
+          reputationScore: 850,
+          previousScore: 800,
+          increase: 50
+        })
       }
     ]
     
@@ -322,9 +374,17 @@ export default function NotificationCenter() {
         <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
           🔔 Centro de Notificaciones
         </h1>
-        <p className="text-white/70 text-lg">
+        <p className="text-white/70 text-lg mb-2">
           Gestiona tus notificaciones y configuraciones
         </p>
+        <div className="bg-white/10 rounded-lg p-4 inline-block">
+          <p className="text-white/80 text-sm">
+            <span className="font-semibold">Wallet conectada:</span> {address}
+          </p>
+          <p className="text-white/60 text-xs mt-1">
+            Notificaciones personalizadas para esta wallet
+          </p>
+        </div>
       </div>
 
       {/* Stats */}
@@ -527,9 +587,12 @@ export default function NotificationCenter() {
                         </span>
                         {notification.metadata && notification.metadata !== '{}' && (
                           <span className="text-xs text-white/50">
-                            📎 Con metadatos
+                            📎 Personalizada
                           </span>
                         )}
+                        <span className="text-xs text-white/40">
+                          Para: {notification.recipient.substring(0, 6)}...{notification.recipient.substring(notification.recipient.length - 4)}
+                        </span>
                       </div>
                       
                       {!notification.isRead && (

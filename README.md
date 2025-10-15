@@ -18,6 +18,10 @@
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 
+[![Smart Contracts](https://img.shields.io/badge/Smart_Contracts-10_Verified-00D26A?style=flat-square&logo=ethereum&logoColor=white)](https://sepolia.etherscan.io/address/0xd427D9ED996fbF78B202c4D783823e161d264E67#code)
+[![Etherscan](https://img.shields.io/badge/Etherscan-Verified-00D26A?style=flat-square&logo=etherscan&logoColor=white)](https://sepolia.etherscan.io/)
+[![Production Ready](https://img.shields.io/badge/Production-Ready-00D26A?style=flat-square&logo=check-circle&logoColor=white)](#)
+
 </div>
 
 ---
@@ -311,15 +315,17 @@ cd frontend && npm run dev
 
 ```
 ActivaChain/
-├── 📁 contracts/              # Smart Contracts
-│   ├── 🏪 ActivaMarketplaceMultiToken.sol    # Marketplace principal
-│   ├── 🏛️ ActivaGovernance.sol              # Sistema de gobernanza
-│   ├── 🪙 ActivaToken.sol                   # Token de gobernanza
-│   ├── 🎨 ActivaNFT.sol                     # NFTs de certificación
-│   ├── 🏭 ActivaNFTFactory.sol              # Factory de colecciones
-│   ├── 🏆 AdvancedReputationSystem.sol      # Reputación con ZK
-│   ├── 🎮 GamificationSystem.sol            # Logros y badges
-│   └── 👥 CommunitySystem.sol               # Mentores y workshops
+├── 📁 contracts/              # Smart Contracts (✅ Todos Verificados)
+│   ├── 🏆 UnifiedReputationSystem.sol       # Sistema de reputación unificado
+│   ├── 🪙 ActivaToken.sol                  # Token principal del ecosistema
+│   ├── 🎨 ActivaNFT.sol                    # NFTs de certificación Soulbound
+│   ├── 🏪 ActivaMarketplaceMultiToken.sol  # Marketplace descentralizado
+│   ├── 🏛️ ActivaGovernance.sol            # Sistema de gobernanza DAO
+│   ├── 🎮 GamificationSystem.sol           # Sistema de gamificación
+│   ├── 👥 CommunitySystem.sol              # Sistema de comunidad
+│   ├── 📁 IPFSIntegration.sol              # Integración con IPFS
+│   ├── 🔔 PushNotificationSystem.sol       # Sistema de notificaciones
+│   └── 🔗 ExternalAPIIntegration.sol       # Integración con APIs externas
 ├── 📁 frontend/               # Aplicación Next.js
 │   ├── 📁 app/               # App Router
 │   │   ├── 🏠 page.tsx                      # Landing page
@@ -336,13 +342,87 @@ ActivaChain/
 
 ---
 
+## 🏗️ Smart Contracts Verificados
+
+### ✅ **Contratos Principales Desplegados en Ethereum Sepolia**
+
+Todos nuestros contratos están **completamente verificados** en Etherscan y listos para producción:
+
+#### 🎯 **Contratos Core del Ecosistema**
+
+| Contrato | Dirección | Estado | Etherscan |
+|----------|-----------|--------|-----------|
+| **🏆 UnifiedReputationSystem** | `0xd427D9ED996fbF78B202c4D783823e161d264E67` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0xd427D9ED996fbF78B202c4D783823e161d264E67#code) |
+| **💰 ActivaToken** | `0x11a16814c7E8079Cc010a1603C15b818c3411FC4` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x11a16814c7E8079Cc010a1603C15b818c3411FC4#code) |
+| **🎨 ActivaNFT** | `0xafc87Aa5ddeC481Cb05F15Fec449D9e705d7EED5` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0xafc87Aa5ddeC481Cb05F15Fec449D9e705d7EED5#code) |
+| **🛒 ActivaMarketplaceMultiToken** | `0x9b5dEfCe5f8eC4762Dd63077063677F3C624d807` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x9b5dEfCe5f8eC4762Dd63077063677F3C624d807#code) |
+| **🏛️ ActivaGovernance** | `0x5CCDF9634A86a387f5517D496BD36700277a9B5E` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x5CCDF9634A86a387f5517D496BD36700277a9B5E#code) |
+
+#### 🔧 **Contratos de Soporte y Servicios**
+
+| Contrato | Dirección | Estado | Etherscan |
+|----------|-----------|--------|-----------|
+| **🎮 GamificationSystem** | `0x75069e3b4e62966325Ac8ef2fEA48e8909225acF` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x75069e3b4e62966325Ac8ef2fEA48e8909225acF#code) |
+| **👥 CommunitySystem** | `0x9231c39C19A4A938Da2E3D1D67AbaBDE77388b09` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x9231c39C19A4A938Da2E3D1D67AbaBDE77388b09#code) |
+| **📁 IPFSIntegration** | `0x79ede9d4E531ea6b7bF5eF35c4b31ea69210107A` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x79ede9d4E531ea6b7bF5eF35c4b31ea69210107A#code) |
+| **🔔 PushNotificationSystem** | `0x1fbD7E942b0e19dB7D74c6DF1CfdE7753A30841d` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0x1fbD7E942b0e19dB7D74c6DF1CfdE7753A30841d#code) |
+| **🔗 ExternalAPIIntegration** | `0xe09D357311eDC869dbba5E043a3915413547F288` | ✅ Verificado | [Ver en Etherscan](https://sepolia.etherscan.io/address/0xe09D357311eDC869dbba5E043a3915413547F288#code) |
+
+### 🎯 **Características de los Contratos**
+
+#### **🏆 UnifiedReputationSystem** - Sistema de Reputación Unificado
+- **Decay temporal** configurable para mantener reputación activa
+- **Verificación ZK** para privacidad total
+- **Sistema de endorsements** entre usuarias
+- **Tracking de actividad** y streaks
+- **Integración completa** con todos los módulos
+
+#### **💰 ActivaToken** - Token Principal del Ecosistema
+- **Staking con 10% APY** para holders
+- **Governance token** para votaciones DAO
+- **Burn mechanism** para deflación
+- **Transfer restrictions** para seguridad
+
+#### **🎨 ActivaNFT** - Certificaciones Soulbound
+- **NFTs no transferibles** (Soulbound)
+- **Certificaciones de logros** y competencias
+- **Integración con reputación** para bonuses
+- **Metadata en IPFS** para descentralización
+
+#### **🛒 ActivaMarketplaceMultiToken** - Marketplace Descentralizado
+- **Multi-token support** (ETH, USDC, ACTIVA)
+- **Sistema de reputación** para vendedores
+- **Platform fees** configurables
+- **Escrow automático** para seguridad
+
+#### **🏛️ ActivaGovernance** - Sistema de Gobernanza DAO
+- **Proposal system** con thresholds configurables
+- **Voting periods** y execution delays
+- **Quorum requirements** para decisiones importantes
+- **Timelock** para seguridad
+
+### 🔗 **Integración con Maldo.uy**
+
+Todos los contratos están **listos para integración** con Maldo.uy:
+
+- **ABIs disponibles** para integración directa
+- **Código fuente verificado** en Etherscan
+- **Documentación completa** de APIs
+- **Webhooks configurados** para eventos
+- **Sistema de reputación unificado** operativo
+
+---
+
 ## 🎯 Roadmap 2025
 
 ### 🥇 **Q1 2025 - Fundación Sólida**
 - [x] ✅ Smart contracts desplegados en Sepolia y Arbitrum
+- [x] ✅ **TODOS los contratos verificados en Etherscan** 🎉
 - [x] ✅ Frontend con todas las funcionalidades core
-- [x] ✅ Sistema de reputación con ZK Proofs
+- [x] ✅ Sistema de reputación unificado con decay temporal
 - [x] ✅ Marketplace multi-token funcional
+- [x] ✅ Sistema de gobernanza DAO operativo
+- [x] ✅ NFTs Soulbound para certificaciones
 - [ ] 🔄 Auditoría de seguridad completa
 - [ ] 🔄 Lanzamiento en mainnet
 

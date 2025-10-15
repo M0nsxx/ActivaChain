@@ -4,6 +4,7 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "./UnifiedReputationSystem.sol";
 
 contract ActivaMarketplaceMultiToken is ReentrancyGuard, Ownable {
     
@@ -34,8 +35,8 @@ contract ActivaMarketplaceMultiToken is ReentrancyGuard, Ownable {
         uint256 timestamp;
     }
     
-    // Mapeo de reputación por usuario
-    mapping(address => uint256) public userReputation;
+    // Referencia al sistema de reputación unificado
+    UnifiedReputationSystem public reputationSystem;
     
     // Tokens ERC20 soportados
     mapping(PaymentToken => IERC20) public supportedTokens;
@@ -55,17 +56,20 @@ contract ActivaMarketplaceMultiToken is ReentrancyGuard, Ownable {
     event ReputationUpdated(address indexed user, uint256 newReputation);
     event TokenSupported(PaymentToken token, address tokenAddress);
     
-    constructor(address _arb) Ownable(msg.sender) {
+    constructor(address _arb, address _reputationSystem) Ownable(msg.sender) {
         // Configurar tokens soportados
         supportedTokens[PaymentToken.ARB] = IERC20(_arb);
         // ETH nativo no necesita configuración
         
+        // Configurar sistema de reputación unificado
+        reputationSystem = UnifiedReputationSystem(_reputationSystem);
+        
         emit TokenSupported(PaymentToken.ARB, _arb);
     }
     
-    // Función para dar reputación (solo owner)
+    // Función para dar reputación (solo owner) - Ahora usa sistema unificado
     function giveReputation(address user, uint256 reputation) external onlyOwner {
-        userReputation[user] = reputation;
+        reputationSystem.updateReputation(user, reputation, true);
         emit ReputationUpdated(user, reputation);
     }
     
@@ -106,7 +110,8 @@ contract ActivaMarketplaceMultiToken is ReentrancyGuard, Ownable {
         require(service.isActive, "Service is not active");
         require(service.paymentToken == PaymentToken.ETH, "Service requires different payment token");
         require(msg.value == service.price, "Incorrect payment amount");
-        require(userReputation[msg.sender] >= service.minReputation, "Insufficient reputation");
+        (uint256 userScore,,,,,) = reputationSystem.getReputation(msg.sender);
+        require(userScore >= service.minReputation, "Insufficient reputation");
         
         orderCounter++;
         orders[orderCounter] = Order({
@@ -127,7 +132,8 @@ contract ActivaMarketplaceMultiToken is ReentrancyGuard, Ownable {
         Service storage service = services[_serviceId];
         require(service.isActive, "Service is not active");
         require(service.paymentToken != PaymentToken.ETH, "Service requires ETH payment");
-        require(userReputation[msg.sender] >= service.minReputation, "Insufficient reputation");
+        (uint256 userScore,,,,,) = reputationSystem.getReputation(msg.sender);
+        require(userScore >= service.minReputation, "Insufficient reputation");
         
         IERC20 token = supportedTokens[service.paymentToken];
         require(address(token) != address(0), "Token not supported");
@@ -175,11 +181,11 @@ contract ActivaMarketplaceMultiToken is ReentrancyGuard, Ownable {
         
         providerEarnings[order.provider] += providerAmount;
         
-        // Aumentar reputación del provider
-        userReputation[order.provider] += 10;
+        // Aumentar reputación del provider usando sistema unificado
+        reputationSystem.updateReputation(order.provider, 10, true);
         
         emit OrderCompleted(_orderId, order.amount);
-        emit ReputationUpdated(order.provider, userReputation[order.provider]);
+        emit ReputationUpdated(order.provider, 10);
     }
     
     // Función para obtener servicios de un provider
